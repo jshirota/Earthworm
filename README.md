@@ -1,7 +1,9 @@
 Earthworm
 =========
 
-ORM for Esri Geodatabase
+ORM for Esri Geodatabase (via ArcObjects)
+
+You will need ArcGIS Desktop, Engine or Server 9.3.1, 10.0 or 10.1.
 
 A tool is available here:
 http://jshirota.com/ORMapping/publish.htm
