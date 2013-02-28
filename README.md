@@ -10,6 +10,6 @@ The API reference is here:
 http://jshirota.com/ORMapping/Help
 
 The source code for the library is here:
-https://github.com/jshirota/Earthworm
+https://github.com/jshirota/Earthworm/archive/master.zip
 
 Thanks!
