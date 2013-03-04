@@ -9,7 +9,7 @@ A tool is available here:
 
 http://jshirota.com/ORMapping/publish.htm
 
-NuGet packages are here:
+The NuGet packages is here:
 
 http://nuget.org/packages/Earthworm
 
