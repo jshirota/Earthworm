@@ -11,11 +11,7 @@ http://jshirota.com/ORMapping/publish.htm
 
 NuGet packages are here:
 
-http://nuget.org/packages/Earthworm10.1
-
-http://nuget.org/packages/Earthworm10.0
-
-http://nuget.org/packages/Earthworm9.3.1
+http://nuget.org/packages/Earthworm
 
 The API reference is here:
 
