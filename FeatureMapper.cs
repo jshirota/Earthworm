@@ -11,6 +11,7 @@ namespace Earthworm
         private readonly ITable _table;
         private readonly bool _isSpatial;
         private readonly Dictionary<int, MappedProperty> _mapping = new Dictionary<int, MappedProperty>();
+        private readonly List<int> _readOnlyFieldIndexes = new List<int>();
 
         #region Private
 
@@ -40,13 +41,13 @@ namespace Earthworm
         {
             foreach (int fieldIndex in _mapping.Keys)
             {
+                if (_readOnlyFieldIndexes.Contains(fieldIndex))
+                    continue;
+
                 MappedProperty mappedProperty = _mapping[fieldIndex];
 
-                if (!mappedProperty.IsReadOnly)
-                {
-                    object value = mappedProperty.GetValue(item, true);
-                    row.SetValue(fieldIndex, value);
-                }
+                object value = mappedProperty.GetValue(item, true);
+                row.SetValue(fieldIndex, value);
             }
 
             if (_isSpatial)
@@ -73,6 +74,9 @@ namespace Earthworm
 
                 if (fieldIndex == -1)
                     throw new Exception(string.Format("'{0}' does not exist in '{1}'.", mappedProperty.MappedField.FieldName, ((IDataset)table).Name));
+
+                if (!table.Fields.get_Field(fieldIndex).Editable)
+                    _readOnlyFieldIndexes.Add(fieldIndex);
 
                 _mapping.Add(fieldIndex, mappedProperty);
             }

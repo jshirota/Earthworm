@@ -161,7 +161,6 @@ namespace Earthworm
             }
 
             List<IField> fields = typeof(T).GetMappedProperties()
-                .Where(p => !p.IsReadOnly)
                 .Select(CreateField).ToList();
 
             List<string> fieldNames = fields.Select(f => f.Name.ToUpper()).ToList();

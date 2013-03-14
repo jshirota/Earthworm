@@ -14,7 +14,6 @@ namespace Earthworm
         public PropertyInfo PropertyInfo { get; private set; }
         public Type PropertyType { get; private set; }
         public MappedField MappedField { get; private set; }
-        public bool IsReadOnly { get; private set; }
 
         #region Private
 
@@ -61,7 +60,6 @@ namespace Earthworm
             PropertyInfo = propertyInfo;
             PropertyType = propertyInfo.PropertyType;
             MappedField = Attribute.GetCustomAttributes(propertyInfo).OfType<MappedField>().SingleOrDefault();
-            IsReadOnly = MappedField != null && !MappedField.IsWritable;
 
             Type t = (PropertyType.IsGenericType && PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
                 ? new NullableConverter(PropertyType).UnderlyingType
