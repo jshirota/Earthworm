@@ -72,7 +72,7 @@ namespace Earthworm
         /// <summary>
         /// Initializes a new instance of the MappedField class based on the application settings.
         /// </summary>
-        /// <param name="settingsType">The type for the application settings object.  This type must inherit System.Configuration.SettingsBase and contain a static property called "Default", which returns an instance (i.e. typeof(MyNamespace.Properties.Settings)).  You can also send typeof(System.Configuration.ConfigurationManager), in which case, the settings will be read from the App.config file.</param>
+        /// <param name="settingsType">The type that provides the application settings.  This may be System.Configuration.ConfigurationManager (i.e. typeof(ConfigurationManager)).  It can also be a type derived from System.Configuration.SettingsBase (i.e. typeof(MyNamespace.Properties.Settings)).  In this case, the type must contain a static property called "Default", which returns an instance of the type.</param>
         /// <param name="name">The name of the configuration setting that represents the field name.</param>
         public MappedField(Type settingsType, string name)
             : this(settingsType, name, 0, true)
@@ -82,7 +82,7 @@ namespace Earthworm
         /// <summary>
         /// Initializes a new instance of the MappedField class based on the application settings.
         /// </summary>
-        /// <param name="settingsType">The type for the application settings object.  This type must inherit System.Configuration.SettingsBase and contain a static property called "Default", which returns an instance (i.e. typeof(MyNamespace.Properties.Settings)).  You can also send typeof(System.Configuration.ConfigurationManager), in which case, the settings will be read from the App.config file.</param>
+        /// <param name="settingsType">The type that provides the application settings.  This may be System.Configuration.ConfigurationManager (i.e. typeof(ConfigurationManager)).  It can also be a type derived from System.Configuration.SettingsBase (i.e. typeof(MyNamespace.Properties.Settings)).  In this case, the type must contain a static property called "Default", which returns an instance of the type.</param>
         /// <param name="name">The name of the configuration setting that represents the field name.</param>
         /// <param name="textLength">The length of the field (for text fields only).</param>
         public MappedField(Type settingsType, string name, int textLength)
@@ -93,7 +93,7 @@ namespace Earthworm
         /// <summary>
         /// Initializes a new instance of the MappedField class based on the application settings.
         /// </summary>
-        /// <param name="settingsType">The type for the application settings object.  This type must inherit System.Configuration.SettingsBase and contain a static property called "Default", which returns an instance (i.e. typeof(MyNamespace.Properties.Settings)).  You can also send typeof(System.Configuration.ConfigurationManager), in which case, the settings will be read from the App.config file.</param>
+        /// <param name="settingsType">The type that provides the application settings.  This may be System.Configuration.ConfigurationManager (i.e. typeof(ConfigurationManager)).  It can also be a type derived from System.Configuration.SettingsBase (i.e. typeof(MyNamespace.Properties.Settings)).  In this case, the type must contain a static property called "Default", which returns an instance of the type.</param>
         /// <param name="name">The name of the configuration setting that represents the field name.</param>
         /// <param name="includeInJson">Indicates whether this field should be included in the JSON serialization.</param>
         public MappedField(Type settingsType, string name, bool includeInJson)
@@ -104,7 +104,7 @@ namespace Earthworm
         /// <summary>
         /// Initializes a new instance of the MappedField class based on the application settings.
         /// </summary>
-        /// <param name="settingsType">The type for the application settings object.  This type must inherit System.Configuration.SettingsBase and contain a static property called "Default", which returns an instance (i.e. typeof(MyNamespace.Properties.Settings)).  You can also send typeof(System.Configuration.ConfigurationManager), in which case, the settings will be read from the App.config file.</param>
+        /// <param name="settingsType">The type that provides the application settings.  This may be System.Configuration.ConfigurationManager (i.e. typeof(ConfigurationManager)).  It can also be a type derived from System.Configuration.SettingsBase (i.e. typeof(MyNamespace.Properties.Settings)).  In this case, the type must contain a static property called "Default", which returns an instance of the type.</param>
         /// <param name="name">The name of the configuration setting that represents the field name.</param>
         /// <param name="textLength">The length of the field (for text fields only).</param>
         /// <param name="includeInJson">Indicates whether this field should be included in the JSON serialization.</param>
