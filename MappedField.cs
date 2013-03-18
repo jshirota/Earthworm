@@ -1,4 +1,6 @@
 using System;
+using System.Configuration;
+using System.Reflection;
 
 namespace Earthworm
 {
@@ -66,5 +68,75 @@ namespace Earthworm
 
             IncludeInJson = includeInJson;
         }
+
+        /// <summary>
+        /// Initializes a new instance of the MappedField class based on the application settings.
+        /// </summary>
+        /// <param name="settingsType">The type for the application settings object.  This type must inherit System.Configuration.SettingsBase and contain a static property called "Default", which returns an instance (i.e. typeof(MyNamespace.Properties.Settings)).  You can also send typeof(System.Configuration.ConfigurationManager), in which case, the settings will be read from the App.config file.</param>
+        /// <param name="name">The name of the configuration setting that represents the field name.</param>
+        public MappedField(Type settingsType, string name)
+            : this(settingsType, name, 0, true)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the MappedField class based on the application settings.
+        /// </summary>
+        /// <param name="settingsType">The type for the application settings object.  This type must inherit System.Configuration.SettingsBase and contain a static property called "Default", which returns an instance (i.e. typeof(MyNamespace.Properties.Settings)).  You can also send typeof(System.Configuration.ConfigurationManager), in which case, the settings will be read from the App.config file.</param>
+        /// <param name="name">The name of the configuration setting that represents the field name.</param>
+        /// <param name="textLength">The length of the field (for text fields only).</param>
+        public MappedField(Type settingsType, string name, int textLength)
+            : this(settingsType, name, textLength, true)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the MappedField class based on the application settings.
+        /// </summary>
+        /// <param name="settingsType">The type for the application settings object.  This type must inherit System.Configuration.SettingsBase and contain a static property called "Default", which returns an instance (i.e. typeof(MyNamespace.Properties.Settings)).  You can also send typeof(System.Configuration.ConfigurationManager), in which case, the settings will be read from the App.config file.</param>
+        /// <param name="name">The name of the configuration setting that represents the field name.</param>
+        /// <param name="includeInJson">Indicates whether this field should be included in the JSON serialization.</param>
+        public MappedField(Type settingsType, string name, bool includeInJson)
+            : this(settingsType, name, 0, includeInJson)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the MappedField class based on the application settings.
+        /// </summary>
+        /// <param name="settingsType">The type for the application settings object.  This type must inherit System.Configuration.SettingsBase and contain a static property called "Default", which returns an instance (i.e. typeof(MyNamespace.Properties.Settings)).  You can also send typeof(System.Configuration.ConfigurationManager), in which case, the settings will be read from the App.config file.</param>
+        /// <param name="name">The name of the configuration setting that represents the field name.</param>
+        /// <param name="textLength">The length of the field (for text fields only).</param>
+        /// <param name="includeInJson">Indicates whether this field should be included in the JSON serialization.</param>
+        public MappedField(Type settingsType, string name, int textLength, bool includeInJson)
+            : this(GetFieldName(settingsType, name), textLength, includeInJson)
+        {
+        }
+
+        #region Private
+
+        private static string GetFieldName(Type settingsType, string name)
+        {
+            if (settingsType == typeof(ConfigurationManager))
+            {
+                string fieldName = ConfigurationManager.AppSettings[name];
+
+                if (fieldName == null)
+                    throw new Exception(string.Format("'{0}' does not exist in the application settings.", name));
+
+                return fieldName;
+            }
+
+            PropertyInfo property = settingsType.GetProperty("Default");
+
+            SettingsBase settings;
+
+            if (property == null || (settings = property.GetValue(null, null) as SettingsBase) == null)
+                throw new Exception(string.Format("'{0}' does not contain any application settings.", settingsType.FullName));
+
+            return settings[name] as string;
+        }
+
+        #endregion
     }
 }
