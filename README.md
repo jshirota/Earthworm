@@ -16,6 +16,6 @@ The API reference is here:
 
 https://github.com/jshirota/Earthworm/raw/master/Help/Earthworm.chm
 
-The NuGet packages is here:
+The NuGet package is here:
 
 http://nuget.org/packages/Earthworm
