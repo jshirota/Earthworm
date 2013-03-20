@@ -7,7 +7,7 @@ You will need ArcGIS Desktop, Engine or Server 9.3.1, 10.0 or 10.1.
 
 A tool is available here:
 
-https://github.com/jshirota/Earthworm/raw/master/setup.exe
+https://github.com/jshirota/Earthworm/Tool/raw/master/setup.exe
 
 The API reference is here:
 
