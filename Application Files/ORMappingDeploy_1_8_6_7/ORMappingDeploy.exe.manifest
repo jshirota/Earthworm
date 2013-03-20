@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ORMappingDeploy.exe" version="1.8.6.7" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="ORMappingDeploy.exe" version="1.8.6.7" publicKeyToken="41a39208f389d7ec" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="web_database.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ORMappingDeploy" version="1.8.6.7" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="ORMappingDeploy" version="1.8.6.7" publicKeyToken="41A39208F389D7EC" language="neutral" processorArchitecture="msil" />
     <commandLine file="ORMappingDeploy.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -59,13 +59,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ORMappingDeploy.exe" size="1608704">
-      <assemblyIdentity name="ORMappingDeploy" version="1.8.6.7" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="ORMappingDeploy" version="1.8.6.7" publicKeyToken="41A39208F389D7EC" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>jJLQyD4C9VuaJxIoTN19PlagSl4=</dsig:DigestValue>
+        <dsig:DigestValue>YQmc4NQUGOqd/A5uM7cvyf6MaKU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,4 +85,4 @@
       <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
     </application>
   </compatibility>
-</asmv1:assembly>
+<publisherIdentity name="CN={650E113B-F711-4E9E-A59B-F1C489974E43}" issuerKeyHash="ba2625154ac5d0d6c06729cfa8547b4112f4b3fd" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>099f/0ycTVLl9T9h1RxslHMVJZo=</DigestValue></Reference></SignedInfo><SignatureValue>Hjsw0q1yqHY4TvHTFBH+UsgYnP898MEtf2n6+YHpu/7wd67jJaIH32qV3ySWMdQIadSuLAMCRQ7Aevjzbh54HmUm26PhwoJgL7kR44delAT39GOCzd1W2Ry7iFFXgIrMNbi/pMtZ6bkU2jia5t14yjmIZ6jH0B+au+xNJSUvIQY=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>3ESabVM++AquZU+R4M25LAzdj9ph47NhVS/4qQiKIDXRwoF9vox+owLypag2E9O3DOVtcrqzldKWuoTATWgshdULqV7LnabJ8RUjEuXCLBN8lMimGliEOm+eMNvpLziubOpYOcS+/Lykrsyr+DaGcfm+e26AdKeA6BmyZI3G9UU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="9a251573946c1cd5613ff5e5524d9c4cff5fdfd3" Description="" Url=""><as:assemblyIdentity name="ORMappingDeploy.exe" version="1.8.6.7" publicKeyToken="41a39208f389d7ec" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN={650E113B-F711-4E9E-A59B-F1C489974E43}</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>lrEj1PTGLBrV+gyiTyhagd/7bUw=</DigestValue></Reference></SignedInfo><SignatureValue>GMzVl6b/artnM2JMybl9jocs+4mgoKUy9s2dYBdoSX7gHNDPkwe+pg78LsPAnN2OM33y2dgaGafHJWDRulltB/q+p6U/OM/zJVJou8IT1/NvNkNmDJIVTA24ivazUuJpJ3DfDvwQykzsJIl9eS5ZsYgKY24LNffYeud/E3zSYao=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>3ESabVM++AquZU+R4M25LAzdj9ph47NhVS/4qQiKIDXRwoF9vox+owLypag2E9O3DOVtcrqzldKWuoTATWgshdULqV7LnabJ8RUjEuXCLBN8lMimGliEOm+eMNvpLziubOpYOcS+/Lykrsyr+DaGcfm+e26AdKeA6BmyZI3G9UU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICMTCCAZqgAwIBAgIQJxXcjHWea71G4JUhutkl2zANBgkqhkiG9w0BAQUFADBXMVUwUwYDVQQDHkwAewA2ADUAMABFADEAMQAzAEIALQBGADcAMQAxAC0ANABFADkARQAtAEEANQA5AEIALQBGADEAQwA0ADgAOQA5ADcANABFADQAMwB9MB4XDTEzMDMyMDEyNTUzM1oXDTE0MDMyMDE4NTUzM1owVzFVMFMGA1UEAx5MAHsANgA1ADAARQAxADEAMwBCAC0ARgA3ADEAMQAtADQARQA5AEUALQBBADUAOQBCAC0ARgAxAEMANAA4ADkAOQA3ADQARQA0ADMAfTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA3ESabVM++AquZU+R4M25LAzdj9ph47NhVS/4qQiKIDXRwoF9vox+owLypag2E9O3DOVtcrqzldKWuoTATWgshdULqV7LnabJ8RUjEuXCLBN8lMimGliEOm+eMNvpLziubOpYOcS+/Lykrsyr+DaGcfm+e26AdKeA6BmyZI3G9UUCAwEAATANBgkqhkiG9w0BAQUFAAOBgQDA4ITMizr4D+dOJOQY1J3yq1dhb+YhYXf895/bvux1MYNN7rvvLQFZNGSKb0XkKZctHHM/ZjqRB5121Ih0X5KED7olYouqDUBB2FFBPsY1vmQAfDTdtBKPUvPkdDShoflFN0eCvXd4Khwvv5kjAp2ZNWIwuOgiym5TxiwypNBZzA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
