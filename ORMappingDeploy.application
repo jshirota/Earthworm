@@ -8,7 +8,7 @@
         <beforeApplicationStartup />
       </update>
     </subscription>
-    <deploymentProvider codebase="https://raw.github.com/jshirota/Earthworm/master/ORMappingDeploy.application/ORMappingDeploy.application" />
+    <deploymentProvider codebase="https://raw.github.com/jshirota/Earthworm/master/ORMappingDeploy.application" />
   </deployment>
   <dependency>
     <dependentAssembly dependencyType="install" codebase="Application Files\ORMappingDeploy_1_8_6_7\ORMappingDeploy.exe.manifest" size="5051">
@@ -18,7 +18,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>In18JtGDpfi36zwnqPwrLGWXnwc=</dsig:DigestValue>
+        <dsig:DigestValue>m68FjRAzhzC45f+43EWp0JxNNU4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
