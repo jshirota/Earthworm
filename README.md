@@ -11,7 +11,7 @@ https://github.com/jshirota/Earthworm/raw/master/Tool/setup.exe
 
 The API reference is here:
 
-http://htmlpreview.github.com/?https://github.com/jshirota/Earthworm/blob/master/Help/Index.html
+https://github.com/jshirota/Earthworm/raw/master/Help/Earthworm.chm
 
 The NuGet packages is here:
 
