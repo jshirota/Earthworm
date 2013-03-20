@@ -7,18 +7,12 @@ You will need ArcGIS Desktop, Engine or Server 9.3.1, 10.0 or 10.1.
 
 A tool is available here:
 
-http://jshirota.com/ORMapping/publish.htm
+https://github.com/jshirota/Earthworm/raw/master/setup.exe
+
+The API reference is here:
+
+http://htmlpreview.github.com/?https://github.com/jshirota/Earthworm/blob/master/Help/Index.html
 
 The NuGet packages is here:
 
 http://nuget.org/packages/Earthworm
-
-The API reference is here:
-
-http://jshirota.com/ORMapping/Help
-
-The source code for the library is here:
-
-https://github.com/jshirota/Earthworm/archive/master.zip
-
-Thanks!
