@@ -6,11 +6,7 @@ Earthworm - an ORM for Esri Geodatabase (via ArcObjects)
 
 *You will need ArcGIS Desktop, Engine or Server 9.3.1, 10.0 or 10.1.
 
-A tool is available here:
-
-http://jshirota.github.com/Earthworm/ORMappingDeploy.application
-
-The API reference is here:
+The library reference is here:
 
 http://jshirota.github.com/Earthworm/Help/Index.html
 
