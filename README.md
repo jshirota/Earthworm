@@ -14,7 +14,7 @@ http://jshirota.github.com/Earthworm/ORMappingDeploy.application
 
 The API reference is here:
 
-https://github.com/jshirota/Earthworm/raw/master/Help/Earthworm.chm
+http://jshirota.github.com/Earthworm/Help/Index.html
 
 The NuGet package is here:
 
