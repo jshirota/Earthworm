@@ -1,7 +1,5 @@
-Earthworm
+Earthworm - An ORM for Esri Geodatabase (via ArcObjects)
 =========
-
-An ORM for Esri Geodatabase (via ArcObjects)
 
 [![A basic example](https://raw.github.com/jshirota/Earthworm/gh-pages/Images/screenshot.png "Click here to install!")]
 (http://jshirota.github.com/Earthworm/ORMappingDeploy.application)
