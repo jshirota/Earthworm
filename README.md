@@ -6,14 +6,14 @@ Earthworm - An ORM for Esri Geodatabase (via ArcObjects)
 [![A basic example](https://raw.github.com/jshirota/Earthworm/gh-pages/images/screenshot.png "Click here to start!")]
 (http://jshirota.github.com/Earthworm/ORMappingDeploy.application)
 
-The project page:
+The project page is here:
 
 http://jshirota.github.com/Earthworm/
 
-The library reference:
+The library reference is here:
 
 http://jshirota.github.com/Earthworm/Help/Index.html
 
-The NuGet package:
+The NuGet package is here:
 
 http://nuget.org/packages/Earthworm
