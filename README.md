@@ -36,7 +36,7 @@ A simple .NET assembly that provides an object-relational mapping abstraction la
 
 -Provides class code generation for meta programming (i.e. code generation tools or runtime compilation via CodeDom or Roslyn).
 
--All mapped classes implement INotifyPropertyChanged (for use with WPF).  All mapped properties automatically raise the PropertyChanged event upon property setter access (via IL weaving).
+-All mapped classes implement INotifyPropertyChanged (for use with WPF).  All mapped properties automatically raise the PropertyChanged event upon property setter access (via IL weaving) without using an AOP library.
 
 The project page is here:
 
