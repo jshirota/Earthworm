@@ -19,7 +19,7 @@ A simple .NET assembly that provides an object-relational mapping abstraction la
 
 -Works with anything that implements IFeatureClass or ITable (i.e. shapefiles, coverages).  Note: The GUI tool only works with SDE, file and personal geodatabases.
 
--Returns mapped objects as a lazy sequence implementing IEnumerable<T>.  Allows LINQ queries.
+-Returns mapped objects as a lazy sequence implementing IEnumerable\<T\>.  Allows LINQ queries.
 
 -Encapsulates low-level ArcObjects "ceremony code" such as cursor cleanup.
 
