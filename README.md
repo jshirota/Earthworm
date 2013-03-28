@@ -1,6 +1,8 @@
 Earthworm - An ORM for Esri Geodatabase (via ArcObjects)
 =========
 
+A simple .NET assembly that provides an object-relational mapping abstraction layer for geodatabase feature classes and tables. It converts features and rows into a (lazy) sequence of strongly-typed objects.
+
 -Fights the impedence mismatch between geodatabase tables and objects.
 
 -Does not get in the way of existing ArcObjects code.  It is basically the same as using ICursor.
