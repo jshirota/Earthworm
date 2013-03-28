@@ -3,6 +3,11 @@ Earthworm - An ORM for Esri Geodatabase (via ArcObjects)
 
 A simple .NET assembly that provides an object-relational mapping abstraction layer for geodatabase feature classes and tables. It converts features and rows into a (lazy) sequence of strongly-typed objects.
 
+*You will need ArcGIS Desktop, Engine or Server 9.3.1, 10.0 or 10.1.
+
+[![A basic example](https://raw.github.com/jshirota/Earthworm/gh-pages/images/screenshot.png "Click here to start!")]
+(http://jshirota.github.com/Earthworm/ORMappingDeploy.application)
+
 -Fights the impedence mismatch between geodatabase tables and objects.
 
 -Does not get in the way of existing ArcObjects code.  It is basically the same as using ICursor.
@@ -32,11 +37,6 @@ A simple .NET assembly that provides an object-relational mapping abstraction la
 -Provides class code generation for meta programming (i.e. code generation tools or runtime compilation via CodeDom or Roslyn).
 
 -All mapped classes implement INotifyPropertyChanged (for use with WPF).  All mapped properties automatically raise the PropertyChanged event upon property setter access (via IL weaving).
-
-*You will need ArcGIS Desktop, Engine or Server 9.3.1, 10.0 or 10.1.
-
-[![A basic example](https://raw.github.com/jshirota/Earthworm/gh-pages/images/screenshot.png "Click here to start!")]
-(http://jshirota.github.com/Earthworm/ORMappingDeploy.application)
 
 The project page is here:
 
