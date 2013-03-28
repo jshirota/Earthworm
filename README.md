@@ -26,7 +26,7 @@ A simple .NET assembly that provides an object-relational mapping abstraction la
 
 -Returns mapped objects as a lazy sequence implementing IEnumerable\<T\>.  Allows LINQ queries.
 
--Encapsulates low-level ArcObjects "ceremony code" such as cursor cleanup.
+-Encapsulates low-level ArcObjects "ceremony code" such as the cursor cleanup code.
 
 -Provides JSON serialization/deserialization compatible with ArcGIS REST API.
 
