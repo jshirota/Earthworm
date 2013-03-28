@@ -8,7 +8,7 @@ A simple .NET assembly that provides an object-relational mapping abstraction la
 [![A basic example](https://raw.github.com/jshirota/Earthworm/gh-pages/images/screenshot.png "Click here to start!")]
 (http://jshirota.github.com/Earthworm/ORMappingDeploy.application)
 
--Fights the impedance mismatch between geodatabase tables and objects.
+-Fights the impedance mismatch between geodatabase tables and OOP.
 
 -Does not get in the way of existing ArcObjects code.  It is basically the same as using ICursor.
 
@@ -24,7 +24,7 @@ A simple .NET assembly that provides an object-relational mapping abstraction la
 
 -Works with anything that implements IFeatureClass or ITable (i.e. shapefiles, coverages).  Note: The GUI tool only works with SDE, file and personal geodatabases.
 
--Returns mapped objects as a lazy sequence implementing IEnumerable\<T\>.  Allows LINQ queries.
+-Returns mapped objects as a lazy sequence implementing IEnumerable\<T\>.  Allows for LINQ queries.  Facilitates functional programming.
 
 -Encapsulates low-level ArcObjects "ceremony code" such as the cursor cleanup code.
 
