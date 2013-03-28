@@ -30,7 +30,7 @@ A simple .NET assembly that provides an object-relational mapping abstraction la
 
 -Provides JSON serialization/deserialization compatible with ArcGIS REST API.
 
--Provides KML serialization.
+-Provides KML serialization for geometries.
 
 -Enables common spatial operations and predicates as extension methods for IGeometry to avoid verbose interface casting code.
 
