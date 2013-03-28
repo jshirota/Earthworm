@@ -34,7 +34,7 @@ A simple .NET assembly that provides an object-relational mapping abstraction la
 
 -Enables common spatial operations and predicates as extension methods for IGeometry to avoid verbose interface casting code.
 
--Provides class code generation for meta programming (i.e. code generation tools or runtime compilation via CodeDom or Roslyn).
+-Provides class code generation for meta programming (i.e. code generation tools or runtime compilation via CodeDom or Roslyn).  Supports C# and Visual Basic.
 
 -All mapped classes implement INotifyPropertyChanged (for use with WPF).  All mapped properties automatically raise the PropertyChanged event upon property setter access (via IL weaving) without using an AOP library.
 
