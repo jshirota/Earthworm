@@ -38,6 +38,8 @@ A simple .NET assembly that provides an object-relational mapping abstraction la
 
 -All mapped classes implement INotifyPropertyChanged (for use with WPF).  All mapped properties automatically raise the PropertyChanged event upon property setter access (via IL weaving) without using an AOP library.
 
+-Acts as a download client for ArcGIS REST endpoints.  Continuously downloads and yields features mapped to defined types, which can be immediately inserted into a feature class.
+
 The project page is here:
 
 http://jshirota.github.com/Earthworm/
