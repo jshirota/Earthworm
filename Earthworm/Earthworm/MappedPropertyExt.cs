@@ -30,8 +30,7 @@ namespace Earthworm
                 }
             }
 
-            lock (TypeToMappedProperties)
-                TypeToMappedProperties.Add(type, mappedProperties);
+            TypeToMappedProperties.Add(type, mappedProperties);
 
             return mappedProperties;
         }

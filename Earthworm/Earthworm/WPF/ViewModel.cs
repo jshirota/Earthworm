@@ -20,7 +20,7 @@ namespace Earthworm.WPF
         private Func<ITable, IEnumerable<T>> _mapping;
 
         /// <summary>
-        /// Function that maps a table to a collection of typed objects.  If this is set to null, the default mapping is applied with no filtering.
+        /// The function that maps a table to a collection of typed objects.  If this is set to null, the default mapping is applied with no filtering.
         /// </summary>
         public Func<ITable, IEnumerable<T>> Mapping
         {

@@ -63,8 +63,7 @@ namespace Earthworm
             Type type = typeof(T);
 
             if (!TypeToType.ContainsKey(type))
-                lock (TypeToType)
-                    TypeToType.Add(type, Derive(type));
+                TypeToType.Add(type, Derive(type));
 
             return (T)Activator.CreateInstance(TypeToType[type]);
         }

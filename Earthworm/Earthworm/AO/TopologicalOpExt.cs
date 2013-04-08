@@ -24,8 +24,7 @@ namespace Earthworm.AO
             try { spatialReference = sre.CreateGeographicCoordinateSystem(wkid); }
             catch { spatialReference = sre.CreateProjectedCoordinateSystem(wkid); }
 
-            lock (WkidToSpatialReference)
-                WkidToSpatialReference.Add(wkid, spatialReference);
+            WkidToSpatialReference.Add(wkid, spatialReference);
 
             return spatialReference;
         }
