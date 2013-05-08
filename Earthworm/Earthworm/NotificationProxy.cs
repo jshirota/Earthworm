@@ -23,8 +23,8 @@ namespace Earthworm
                 MethodInfo g = p.GetGetMethod();
                 MethodInfo s = p.GetSetMethod();
 
-                return g != null && g.IsPublic && g.IsVirtual & !g.IsFinal
-                    && s != null && s.IsPublic && s.IsVirtual & !s.IsFinal;
+                return g != null && g.IsPublic && g.IsVirtual && !g.IsFinal
+                    && s != null && s.IsPublic && s.IsVirtual && !s.IsFinal;
             });
 
             foreach (PropertyInfo propertyInfo in propertyInfos)
