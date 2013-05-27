@@ -90,8 +90,6 @@
     <Compile Include="Serialization\Kml.cs" />
     <Compile Include="TableWriter.cs" />
     <Compile Include="Utility.cs" />
-    <Compile Include="Web\FeatureSet.cs" />
-    <Compile Include="Web\RestApi.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
