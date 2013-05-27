@@ -130,7 +130,7 @@ namespace Earthworm.AO
         /// <param name="comparisonShape">The geometry to compare with.</param>
         /// <param name="distance">The distance in the map unit of the current shape.</param>
         /// <returns>True or false.</returns>
-        public static bool WithinDistanceOf(this IGeometry shape, IGeometry comparisonShape, double distance)
+        public static bool Within(this IGeometry shape, IGeometry comparisonShape, double distance)
         {
             return shape.Buffer(distance).Intersects(comparisonShape);
         }

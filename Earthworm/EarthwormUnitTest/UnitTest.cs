@@ -7,7 +7,6 @@ using Earthworm;
 using Earthworm.AO;
 using Earthworm.Meta;
 using Earthworm.Serialization;
-using Earthworm.WPF;
 using ESRI.ArcGIS;
 using ESRI.ArcGIS.DataSourcesGDB;
 using ESRI.ArcGIS.esriSystem;
@@ -383,7 +382,7 @@ namespace EarthwormUnitTest
                 double d = r.NextDouble() * 10;
 
                 List<County> within3a = counties.Where(c => p.DistanceTo(c.Shape) < d).ToList();
-                List<County> within3b = counties.Where(c => p.WithinDistanceOf(c.Shape, d)).ToList();
+                List<County> within3b = counties.Where(c => p.Within(c.Shape, d)).ToList();
 
                 Assert.AreEqual(within3a.Count, within3b.Count);
             }
@@ -1627,49 +1626,6 @@ namespace EarthwormUnitTest
         //Store.cs
         //TractCentroid.cs
 
-        private void ViewModelsDelete<T>(string fcName) where T : MappableFeature, new()
-        {
-            IFeatureClass fc = _featureWorkspace.OpenFeatureClass2(fcName);
-
-            int count = fc.FeatureCount(null);
-
-            ViewModel<T> model = new ViewModel<T>((ITable)fc);
-
-            for (int i = 0; i < 3; i++)
-            {
-                T item = model.Items.FirstOrDefault();
-
-                if (item == null)
-                    break;
-
-                model.DeleteCommand.Execute(item);
-                count--;
-            }
-
-            Assert.AreEqual(count, fc.FeatureCount(null));
-        }
-
-        private void ViewModelsUpdate<T>(string fcName) where T : MappableFeature, new()
-        {
-            IFeatureClass fc = _featureWorkspace.OpenFeatureClass2(fcName);
-
-            ViewModel<T> model = new ViewModel<T>((ITable)fc);
-
-            foreach (T item in model.Items)
-            {
-                item.Shape = null;
-            }
-
-            model.SaveAllCommand.Execute(null);
-
-            IFeatureClass fc2 = _featureWorkspace.OpenFeatureClass2(fcName);
-
-            foreach (T item in fc2.Map<T>())
-            {
-                Assert.AreEqual(null, item.Shape);
-            }
-        }
-
         [Test]
         public void _139_OrderByAndKml()
         {
@@ -1684,120 +1640,6 @@ namespace EarthwormUnitTest
                 Assert.AreEqual(true, items1[i].Shape.Equals2(items2[i].Shape));
                 Assert.AreEqual(items1[i].Shape.ToKml().ToString(), items2[i].Shape.ToKml().ToString());
             }
-        }
-
-        [Test]
-        public void _140_ViewModels()
-        {
-            ViewModelsUpdate<CentralDepot>("CentralDepots");
-        }
-
-        [Test]
-        public void _141_ViewModels()
-        {
-            ViewModelsUpdate<CompetitorStore>("CompetitorStores");
-        }
-
-        [Test]
-        public void _142_ViewModels()
-        {
-            ViewModelsUpdate<DistributionCenter>("DistributionCenter");
-        }
-
-        [Test]
-        public void _143_ViewModels()
-        {
-            ViewModelsUpdate<ExistingStore>("ExistingStore");
-        }
-
-        [Test]
-        public void _144_ViewModels()
-        {
-            ViewModelsUpdate<FireStation>("FireStations");
-        }
-
-        [Test]
-        public void _145_ViewModels()
-        {
-            ViewModelsUpdate<Hospital>("Hospitals");
-        }
-
-        [Test]
-        public void _146_ViewModels()
-        {
-            ViewModelsUpdate<Route>("Routes");
-        }
-
-        [Test]
-        public void _147_ViewModels()
-        {
-            ViewModelsUpdate<Store>("Stores");
-        }
-
-        [Test]
-        public void _148_ViewModels()
-        {
-            ViewModelsUpdate<TractCentroid>("TractCentroids");
-        }
-
-        [Test]
-        public void _149_ViewModels()
-        {
-            ViewModelsDelete<CandidateStore>("CandidateStores");
-        }
-
-        [Test]
-        public void _150_ViewModels()
-        {
-            ViewModelsDelete<CentralDepot>("CentralDepots");
-        }
-
-        [Test]
-        public void _151_ViewModels()
-        {
-            ViewModelsDelete<CompetitorStore>("CompetitorStores");
-        }
-
-        [Test]
-        public void _152_ViewModels()
-        {
-            ViewModelsDelete<DistributionCenter>("DistributionCenter");
-        }
-
-        [Test]
-        public void _153_ViewModels()
-        {
-            ViewModelsDelete<ExistingStore>("ExistingStore");
-        }
-
-        [Test]
-        public void _154_ViewModels()
-        {
-            ViewModelsDelete<FireStation>("FireStations");
-        }
-
-        [Test]
-        public void _155_ViewModels()
-        {
-            ViewModelsDelete<Hospital>("Hospitals");
-        }
-
-        [Test]
-        public void _156_ViewModels()
-        {
-            ViewModelsDelete<Route>("Routes");
-        }
-
-        [Test]
-        public void _157_ViewModels()
-        {
-            ViewModelsDelete<Store>("Stores");
-        }
-
-        [Test]
-        public void _158_ViewModels()
-        {
-            ViewModelsDelete<TractCentroid>("TractCentroids");
         }
 
         [Test]
