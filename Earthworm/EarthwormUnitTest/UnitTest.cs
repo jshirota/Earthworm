@@ -1613,6 +1613,10 @@ namespace EarthwormUnitTest
                 c.Update();
                 Assert.AreEqual(g, c.GlobalID);
             }
+
+            CityWithGlobalID city = new CityWithGlobalID();
+
+            city.InsertInto(fc);
         }
 
         //CandidateStore.cs
