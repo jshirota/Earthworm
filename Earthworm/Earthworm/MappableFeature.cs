@@ -157,12 +157,7 @@ namespace Earthworm
                 byte[] array = newValue as byte[];
 
                 if (array != null)
-                {
-                    if (array.SequenceEqual((byte[])oldValue))
-                        continue;
-
                     newValue = array.Clone();
-                }
 
                 property.SetValue(this, newValue, false);
             }
