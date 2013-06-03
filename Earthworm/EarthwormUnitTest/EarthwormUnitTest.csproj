@@ -174,10 +174,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library\Newtonsoft.Json.dll" />
-    <None Include="Library\nunit.framework.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Data\Data.gdb\a00000001.gdbindexes">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1435,6 +1431,8 @@
     <None Include="Data\Data.gdb\timestamps">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Library\Newtonsoft.Json.dll" />
+    <None Include="Library\nunit.framework.dll" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\logo3w.png">

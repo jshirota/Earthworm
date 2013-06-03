@@ -37,7 +37,7 @@ namespace Earthworm
             return item;
         }
 
-        private T Write(T item, IRow row)
+        private T Write(T item, IRow row, bool changedPropertiesOnly)
         {
             foreach (int fieldIndex in _mapping.Keys)
             {
@@ -45,6 +45,9 @@ namespace Earthworm
                     continue;
 
                 MappedProperty mappedProperty = _mapping[fieldIndex];
+
+                if (changedPropertiesOnly && !item.ChangedProperties.ContainsKey(mappedProperty.PropertyInfo.Name))
+                    continue;
 
                 object value = mappedProperty.GetValue(item, true);
                 row.SetValue(fieldIndex, value);
@@ -99,7 +102,7 @@ namespace Earthworm
 
         public T Insert(T item)
         {
-            return Write(item, _table.CreateRow());
+            return Write(item, _table.CreateRow(), false);
         }
 
         public void Update(T item)
@@ -107,12 +110,12 @@ namespace Earthworm
             if (!item.IsDataBound)
                 throw new Exception("This item cannot be updated because it is not bound to a table.");
 
-            T item2 = Write(item, _table.GetRow(item.OID));
+            T item2 = Write(item, _table.GetRow(item.OID), true);
 
             item.IsBeingSetByFeatureMapper = true;
             item.CopyDataFrom(item2);
             item.IsBeingSetByFeatureMapper = false;
-            item.IsDirty = false;
+            item.ChangedProperties.Clear();
         }
 
         public void Delete(T item)
@@ -124,7 +127,7 @@ namespace Earthworm
 
             item.Table = null;
             item.OID = -1;
-            item.IsDirty = false;
+            item.ChangedProperties.Clear();
         }
     }
 }

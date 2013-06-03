@@ -17,9 +17,9 @@ namespace Earthworm
         private static readonly AttributeValueComparer Comparer = new AttributeValueComparer();
         private readonly Type _type;
         private IGeometry _shape;
-        private bool _isDirty;
 
         internal ITable Table { get; set; }
+        internal Dictionary<string, object> ChangedProperties { get; set; }
 
         /// <summary>
         /// Represents the method that will handle the PropertyChanged event raised when a property is changed on a component.
@@ -39,7 +39,8 @@ namespace Earthworm
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 
             if (propertyName != "IsDirty")
-                IsDirty = true;
+                if (!ChangedProperties.ContainsKey(propertyName))
+                    ChangedProperties.Add(propertyName, null);
         }
 
         #region Private
@@ -86,6 +87,7 @@ namespace Earthworm
         protected MappableFeature()
         {
             _type = GetType();
+            ChangedProperties = new Dictionary<string, object>();
             OID = -1;
         }
 
@@ -132,15 +134,7 @@ namespace Earthworm
         [BrowsableAttribute(false)]
         public bool IsDirty
         {
-            get { return _isDirty; }
-            internal set
-            {
-                if (value != _isDirty)
-                {
-                    _isDirty = value;
-                    RaisePropertyChanged("IsDirty");
-                }
-            }
+            get { return ChangedProperties.Count > 0; }
         }
 
         #endregion
@@ -154,14 +148,23 @@ namespace Earthworm
         {
             foreach (MappedProperty property in typeof(T).GetMappedProperties())
             {
-                object obj = property.GetValue(item, false);
+                object newValue = property.GetValue(item, false);
+                object oldValue = property.GetValue(this, false);
 
-                byte[] array = obj as byte[];
+                if (newValue == oldValue)
+                    continue;
+
+                byte[] array = newValue as byte[];
 
                 if (array != null)
-                    obj = array.Clone();
+                {
+                    if (array.SequenceEqual((byte[])oldValue))
+                        continue;
 
-                property.SetValue(this, obj, false);
+                    newValue = array.Clone();
+                }
+
+                property.SetValue(this, newValue, false);
             }
 
             Shape = item.Shape;
