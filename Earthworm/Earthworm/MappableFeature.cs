@@ -151,13 +151,17 @@ namespace Earthworm
                 object newValue = property.GetValue(item, false);
                 object oldValue = property.GetValue(this, false);
 
-                if (newValue == oldValue)
-                    continue;
-
                 byte[] array = newValue as byte[];
 
-                if (array != null)
+                if (array == null)
+                {
+                    if (newValue == oldValue)
+                        continue;
+                }
+                else
+                {
                     newValue = array.Clone();
+                }
 
                 property.SetValue(this, newValue, false);
             }
