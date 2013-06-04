@@ -53,7 +53,7 @@ namespace Earthworm
                 row.SetValue(fieldIndex, value);
             }
 
-            if (_isSpatial)
+            if (_isSpatial && (!changedPropertiesOnly || item.ChangedProperties.ContainsKey("Shape")))
                 ((IFeature)row).Shape = item.Shape;
 
             row.Store();
