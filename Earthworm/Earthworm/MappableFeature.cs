@@ -148,22 +148,14 @@ namespace Earthworm
         {
             foreach (MappedProperty property in typeof(T).GetMappedProperties())
             {
-                object newValue = property.GetValue(item, false);
-                object oldValue = property.GetValue(this, false);
+                object obj = property.GetValue(item, false);
 
-                byte[] array = newValue as byte[];
+                byte[] array = obj as byte[];
 
-                if (array == null)
-                {
-                    if (newValue == oldValue)
-                        continue;
-                }
-                else
-                {
-                    newValue = array.Clone();
-                }
+                if (array != null)
+                    obj = array.Clone();
 
-                property.SetValue(this, newValue, false);
+                property.SetValue(this, obj, false);
             }
 
             Shape = item.Shape;
