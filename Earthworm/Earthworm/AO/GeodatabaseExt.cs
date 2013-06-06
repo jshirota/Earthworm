@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using ESRI.ArcGIS.Geodatabase;
 
@@ -12,21 +11,6 @@ namespace Earthworm.AO
     public static class GeodatabaseExt
     {
         #region Private
-
-        private static IEnumerable<IDataset> Enumerate(this IEnumDataset enumDataset)
-        {
-            IDataset dataset;
-
-            while (true)
-            {
-                dataset = enumDataset.Next();
-
-                if (dataset == null)
-                    yield break;
-
-                yield return dataset;
-            }
-        }
 
         internal static IEnumerable<IRow> ReadRows(this ITable table, IQueryFilter filter)
         {
@@ -117,37 +101,6 @@ namespace Earthworm.AO
         {
             Exception ex;
             return workspace.Edit(action, out ex);
-        }
-
-        /// <summary>
-        /// Returns all datasets in a workspace.
-        /// </summary>
-        /// <param name="workspace">The workspace to scan.</param>
-        /// <param name="datasetType">The type of datasets to find.</param>
-        /// <param name="recursive">If set to true, all subsets in feature datasets are also returned.</param>
-        /// <returns></returns>
-        public static IEnumerable<IDataset> GetDatasets(this IWorkspace workspace, esriDatasetType datasetType, bool recursive)
-        {
-            IEnumerable<IDataset> datasets = workspace.get_Datasets(datasetType).Enumerate();
-
-            if (recursive && datasetType != esriDatasetType.esriDTFeatureDataset && datasetType != esriDatasetType.esriDTTable)
-            {
-                IEnumerable<IDataset> featureDatasets = workspace.get_Datasets(esriDatasetType.esriDTFeatureDataset).Enumerate();
-                datasets = datasets.Concat(featureDatasets.SelectMany(d => d.GetDatasets(datasetType)));
-            }
-
-            return datasets;
-        }
-
-        /// <summary>
-        /// Returns all subset datasets in a feature dataset.
-        /// </summary>
-        /// <param name="dataset">The parent feature dataset to scan.</param>
-        /// <param name="datasetType">The type of datasets to find.</param>
-        /// <returns></returns>
-        public static IEnumerable<IDataset> GetDatasets(this IDataset dataset, esriDatasetType datasetType)
-        {
-            return dataset.Subsets.Enumerate().Where(d => datasetType == esriDatasetType.esriDTAny || d.Type == datasetType);
         }
 
         /// <summary>
