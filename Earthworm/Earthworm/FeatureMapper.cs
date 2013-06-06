@@ -11,6 +11,7 @@ namespace Earthworm
         private readonly ITable _table;
         private readonly bool _isSpatial;
         private readonly Dictionary<int, MappedProperty> _mapping = new Dictionary<int, MappedProperty>();
+        private readonly List<int> _keyFieldIndexes = new List<int>();
         private readonly List<int> _readOnlyFieldIndexes = new List<int>();
 
         #region Private
@@ -37,23 +38,26 @@ namespace Earthworm
             return item;
         }
 
-        private T Write(T item, IRow row, bool changedPropertiesOnly)
+        private T Write(T item, IRow row, bool isUpdate)
         {
             foreach (int fieldIndex in _mapping.Keys)
             {
+                if (isUpdate && _keyFieldIndexes.Contains(fieldIndex))
+                    continue;
+
                 if (_readOnlyFieldIndexes.Contains(fieldIndex))
                     continue;
 
                 MappedProperty mappedProperty = _mapping[fieldIndex];
 
-                if (changedPropertiesOnly && !item.ChangedProperties.ContainsKey(mappedProperty.PropertyInfo.Name))
+                if (isUpdate && !item.ChangedProperties.ContainsKey(mappedProperty.PropertyInfo.Name))
                     continue;
 
                 object value = mappedProperty.GetValue(item, true);
                 row.SetValue(fieldIndex, value);
             }
 
-            if (_isSpatial && !(changedPropertiesOnly && !item.ChangedProperties.ContainsKey("Shape")))
+            if (_isSpatial && !(isUpdate && !item.ChangedProperties.ContainsKey("Shape")))
                 ((IFeature)row).Shape = item.Shape;
 
             row.Store();
@@ -71,12 +75,27 @@ namespace Earthworm
             _table = table;
             _isSpatial = table is IFeatureClass;
 
+            List<string> keyFields = new List<string>();
+
+            IRelationshipClass relationshipClass = table as IRelationshipClass;
+
+            if (relationshipClass != null)
+            {
+                keyFields.Add(relationshipClass.OriginPrimaryKey);
+                keyFields.Add(relationshipClass.DestinationForeignKey);
+            }
+
             foreach (MappedProperty mappedProperty in typeof(T).GetMappedProperties())
             {
-                int fieldIndex = table.FindField(mappedProperty.MappedField.FieldName);
+                string fieldName = mappedProperty.MappedField.FieldName;
+
+                int fieldIndex = table.FindField(fieldName);
 
                 if (fieldIndex == -1)
-                    throw new Exception(string.Format("'{0}' does not exist in '{1}'.", mappedProperty.MappedField.FieldName, ((IDataset)table).Name));
+                    throw new Exception(string.Format("'{0}' does not exist in '{1}'.", fieldName, ((IDataset)table).Name));
+
+                if (keyFields.Contains(fieldName))
+                    _keyFieldIndexes.Add(fieldIndex);
 
                 if (!table.Fields.get_Field(fieldIndex).Editable)
                     _readOnlyFieldIndexes.Add(fieldIndex);
