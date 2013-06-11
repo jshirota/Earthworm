@@ -1,6 +1,4 @@
 using System;
-using System.Configuration;
-using System.Reflection;
 
 namespace Earthworm
 {
@@ -9,6 +7,11 @@ namespace Earthworm
     /// </summary>
     public class MappedField : Attribute
     {
+        /// <summary>
+        /// The function used to retieve the field name.  If this is set to null (default), the text sent to the MappedField constructor is the actual field name.  This can be replaced by another function such as s => ConfigurationManager.AppSettings[s], which will use the string to retrieve the real field name from app.config.
+        /// </summary>
+        public static Func<string, string> FieldNameRetrievalFunction { get; set; }
+
         /// <summary>
         /// The name of the feature class field.
         /// </summary>
@@ -61,82 +64,12 @@ namespace Earthworm
         /// <param name="includeInJson">Indicates whether this field should be included in the JSON serialization.</param>
         public MappedField(string fieldName, int textLength, bool includeInJson)
         {
-            FieldName = fieldName;
+            FieldName = FieldNameRetrievalFunction == null ? fieldName : FieldNameRetrievalFunction(fieldName);
 
             if (textLength > 0)
                 TextLength = textLength;
 
             IncludeInJson = includeInJson;
         }
-
-        /// <summary>
-        /// Initializes a new instance of the MappedField class based on the application settings.
-        /// </summary>
-        /// <param name="settingsType">The type that provides the application settings.  This may be System.Configuration.ConfigurationManager (i.e. typeof(ConfigurationManager)).  It can also be a type derived from System.Configuration.SettingsBase (i.e. typeof(MyNamespace.Properties.Settings)).  In this case, the type must contain a static property called "Default", which returns an instance of the type.</param>
-        /// <param name="name">The name of the configuration setting that represents the field name.</param>
-        public MappedField(Type settingsType, string name)
-            : this(settingsType, name, 0, true)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the MappedField class based on the application settings.
-        /// </summary>
-        /// <param name="settingsType">The type that provides the application settings.  This may be System.Configuration.ConfigurationManager (i.e. typeof(ConfigurationManager)).  It can also be a type derived from System.Configuration.SettingsBase (i.e. typeof(MyNamespace.Properties.Settings)).  In this case, the type must contain a static property called "Default", which returns an instance of the type.</param>
-        /// <param name="name">The name of the configuration setting that represents the field name.</param>
-        /// <param name="textLength">The length of the field (for text fields only).</param>
-        public MappedField(Type settingsType, string name, int textLength)
-            : this(settingsType, name, textLength, true)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the MappedField class based on the application settings.
-        /// </summary>
-        /// <param name="settingsType">The type that provides the application settings.  This may be System.Configuration.ConfigurationManager (i.e. typeof(ConfigurationManager)).  It can also be a type derived from System.Configuration.SettingsBase (i.e. typeof(MyNamespace.Properties.Settings)).  In this case, the type must contain a static property called "Default", which returns an instance of the type.</param>
-        /// <param name="name">The name of the configuration setting that represents the field name.</param>
-        /// <param name="includeInJson">Indicates whether this field should be included in the JSON serialization.</param>
-        public MappedField(Type settingsType, string name, bool includeInJson)
-            : this(settingsType, name, 0, includeInJson)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the MappedField class based on the application settings.
-        /// </summary>
-        /// <param name="settingsType">The type that provides the application settings.  This may be System.Configuration.ConfigurationManager (i.e. typeof(ConfigurationManager)).  It can also be a type derived from System.Configuration.SettingsBase (i.e. typeof(MyNamespace.Properties.Settings)).  In this case, the type must contain a static property called "Default", which returns an instance of the type.</param>
-        /// <param name="name">The name of the configuration setting that represents the field name.</param>
-        /// <param name="textLength">The length of the field (for text fields only).</param>
-        /// <param name="includeInJson">Indicates whether this field should be included in the JSON serialization.</param>
-        public MappedField(Type settingsType, string name, int textLength, bool includeInJson)
-            : this(GetFieldName(settingsType, name), textLength, includeInJson)
-        {
-        }
-
-        #region Private
-
-        private static string GetFieldName(Type settingsType, string name)
-        {
-            if (settingsType == typeof(ConfigurationManager))
-            {
-                string fieldName = ConfigurationManager.AppSettings[name];
-
-                if (fieldName == null)
-                    throw new Exception(string.Format("'{0}' does not exist in the application settings.", name));
-
-                return fieldName;
-            }
-
-            PropertyInfo property = settingsType.GetProperty("Default");
-
-            SettingsBase settings;
-
-            if (property == null || (settings = property.GetValue(null, null) as SettingsBase) == null)
-                throw new Exception(string.Format("'{0}' does not contain any application settings.", settingsType.FullName));
-
-            return settings[name] as string;
-        }
-
-        #endregion
     }
 }
