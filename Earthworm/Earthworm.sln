@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Earthworm", "Earthworm\Earthworm.csproj", "{839AA4BD-E9E9-42E8-8FF0-1AC1E589DE14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthwormUnitTest", "EarthwormUnitTest\EarthwormUnitTest.csproj", "{634CD9A0-1EC9-48FA-8B62-5FB96D505B5E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,10 +13,6 @@ Global
 		{839AA4BD-E9E9-42E8-8FF0-1AC1E589DE14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{839AA4BD-E9E9-42E8-8FF0-1AC1E589DE14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{839AA4BD-E9E9-42E8-8FF0-1AC1E589DE14}.Release|Any CPU.Build.0 = Release|Any CPU
-		{634CD9A0-1EC9-48FA-8B62-5FB96D505B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{634CD9A0-1EC9-48FA-8B62-5FB96D505B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{634CD9A0-1EC9-48FA-8B62-5FB96D505B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{634CD9A0-1EC9-48FA-8B62-5FB96D505B5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
