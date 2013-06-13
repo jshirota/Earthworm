@@ -81,7 +81,7 @@ namespace Earthworm
 
             if (relationshipClass != null)
             {
-                keyFields.Add(relationshipClass.OriginPrimaryKey);
+                keyFields.Add(relationshipClass.OriginForeignKey);
                 keyFields.Add(relationshipClass.DestinationForeignKey);
             }
 
