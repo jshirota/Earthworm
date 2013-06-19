@@ -96,7 +96,6 @@ namespace Earthworm
         /// <summary>
         /// The OID of the item.  If an item is not bound to a feature class (if it is created from scratch), the OID is set to -1.
         /// </summary>
-        [BrowsableAttribute(false)]
         public int OID { get; internal set; }
 
         /// <summary>
