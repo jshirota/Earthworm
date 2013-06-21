@@ -28,7 +28,7 @@ namespace Earthworm
         /// <returns></returns>
         public int GetHashCode(T obj)
         {
-            return obj.ToKeyValuePairs().Aggregate(0, (n, o) => n ^ (o.Value ?? DBNull.Value).GetHashCode());
+            return obj.ToKeyValuePairs().Aggregate(0, (n, o) => n ^ (o.Value == null ? 0 : o.Value.GetHashCode()));
         }
     }
 }
