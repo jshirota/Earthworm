@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Earthworm
@@ -21,13 +22,13 @@ namespace Earthworm
         }
 
         /// <summary>
-        /// Returns the hash code of the concatenated attribute values.
+        /// Returns the hash code for the attribute values.
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
         public int GetHashCode(T obj)
         {
-            return string.Join("\t", obj.ToKeyValuePairs().Select(o => (o.Value ?? "").ToString()).ToArray()).GetHashCode();
+            return obj.ToKeyValuePairs().Aggregate(0, (n, o) => n ^ (o.Value ?? DBNull.Value).GetHashCode());
         }
     }
 }
