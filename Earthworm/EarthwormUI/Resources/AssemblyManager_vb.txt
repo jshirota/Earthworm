@@ -1,0 +1,82 @@
+﻿Imports System.IO
+Imports ESRI.ArcGIS.esriSystem
+
+Public Class AssemblyManager
+
+    Private Shared ReadOnly DllPaths As String()
+    Private Shared _instance As AssemblyManager
+    Private _ao As AoInitialize
+
+    ''' <summary>
+    ''' Binds to Desktop or Engine and initializes the first available license.  This also attempts to resolve Esri assembly paths so that a program compiled using 10.1 can run on 9.3.1 machines.  Call this from the static constructor of the main class.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Shared Sub InitializeLicense()
+        If _instance Is Nothing Then
+            _instance = New AssemblyManager()
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Shuts down the license.  It is recommended that you explicitly call this method at the end of your program (although it is also called by the destructor).
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Shared Sub ReleaseLicense()
+        If _instance IsNot Nothing Then
+            _instance.Shutdown()
+            _instance = Nothing
+        End If
+    End Sub
+
+    Private Sub RuntimeBind()
+        Dim dll = DllPaths.FirstOrDefault(Function(p) p.Contains("\ESRI.ArcGIS.Version\"))
+
+        If dll IsNot Nothing Then
+            Assembly.LoadFrom(dll).GetExportedTypes().Single(Function(t) t.Name = "RuntimeManager").GetMethod("Bind").Invoke(Nothing, {100})
+        End If
+    End Sub
+
+    Private Sub Initialize()
+        _ao = New AoInitialize()
+
+        Dim licenseCode = {60, 50, 40, 10}.FirstOrDefault(Function(c) _ao.IsProductCodeAvailable(CType(c, esriLicenseProductCode)) = esriLicenseStatus.esriLicenseAvailable)
+
+        If licenseCode = 0 Then
+            Throw New Exception("No license available.")
+        End If
+
+        _ao.Initialize(CType(licenseCode, esriLicenseProductCode))
+    End Sub
+
+    Private Sub Shutdown()
+        Try
+            SyncLock _ao
+                If _ao IsNot Nothing Then
+                    _ao.Shutdown()
+                    _ao = Nothing
+                End If
+            End SyncLock
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Shared Sub New()
+        DllPaths = Directory.GetFiles(Environment.GetEnvironmentVariable("windir") & "\assembly", "*ESRI*.dll", SearchOption.AllDirectories)
+
+        AddHandler AppDomain.CurrentDomain.AssemblyResolve,
+            Function(sender As Object, args As ResolveEventArgs)
+                Dim dll = DllPaths.FirstOrDefault(Function(p) p.Contains("\" & args.Name.Split(","c)(0) & "\"))
+                Return If(dll Is Nothing, Nothing, Assembly.LoadFrom(dll))
+            End Function
+    End Sub
+
+    Private Sub New()
+        RuntimeBind()
+        Initialize()
+    End Sub
+
+    Protected Overrides Sub Finalize()
+        Shutdown()
+    End Sub
+
+End Class
