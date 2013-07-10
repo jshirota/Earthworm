@@ -23,11 +23,11 @@
                                 </Style.Triggers>
                             </Style>
                         </StackPanel.Resources>
-                        <TextBlock>
+                        <TextBlock Foreground="Gray">
                             Drag and drop a
-                            <Hyperlink Command="{Binding OpenSampleDataFolderCommand}">file geodatabase folder (.gdb)</Hyperlink>
+                            <Hyperlink Command="{Binding OpenSampleDataFolderCommand}" Foreground="Gray">file geodatabase folder (.gdb)</Hyperlink>
                             or an
-                            <Hyperlink Command="{Binding OpenArcCatalogFolderCommand}">SDE connection file (.sde)</Hyperlink>
+                            <Hyperlink Command="{Binding OpenArcCatalogFolderCommand}" Foreground="Gray">SDE connection file (.sde)</Hyperlink>
                         </TextBlock>
                     </StackPanel>
                     <StackPanel x:Name="DragBoxPanel" Visibility="Visible">
