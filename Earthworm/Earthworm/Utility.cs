@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Earthworm
 {
@@ -6,23 +7,11 @@ namespace Earthworm
     {
         #region Sequence
 
-        public static IEnumerable<List<T>> Partition<T>(this IEnumerable<T> items, int size)
+        public static IEnumerable<IEnumerable<T>> Partition<T>(this IEnumerable<T> items, int size)
         {
-            List<T> batch = new List<T>();
-
-            foreach (T item in items)
-            {
-                batch.Add(item);
-
-                if (batch.Count == size)
-                {
-                    yield return batch;
-                    batch.Clear();
-                }
-            }
-
-            if (batch.Count > 0)
-                yield return batch;
+            return items
+                .Select((item, i) => new { group = i / size, item })
+                .GroupBy(o => o.group, o => o.item);
         }
 
         #endregion
