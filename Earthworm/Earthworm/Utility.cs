@@ -11,7 +11,8 @@ namespace Earthworm
         {
             return items
                 .Select((item, i) => new { group = i / size, item })
-                .GroupBy(o => o.group, o => o.item);
+                .GroupBy(o => o.group, o => o.item)
+                .Select(g => g.Select(o => o));
         }
 
         #endregion
