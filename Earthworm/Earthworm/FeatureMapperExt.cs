@@ -95,9 +95,11 @@ namespace Earthworm
         /// <returns></returns>
         public static IEnumerable<T> Map<T>(this ITable table, IEnumerable<int> oids) where T : MappableFeature, new()
         {
-            foreach (List<string> batch in oids.Distinct().Select(n => n.ToString()).Partition(100))
+            foreach (IEnumerable<int> batch in oids.Distinct().Partition(100))
             {
-                string whereClause = string.Format("{0} in ({1})", table.OIDFieldName, batch.Count == 0 ? "-1" : string.Join(",", batch.ToArray()));
+                string[] array = batch.Select(n => n.ToString()).ToArray();
+
+                string whereClause = string.Format("{0} in ({1})", table.OIDFieldName, array.Length == 0 ? "-1" : string.Join(",", array));
 
                 foreach (T item in table.Map<T>(whereClause))
                     yield return item;
