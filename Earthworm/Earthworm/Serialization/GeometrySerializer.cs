@@ -12,20 +12,28 @@ namespace Earthworm.Serialization
     {
         #region Private
 
-        private static double[][] ToArray(this IPointCollection4 points)
+        private static double[][] ToArray(this IPointCollection4 pointCollection)
         {
-            return Enumerable.Range(0, points.PointCount).Select(i =>
+            return Enumerable.Range(0, pointCollection.PointCount).Select(i =>
             {
-                IPoint p = points.Point[i];
+                IPoint p = pointCollection.Point[i];
                 return new[] { p.X, p.Y };
             }).ToArray();
         }
 
-        private static double[][][] ToArray(this IGeometryCollection collection)
+        private static double[][][] ToArray(this IGeometryCollection geometryCollection)
         {
-            return Enumerable.Range(0, collection.GeometryCount)
-                .Select(i => ((IPointCollection4)collection.Geometry[i]).ToArray())
+            return Enumerable.Range(0, geometryCollection.GeometryCount)
+                .Select(i => ((IPointCollection4)geometryCollection.Geometry[i]).ToArray())
                 .ToArray();
+        }
+
+        private static IGeometry Load<T>(this T shape, double[][] array)
+        {
+            WKSPoint[] points = array.Select(c => new WKSPoint { X = c[0], Y = c[1] }).ToArray();
+            ((IGeometryBridge2)new GeometryEnvironment()).SetWKSPoints((IPointCollection4)shape, ref points);
+
+            return (IGeometry)shape;
         }
 
         private static JsonPoint ToPoint(this IPoint shape)
@@ -55,27 +63,15 @@ namespace Earthworm.Serialization
 
         private static IMultipoint ToEsriMultipoint(this JsonMultipoint shape)
         {
-            IPointCollection4 multipoint = (IPointCollection4)new Multipoint();
-            IGeometryBridge2 geometryEnvironment = (IGeometryBridge2)new GeometryEnvironment();
-
-            WKSPoint[] points = shape.points.Select(c => new WKSPoint { X = c[0], Y = c[1] }).ToArray();
-            geometryEnvironment.SetWKSPoints(multipoint, ref points);
-
-            return (IMultipoint)multipoint;
+            return (IMultipoint)new Multipoint().Load(shape.points);
         }
 
         private static IPolyline ToEsriPolyline(this JsonPolyline shape)
         {
             IGeometryCollection polyline = (IGeometryCollection)new Polyline();
-            IGeometryBridge2 geometryEnvironment = (IGeometryBridge2)new GeometryEnvironment();
 
-            foreach (double[][] p in shape.paths)
-            {
-                IPointCollection4 path = (IPointCollection4)new Path();
-                WKSPoint[] points = p.Select(c => new WKSPoint { X = c[0], Y = c[1] }).ToArray();
-                geometryEnvironment.SetWKSPoints(path, ref points);
-                polyline.AddGeometry((IGeometry)path);
-            }
+            foreach (double[][] path in shape.paths)
+                polyline.AddGeometry(new Path().Load(path));
 
             return (IPolyline)polyline;
         }
@@ -83,15 +79,9 @@ namespace Earthworm.Serialization
         private static IPolygon ToEsriPolygon(this JsonPolygon shape)
         {
             IGeometryCollection polygon = (IGeometryCollection)new Polygon();
-            IGeometryBridge2 geometryEnvironment = (IGeometryBridge2)new GeometryEnvironment();
 
-            foreach (double[][] r in shape.rings)
-            {
-                IPointCollection4 ring = (IPointCollection4)new Ring();
-                WKSPoint[] points = r.Select(c => new WKSPoint { X = c[0], Y = c[1] }).ToArray();
-                geometryEnvironment.SetWKSPoints(ring, ref points);
-                polygon.AddGeometry((IGeometry)ring);
-            }
+            foreach (double[][] ring in shape.rings)
+                polygon.AddGeometry(new Ring().Load(ring));
 
             return (IPolygon)polygon;
         }
