@@ -58,6 +58,8 @@ namespace EarthwormUI
 
         private void Window_DragEnter(object sender, DragEventArgs e)
         {
+            Activate();
+
             string file = GetValidFile(e);
 
             if (file == null)
