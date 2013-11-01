@@ -14,7 +14,7 @@ namespace Earthworm.AO
 
         internal static IEnumerable<IRow> ReadRows(this ITable table, IQueryFilter filter)
         {
-            ICursor cursor = table.Search(filter, false);
+            var cursor = table.Search(filter, false);
 
             try
             {
@@ -38,7 +38,7 @@ namespace Earthworm.AO
 
         internal static object GetValue(this IRow row, int fieldIndex)
         {
-            object o = row.get_Value(fieldIndex);
+            var o = row.get_Value(fieldIndex);
             return o == DBNull.Value ? null : o;
         }
 
@@ -58,10 +58,10 @@ namespace Earthworm.AO
         /// <returns></returns>
         public static bool Edit(this IWorkspace workspace, Action action, out Exception exception)
         {
-            IWorkspaceEdit workspaceEdit = (IWorkspaceEdit)workspace;
+            var workspaceEdit = (IWorkspaceEdit)workspace;
 
-            bool isBeingEditedAtStart = workspaceEdit.IsBeingEdited();
-            bool success = false;
+            var isBeingEditedAtStart = workspaceEdit.IsBeingEdited();
+            var success = false;
 
             try
             {

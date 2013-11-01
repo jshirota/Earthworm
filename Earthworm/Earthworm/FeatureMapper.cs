@@ -18,18 +18,18 @@ namespace Earthworm
 
         private T Read(IRow row)
         {
-            T item = NotificationProxy.Create<T>();
+            var item = NotificationProxy.Create<T>();
 
             item.Table = _table;
             item.OID = row.OID;
             item.IsBeingSetByFeatureMapper = true;
             item.Shape = _isSpatial ? ((IFeature)row).Shape : null;
 
-            foreach (int fieldIndex in _mapping.Keys)
+            foreach (var fieldIndex in _mapping.Keys)
             {
-                MappedProperty mappedProperty = _mapping[fieldIndex];
+                var mappedProperty = _mapping[fieldIndex];
 
-                object value = row.GetValue(fieldIndex);
+                var value = row.GetValue(fieldIndex);
                 mappedProperty.SetValue(item, value, true);
             }
 
@@ -40,7 +40,7 @@ namespace Earthworm
 
         private T Write(T item, IRow row, bool isUpdate)
         {
-            foreach (int fieldIndex in _mapping.Keys)
+            foreach (var fieldIndex in _mapping.Keys)
             {
                 if (isUpdate && _keyFieldIndexes.Contains(fieldIndex))
                     continue;
@@ -48,12 +48,12 @@ namespace Earthworm
                 if (_readOnlyFieldIndexes.Contains(fieldIndex))
                     continue;
 
-                MappedProperty mappedProperty = _mapping[fieldIndex];
+                var mappedProperty = _mapping[fieldIndex];
 
                 if (isUpdate && !item.ChangedProperties.ContainsKey(mappedProperty.PropertyInfo.Name))
                     continue;
 
-                object value = mappedProperty.GetValue(item, true);
+                var value = mappedProperty.GetValue(item, true);
                 row.SetValue(fieldIndex, value);
             }
 
@@ -75,9 +75,9 @@ namespace Earthworm
             _table = table;
             _isSpatial = table is IFeatureClass;
 
-            List<string> keyFields = new List<string>();
+            var keyFields = new List<string>();
 
-            IRelationshipClass relationshipClass = table as IRelationshipClass;
+            var relationshipClass = table as IRelationshipClass;
 
             if (relationshipClass != null)
             {
@@ -85,11 +85,11 @@ namespace Earthworm
                 keyFields.Add(relationshipClass.DestinationForeignKey);
             }
 
-            foreach (MappedProperty mappedProperty in typeof(T).GetMappedProperties())
+            foreach (var mappedProperty in typeof(T).GetMappedProperties())
             {
-                string fieldName = mappedProperty.MappedField.FieldName;
+                var fieldName = mappedProperty.MappedField.FieldName;
 
-                int fieldIndex = table.FindField(fieldName);
+                var fieldIndex = table.FindField(fieldName);
 
                 if (fieldIndex == -1)
                     throw new Exception(string.Format("'{0}' does not exist in '{1}'.", fieldName, ((IDataset)table).Name));
@@ -129,7 +129,7 @@ namespace Earthworm
             if (!item.IsDataBound)
                 throw new Exception("This item cannot be updated because it is not bound to a table.");
 
-            T item2 = Write(item, _table.GetRow(item.OID), true);
+            var item2 = Write(item, _table.GetRow(item.OID), true);
 
             item.IsBeingSetByFeatureMapper = true;
             item.CopyDataFrom(item2);

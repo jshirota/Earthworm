@@ -60,7 +60,7 @@ namespace Earthworm.AO
         /// <returns>True or false.</returns>
         public static bool Equals2(this IPoint shape, IPoint comparisonShape)
         {
-            double tolerance = 0.001;
+            var tolerance = 0.001;
 
             return Math.Abs(shape.X - comparisonShape.X) < tolerance
                 && Math.Abs(shape.Y - comparisonShape.Y) < tolerance

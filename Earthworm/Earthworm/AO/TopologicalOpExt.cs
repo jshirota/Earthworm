@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Geometry;
 
@@ -9,34 +9,29 @@ namespace Earthworm.AO
     /// </summary>
     public static class TopologicalOpExt
     {
-        private static readonly Dictionary<int, ISpatialReference> WkidToSpatialReference = new Dictionary<int, ISpatialReference>();
+        private static readonly ConcurrentDictionary<int, ISpatialReference> WkidToSpatialReference = new ConcurrentDictionary<int, ISpatialReference>();
 
         #region Private
 
         internal static ISpatialReference GetSpatialReference(int wkid)
         {
-            if (WkidToSpatialReference.ContainsKey(wkid))
-                return WkidToSpatialReference[wkid];
+            return WkidToSpatialReference.GetOrAdd(wkid, n =>
+            {
+                var spatialReferenceEnvironment = new SpatialReferenceEnvironment();
 
-            SpatialReferenceEnvironment sre = new SpatialReferenceEnvironment();
-            ISpatialReference spatialReference;
-
-            try { spatialReference = sre.CreateGeographicCoordinateSystem(wkid); }
-            catch { spatialReference = sre.CreateProjectedCoordinateSystem(wkid); }
-
-            WkidToSpatialReference.Add(wkid, spatialReference);
-
-            return spatialReference;
+                try { return spatialReferenceEnvironment.CreateGeographicCoordinateSystem(wkid); }
+                catch { return spatialReferenceEnvironment.CreateProjectedCoordinateSystem(wkid); }
+            });
         }
 
         internal static ISpatialReference GetSpatialReference(string wkt)
         {
-            SpatialReferenceEnvironment sre = new SpatialReferenceEnvironment();
+            var spatialReferenceEnvironment = new SpatialReferenceEnvironment();
 
             ISpatialReference spatialReference;
             int n;
 
-            sre.CreateESRISpatialReference(wkt, out spatialReference, out n);
+            spatialReferenceEnvironment.CreateESRISpatialReference(wkt, out spatialReference, out n);
 
             return spatialReference;
         }
@@ -52,7 +47,7 @@ namespace Earthworm.AO
         /// <returns></returns>
         public static IGeometry Buffer(this IGeometry shape, double distance, bool autoDensify)
         {
-            IGeometry result = ((ITopologicalOperator)shape).Buffer(distance);
+            var result = ((ITopologicalOperator)shape).Buffer(distance);
 
             if (autoDensify)
                 ((IPolygon)result).Densify(-1, -1);
@@ -81,7 +76,7 @@ namespace Earthworm.AO
         /// <returns></returns>
         public static IGeometry Buffer(this IGeometry shape, double distance, ISpatialReference spatialReference, bool autoDensify)
         {
-            ISpatialReference originalSpatialReference = shape.SpatialReference;
+            var originalSpatialReference = shape.SpatialReference;
             return shape.Project2(spatialReference).Buffer(distance, autoDensify).Project2(originalSpatialReference);
         }
 
@@ -95,7 +90,7 @@ namespace Earthworm.AO
         /// <returns></returns>
         public static IGeometry Buffer(this IGeometry shape, double distance, int wkid, bool autoDensify)
         {
-            ISpatialReference spatialReference = GetSpatialReference(wkid);
+            var spatialReference = GetSpatialReference(wkid);
             return shape.Buffer(distance, spatialReference, autoDensify);
         }
 
@@ -130,7 +125,7 @@ namespace Earthworm.AO
             if (shape == null)
                 return default(T);
 
-            IClone clone = (IClone)shape;
+            var clone = (IClone)shape;
             return (T)clone.Clone();
         }
 
@@ -142,7 +137,7 @@ namespace Earthworm.AO
         /// <returns></returns>
         public static IGeometry Clip(this IGeometry shape, IEnvelope clipperEnvelope)
         {
-            IGeometry clone = shape.Copy();
+            var clone = shape.Copy();
             ((ITopologicalOperator)shape).Clip(clipperEnvelope);
             return clone;
         }
@@ -191,7 +186,7 @@ namespace Earthworm.AO
         /// <returns>A projected copy of the geometry.</returns>
         public static T Project2<T>(this T shape, ISpatialReference spatialReference, IGeoTransformation transformation, esriTransformDirection direction) where T : class, IGeometry
         {
-            T copy = shape.Copy();
+            var copy = shape.Copy();
 
             if (transformation == null)
                 copy.Project(spatialReference);

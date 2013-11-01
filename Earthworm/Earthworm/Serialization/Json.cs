@@ -31,14 +31,14 @@ namespace Earthworm.Serialization
         /// <returns></returns>
         public static Dictionary<string, object> ToDictionary(this MappableFeature feature, bool includeGeometry = false)
         {
-            Dictionary<string, object> attributes = new Dictionary<string, object>();
+            var attributes = new Dictionary<string, object>();
 
             if (feature.IsDataBound)
                 attributes.Add(feature.Table.OIDFieldName, feature.OID);
 
-            foreach (KeyValuePair<string, object> o in feature.ToKeyValuePairs(p => p.MappedField.IncludeInJson))
+            foreach (var o in feature.ToKeyValuePairs(p => p.MappedField.IncludeInJson))
             {
-                object value = o.Value;
+                var value = o.Value;
 
                 if (value != null)
                 {
@@ -51,8 +51,7 @@ namespace Earthworm.Serialization
                 attributes.Add(o.Key, value);
             }
 
-            Dictionary<string, object> dictionary = new Dictionary<string, object>();
-            dictionary.Add("attributes", attributes);
+            var dictionary = new Dictionary<string, object> { { "attributes", attributes } };
 
             if (includeGeometry && feature.Shape != null)
                 dictionary.Add("geometry", feature.Shape.ToJsonGeometry());
@@ -79,15 +78,15 @@ namespace Earthworm.Serialization
         /// <returns></returns>
         public static T Deserialize<T>(string json) where T : MappableFeature, new()
         {
-            T mappableFeature = new T();
+            var mappableFeature = new T();
 
-            Graphic graphic = Serializer.Deserialize<Graphic>(json);
+            var graphic = Serializer.Deserialize<Graphic>(json);
 
-            foreach (MappedProperty property in typeof(T).GetMappedProperties())
+            foreach (var property in typeof(T).GetMappedProperties())
             {
                 if (graphic.attributes.ContainsKey(property.MappedField.FieldName))
                 {
-                    object value = graphic.attributes[property.MappedField.FieldName];
+                    var value = graphic.attributes[property.MappedField.FieldName];
 
                     if (value != null && (property.PropertyType == typeof(DateTime) || property.PropertyType == typeof(DateTime?)))
                         value = BaseTime.AddMilliseconds((long)value);
@@ -96,7 +95,7 @@ namespace Earthworm.Serialization
                 }
             }
 
-            Dictionary<string, object> dictionary = graphic.geometry as Dictionary<string, object>;
+            var dictionary = graphic.geometry as Dictionary<string, object>;
 
             if (dictionary != null)
             {
@@ -105,18 +104,24 @@ namespace Earthworm.Serialization
                 IJsonGeometry geometry;
 
                 string[] keys = { "points", "paths", "rings" };
-                string key = keys.SingleOrDefault(dictionary.ContainsKey);
+                var key = keys.SingleOrDefault(dictionary.ContainsKey);
 
                 if (key == null && dictionary.ContainsKey("x") && dictionary.ContainsKey("y"))
                     geometry = Serializer.Deserialize<JsonPoint>(json);
-                else if (key == "points")
-                    geometry = Serializer.Deserialize<JsonMultipoint>(json);
-                else if (key == "paths")
-                    geometry = Serializer.Deserialize<JsonPolyline>(json);
-                else if (key == "rings")
-                    geometry = Serializer.Deserialize<JsonPolygon>(json);
-                else
-                    throw new Exception("Invalid geometry object.");
+                else switch (key)
+                    {
+                        case "points":
+                            geometry = Serializer.Deserialize<JsonMultipoint>(json);
+                            break;
+                        case "paths":
+                            geometry = Serializer.Deserialize<JsonPolyline>(json);
+                            break;
+                        case "rings":
+                            geometry = Serializer.Deserialize<JsonPolygon>(json);
+                            break;
+                        default:
+                            throw new Exception("Invalid geometry object.");
+                    }
 
                 mappableFeature.Shape = geometry.ToEsriGeometry();
             }

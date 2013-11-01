@@ -87,10 +87,10 @@ namespace Earthworm.Meta
                 vbType += "?";
             }
 
-            string propertyName = Regex.Replace(name, @"\W", "_");
+            var propertyName = Regex.Replace(name, @"\W", "_");
             propertyName = _keywords.Contains(propertyName.ToLower()) ? propertyName + "_" : propertyName;
 
-            string indentation = _hasNamespace ? "    " : "";
+            var indentation = _hasNamespace ? "    " : "";
 
             _cs.AppendFormat("\r\n{0}    [MappedField(\"{1}\"{2})]\r\n{0}    public virtual {3} {4} {{ get; set; }}\r\n", indentation, name, lengthText, csType, propertyName);
             _vb.AppendFormat("\r\n{0}    <MappedField(\"{1}\"{2})>\r\n{0}    Public Overridable Property {4} As {3}\r\n", indentation, name, lengthText, vbType, propertyName);
@@ -121,11 +121,11 @@ namespace Earthworm.Meta
 
             AppendBeginning(namespaceName, className);
 
-            IFields fields = table.Fields;
+            var fields = table.Fields;
 
-            for (int i = 0; i < fields.FieldCount; i++)
+            for (var i = 0; i < fields.FieldCount; i++)
             {
-                IField field = fields.get_Field(i);
+                var field = fields.get_Field(i);
 
                 if (field.Editable)
                     AppendProperty(field.Name, field.Type, field.Length, field.IsNullable);

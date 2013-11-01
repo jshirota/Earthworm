@@ -18,7 +18,7 @@ namespace Earthworm
         {
             IField field = new Field();
 
-            IFieldEdit fieldEdit = (IFieldEdit)field;
+            var fieldEdit = (IFieldEdit)field;
             fieldEdit.Name_2 = fieldName;
             fieldEdit.Type_2 = esriFieldType.esriFieldTypeOID;
 
@@ -27,21 +27,21 @@ namespace Earthworm
 
         private static IField GetShapeField(esriGeometryType geometryType, ISpatialReference spatialReference)
         {
-            ISpatialReferenceResolution spatialReferenceResolution = (ISpatialReferenceResolution)spatialReference;
+            var spatialReferenceResolution = (ISpatialReferenceResolution)spatialReference;
             spatialReferenceResolution.ConstructFromHorizon();
             spatialReferenceResolution.SetDefaultXYResolution();
 
-            ISpatialReferenceTolerance spatialReferenceTolerance = (ISpatialReferenceTolerance)spatialReference;
+            var spatialReferenceTolerance = (ISpatialReferenceTolerance)spatialReference;
             spatialReferenceTolerance.SetDefaultXYTolerance();
 
             IGeometryDef geometryDef = new GeometryDef();
-            IGeometryDefEdit geometryDefEdit = (IGeometryDefEdit)geometryDef;
+            var geometryDefEdit = (IGeometryDefEdit)geometryDef;
             geometryDefEdit.GeometryType_2 = geometryType;
             geometryDefEdit.SpatialReference_2 = spatialReference;
 
             IField field = new Field();
 
-            IFieldEdit fieldEdit = (IFieldEdit)field;
+            var fieldEdit = (IFieldEdit)field;
             fieldEdit.Name_2 = "Shape";
             fieldEdit.Type_2 = esriFieldType.esriFieldTypeGeometry;
             fieldEdit.GeometryDef_2 = geometryDef;
@@ -53,7 +53,7 @@ namespace Earthworm
         {
             IField field = new Field();
 
-            IFieldEdit fieldEdit = (IFieldEdit)field;
+            var fieldEdit = (IFieldEdit)field;
             fieldEdit.Name_2 = name;
             fieldEdit.Type_2 = type;
             fieldEdit.IsNullable_2 = isNullable;
@@ -66,10 +66,10 @@ namespace Earthworm
 
         private static IField CreateField(MappedProperty mappedProperty)
         {
-            Type t = mappedProperty.PropertyType;
+            var t = mappedProperty.PropertyType;
 
-            string name = mappedProperty.MappedField.FieldName;
-            int? textLength = mappedProperty.MappedField.TextLength;
+            var name = mappedProperty.MappedField.FieldName;
+            var textLength = mappedProperty.MappedField.TextLength;
 
             if (t == typeof(string))
                 return CreateField(name, esriFieldType.esriFieldTypeString, true, textLength);
@@ -118,29 +118,29 @@ namespace Earthworm
 
         private static ITable CreateTable(object container, string name, string oidField, bool isSpatial, esriGeometryType geometryType, ISpatialReference spatialReference, List<IField> customFields)
         {
-            int i = (isSpatial ? 2 : 1);
+            var i = (isSpatial ? 2 : 1);
 
             IFields fields = new Fields();
 
-            IFieldsEdit fieldsEdit = (IFieldsEdit)fields;
+            var fieldsEdit = (IFieldsEdit)fields;
             fieldsEdit.FieldCount_2 = i + customFields.Count;
             fieldsEdit.set_Field(0, GetOIDField(oidField));
 
             if (isSpatial)
                 fieldsEdit.set_Field(1, GetShapeField(geometryType, spatialReference));
 
-            foreach (IField field in customFields)
+            foreach (var field in customFields)
                 fieldsEdit.set_Field(i++, field);
 
             IObjectClassDescription ocDesc = new FeatureClassDescription();
 
-            IFeatureWorkspace fws = container as IFeatureWorkspace;
+            var fws = container as IFeatureWorkspace;
             if (fws != null)
                 return isSpatial
                     ? fws.CreateFeatureClass(name, fields, ocDesc.InstanceCLSID, ocDesc.ClassExtensionCLSID, esriFeatureType.esriFTSimple, "Shape", "") as ITable
                     : fws.CreateTable(name, fields, ocDesc.InstanceCLSID, ocDesc.ClassExtensionCLSID, "");
 
-            IFeatureDataset fds = container as IFeatureDataset;
+            var fds = container as IFeatureDataset;
             if (fds != null)
                 return fds.CreateFeatureClass(name, fields, ocDesc.InstanceCLSID, ocDesc.ClassExtensionCLSID, esriFeatureType.esriFTSimple, "Shape", "") as ITable;
 
@@ -151,24 +151,24 @@ namespace Earthworm
         {
             if (overwrite)
             {
-                IFeatureWorkspace featureWorkspace = container as IFeatureWorkspace
+                var featureWorkspace = container as IFeatureWorkspace
                     ?? ((IFeatureDataset)container).Workspace as IFeatureWorkspace;
 
-                ITable table = featureWorkspace.OpenTable2(name);
+                var table = featureWorkspace.OpenTable2(name);
 
                 if (table != null)
                     ((IDataset)table).Delete();
             }
 
-            List<IField> fields = typeof(T).GetMappedProperties()
+            var fields = typeof(T).GetMappedProperties()
                 .Select(CreateField).ToList();
 
-            List<string> fieldNames = fields.Select(f => f.Name.ToUpper()).ToList();
+            var fieldNames = fields.Select(f => f.Name.ToUpper()).ToList();
 
-            string defaultName = "OBJECTID";
+            var defaultName = "OBJECTID";
 
-            string oidField = defaultName;
-            int i = 0;
+            var oidField = defaultName;
+            var i = 0;
 
             while (fieldNames.Contains(oidField))
                 oidField = defaultName + ++i;

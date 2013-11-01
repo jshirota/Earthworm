@@ -95,13 +95,13 @@ namespace Earthworm
         /// <returns></returns>
         public static IEnumerable<T> Map<T>(this ITable table, IEnumerable<int> oids) where T : MappableFeature, new()
         {
-            foreach (IEnumerable<int> batch in oids.Distinct().Partition(100))
+            foreach (var batch in oids.Distinct().Partition(100))
             {
-                string[] array = batch.Select(n => n.ToString()).ToArray();
+                var array = batch.Select(n => n.ToString()).ToArray();
 
-                string whereClause = string.Format("{0} in ({1})", table.OIDFieldName, array.Length == 0 ? "-1" : string.Join(",", array));
+                var whereClause = string.Format("{0} in ({1})", table.OIDFieldName, array.Length == 0 ? "-1" : string.Join(",", array));
 
-                foreach (T item in table.Map<T>(whereClause))
+                foreach (var item in table.Map<T>(whereClause))
                     yield return item;
             }
         }
@@ -115,7 +115,7 @@ namespace Earthworm
         /// <returns></returns>
         public static IEnumerable<T> Map<T>(this ITable table, IEnumIDs enumIDs) where T : MappableFeature, new()
         {
-            IEnumerable<int> oids = Enumerable.Range(0, int.MaxValue)
+            var oids = Enumerable.Range(0, int.MaxValue)
                 .Select(n => enumIDs.Next())
                 .TakeWhile(n => n != -1);
 

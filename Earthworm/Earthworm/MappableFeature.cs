@@ -146,11 +146,11 @@ namespace Earthworm
         /// <param name="item"></param>
         public void CopyDataFrom<T>(T item) where T : MappableFeature, new()
         {
-            foreach (MappedProperty property in typeof(T).GetMappedProperties())
+            foreach (var property in typeof(T).GetMappedProperties())
             {
-                object obj = property.GetValue(item, false);
+                var obj = property.GetValue(item, false);
 
-                byte[] array = obj as byte[];
+                var array = obj as byte[];
 
                 if (array != null)
                     obj = array.Clone();

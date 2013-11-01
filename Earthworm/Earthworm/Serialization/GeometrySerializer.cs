@@ -16,7 +16,7 @@ namespace Earthworm.Serialization
         {
             return Enumerable.Range(0, pointCollection.PointCount).Select(i =>
             {
-                IPoint p = pointCollection.Point[i];
+                var p = pointCollection.Point[i];
                 return new[] { p.X, p.Y };
             }).ToArray();
         }
@@ -30,7 +30,7 @@ namespace Earthworm.Serialization
 
         private static IGeometry Load<T>(this T shape, double[][] array)
         {
-            WKSPoint[] points = array.Select(c => new WKSPoint { X = c[0], Y = c[1] }).ToArray();
+            var points = array.Select(c => new WKSPoint { X = c[0], Y = c[1] }).ToArray();
             ((IGeometryBridge2)new GeometryEnvironment()).SetWKSPoints((IPointCollection4)shape, ref points);
 
             return (IGeometry)shape;
@@ -68,9 +68,9 @@ namespace Earthworm.Serialization
 
         private static IPolyline ToEsriPolyline(this JsonPolyline shape)
         {
-            IGeometryCollection polyline = (IGeometryCollection)new Polyline();
+            var polyline = (IGeometryCollection)new Polyline();
 
-            foreach (double[][] path in shape.paths)
+            foreach (var path in shape.paths)
                 polyline.AddGeometry(new Path().Load(path));
 
             return (IPolyline)polyline;
@@ -78,9 +78,9 @@ namespace Earthworm.Serialization
 
         private static IPolygon ToEsriPolygon(this JsonPolygon shape)
         {
-            IGeometryCollection polygon = (IGeometryCollection)new Polygon();
+            var polygon = (IGeometryCollection)new Polygon();
 
-            foreach (double[][] ring in shape.rings)
+            foreach (var ring in shape.rings)
                 polygon.AddGeometry(new Ring().Load(ring));
 
             return (IPolygon)polygon;
@@ -95,17 +95,21 @@ namespace Earthworm.Serialization
         /// <returns></returns>
         public static IJsonGeometry ToJsonGeometry(this IGeometry shape)
         {
-            if (shape is IPoint)
-                return ((IPoint)shape).ToPoint();
+            var point = shape as IPoint;
+            if (point != null)
+                return point.ToPoint();
 
-            if (shape is IMultipoint)
-                return ((IMultipoint)shape).ToMultipoint();
+            var multipoint = shape as IMultipoint;
+            if (multipoint != null)
+                return multipoint.ToMultipoint();
 
-            if (shape is IPolyline)
-                return ((IPolyline)shape).ToPolyline();
+            var polyline = shape as IPolyline;
+            if (polyline != null)
+                return polyline.ToPolyline();
 
-            if (shape is IPolygon)
-                return ((IPolygon)shape).ToPolygon();
+            var polygon = shape as IPolygon;
+            if (polygon != null)
+                return polygon.ToPolygon();
 
             throw new Exception("This geometry type is not supported.");
         }
@@ -117,17 +121,21 @@ namespace Earthworm.Serialization
         /// <returns></returns>
         public static IGeometry ToEsriGeometry(this IJsonGeometry shape)
         {
-            if (shape is JsonPoint)
-                return ((JsonPoint)shape).ToEsriPoint();
+            var point = shape as JsonPoint;
+            if (point != null)
+                return point.ToEsriPoint();
 
-            if (shape is JsonMultipoint)
-                return ((JsonMultipoint)shape).ToEsriMultipoint();
+            var multipoint = shape as JsonMultipoint;
+            if (multipoint != null)
+                return multipoint.ToEsriMultipoint();
 
-            if (shape is JsonPolyline)
-                return ((JsonPolyline)shape).ToEsriPolyline();
+            var polyline = shape as JsonPolyline;
+            if (polyline != null)
+                return polyline.ToEsriPolyline();
 
-            if (shape is JsonPolygon)
-                return ((JsonPolygon)shape).ToEsriPolygon();
+            var polygon = shape as JsonPolygon;
+            if (polygon != null)
+                return polygon.ToEsriPolygon();
 
             throw new Exception("This geometry type is not supported.");
         }

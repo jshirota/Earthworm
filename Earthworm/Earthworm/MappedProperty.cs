@@ -21,14 +21,14 @@ namespace Earthworm
         {
             _convertFromEsriType = value =>
             {
-                IMemoryBlobStreamVariant ms = (IMemoryBlobStreamVariant)value;
+                var ms = (IMemoryBlobStreamVariant)value;
                 ms.ExportToVariant(out value);
                 return value;
             };
 
             _convertToEsriType = value =>
             {
-                IMemoryBlobStreamVariant ms = (IMemoryBlobStreamVariant)new MemoryBlobStream();
+                var ms = (IMemoryBlobStreamVariant)new MemoryBlobStream();
                 ms.ImportFromVariant(value);
                 return ms;
             };
@@ -61,7 +61,7 @@ namespace Earthworm
             PropertyType = propertyInfo.PropertyType;
             MappedField = Attribute.GetCustomAttributes(propertyInfo).OfType<MappedField>().SingleOrDefault();
 
-            Type t = (PropertyType.IsGenericType && PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
+            var t = (PropertyType.IsGenericType && PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
                 ? new NullableConverter(PropertyType).UnderlyingType
                 : PropertyType;
 
@@ -75,7 +75,7 @@ namespace Earthworm
 
         public object GetValue(object obj, bool convertToEsriType)
         {
-            object value = PropertyInfo.GetValue(obj, null);
+            var value = PropertyInfo.GetValue(obj, null);
 
             if (convertToEsriType && value != null)
                 value = _convertToEsriType(value);

@@ -56,11 +56,11 @@ namespace Earthworm.Serialization
 
         private static XElement ToKmlPolygon(this JsonPolygon shape, XNamespace ns, double z, params XElement[] extraElements)
         {
-            List<XElement> polygons = new List<XElement>();
+            var polygons = new List<XElement>();
 
-            foreach (double[][] ring in shape.rings)
+            foreach (var ring in shape.rings)
             {
-                bool isInnerRing = IsInnerRing(ring);
+                var isInnerRing = IsInnerRing(ring);
 
                 if (!isInnerRing)
                     polygons.Add(new XElement(ns + "Polygon", extraElements));
@@ -85,17 +85,21 @@ namespace Earthworm.Serialization
         /// <returns></returns>
         public static XElement ToKml(this IJsonGeometry shape, XNamespace ns, double z, params XElement[] extraElements)
         {
-            if (shape is JsonPoint)
-                return ((JsonPoint)shape).ToKmlPoint(ns, z, extraElements);
+            var point = shape as JsonPoint;
+            if (point != null)
+                return point.ToKmlPoint(ns, z, extraElements);
 
-            if (shape is JsonMultipoint)
-                return ((JsonMultipoint)shape).ToKmlMultipoint(ns, z, extraElements);
+            var multipoint = shape as JsonMultipoint;
+            if (multipoint != null)
+                return multipoint.ToKmlMultipoint(ns, z, extraElements);
 
-            if (shape is JsonPolyline)
-                return ((JsonPolyline)shape).ToKmlPolyline(ns, z, extraElements);
+            var polyline = shape as JsonPolyline;
+            if (polyline != null)
+                return polyline.ToKmlPolyline(ns, z, extraElements);
 
-            if (shape is JsonPolygon)
-                return ((JsonPolygon)shape).ToKmlPolygon(ns, z, extraElements);
+            var polygon = shape as JsonPolygon;
+            if (polygon != null)
+                return polygon.ToKmlPolygon(ns, z, extraElements);
 
             throw new Exception("This geometry type is not supported.");
         }
