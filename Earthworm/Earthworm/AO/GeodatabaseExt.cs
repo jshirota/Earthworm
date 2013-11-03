@@ -38,13 +38,13 @@ namespace Earthworm.AO
 
         internal static object GetValue(this IRow row, int fieldIndex)
         {
-            var o = row.get_Value(fieldIndex);
+            var o = row.Value[fieldIndex];
             return o == DBNull.Value ? null : o;
         }
 
         internal static void SetValue(this IRow row, int fieldIndex, object value)
         {
-            row.set_Value(fieldIndex, value ?? DBNull.Value);
+            row.Value[fieldIndex] = value ?? DBNull.Value;
         }
 
         #endregion

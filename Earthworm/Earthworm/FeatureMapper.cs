@@ -97,7 +97,7 @@ namespace Earthworm
                 if (keyFields.Contains(fieldName))
                     _keyFieldIndexes.Add(fieldIndex);
 
-                if (!table.Fields.get_Field(fieldIndex).Editable)
+                if (!table.Fields.Field[fieldIndex].Editable)
                     _readOnlyFieldIndexes.Add(fieldIndex);
 
                 _mapping.Add(fieldIndex, mappedProperty);

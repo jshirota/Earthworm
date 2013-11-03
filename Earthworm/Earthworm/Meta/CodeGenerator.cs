@@ -125,7 +125,7 @@ namespace Earthworm.Meta
 
             for (var i = 0; i < fields.FieldCount; i++)
             {
-                var field = fields.get_Field(i);
+                var field = fields.Field[i];
 
                 if (field.Editable)
                     AppendProperty(field.Name, field.Type, field.Length, field.IsNullable);

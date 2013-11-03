@@ -124,13 +124,13 @@ namespace Earthworm
 
             var fieldsEdit = (IFieldsEdit)fields;
             fieldsEdit.FieldCount_2 = i + customFields.Count;
-            fieldsEdit.set_Field(0, GetOIDField(oidField));
+            fieldsEdit.Field_2[0] = GetOIDField(oidField);
 
             if (isSpatial)
-                fieldsEdit.set_Field(1, GetShapeField(geometryType, spatialReference));
+                fieldsEdit.Field_2[1] = GetShapeField(geometryType, spatialReference);
 
             foreach (var field in customFields)
-                fieldsEdit.set_Field(i++, field);
+                fieldsEdit.Field_2[i++] = field;
 
             IObjectClassDescription ocDesc = new FeatureClassDescription();
 
