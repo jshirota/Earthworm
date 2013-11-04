@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Earthworm
         private IGeometry _shape;
 
         internal ITable Table { get; set; }
-        internal Dictionary<string, object> ChangedProperties { get; set; }
+        internal ConcurrentDictionary<string, object> ChangedProperties { get; set; }
 
         /// <summary>
         /// Represents the method that will handle the PropertyChanged event raised when a property is changed on a component.
@@ -40,7 +41,7 @@ namespace Earthworm
 
             if (propertyName != "IsDirty")
                 if (!ChangedProperties.ContainsKey(propertyName))
-                    ChangedProperties.Add(propertyName, null);
+                    ChangedProperties.TryAdd(propertyName, null);
         }
 
         #region Private
@@ -87,7 +88,7 @@ namespace Earthworm
         protected MappableFeature()
         {
             _type = GetType();
-            ChangedProperties = new Dictionary<string, object>();
+            ChangedProperties = new ConcurrentDictionary<string, object>();
             OID = -1;
         }
 
