@@ -84,15 +84,15 @@ namespace Earthworm.Serialization
 
             foreach (var property in typeof(T).GetMappedProperties())
             {
-                if (graphic.attributes.ContainsKey(property.MappedField.FieldName))
-                {
-                    var value = graphic.attributes[property.MappedField.FieldName];
+                if (!graphic.attributes.ContainsKey(property.MappedField.FieldName))
+                    continue;
 
-                    if (value != null && (property.PropertyType == typeof(DateTime) || property.PropertyType == typeof(DateTime?)))
-                        value = BaseTime.AddMilliseconds((long)value);
+                var value = graphic.attributes[property.MappedField.FieldName];
 
-                    property.SetValue(mappableFeature, value, true);
-                }
+                if (value != null && (property.PropertyType == typeof(DateTime) || property.PropertyType == typeof(DateTime?)))
+                    value = BaseTime.AddMilliseconds((long)value);
+
+                property.SetValue(mappableFeature, value, true);
             }
 
             var dictionary = graphic.geometry as Dictionary<string, object>;

@@ -17,16 +17,16 @@ namespace Earthworm
 
                 foreach (var p in type.GetProperties())
                 {
-                    if (!mappedPropertyNames.Contains(p.Name))
-                    {
-                        var mappedProperty = new MappedProperty(p);
+                    if (mappedPropertyNames.Contains(p.Name))
+                        continue;
 
-                        if (mappedProperty.MappedField != null)
-                        {
-                            mappedProperties.Add(mappedProperty);
-                            mappedPropertyNames.Add(p.Name);
-                        }
-                    }
+                    var mappedProperty = new MappedProperty(p);
+
+                    if (mappedProperty.MappedField == null)
+                        continue;
+
+                    mappedProperties.Add(mappedProperty);
+                    mappedPropertyNames.Add(p.Name);
                 }
 
                 return mappedProperties;

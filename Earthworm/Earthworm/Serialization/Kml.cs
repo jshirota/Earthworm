@@ -25,7 +25,7 @@ namespace Earthworm.Serialization
 
         private static string ToCoordinates(this double[][] coordinates, double z)
         {
-            return string.Join(" ", coordinates.Select(c => c.ToCoordinates(z)).ToArray());
+            return string.Join(" ", coordinates.Select(c => c.ToCoordinates(z)));
         }
 
         private static bool IsInnerRing(double[][] ring)
