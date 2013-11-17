@@ -4,11 +4,11 @@ A simple .NET assembly that provides an object-relational mapping abstraction la
 
 The project page is here:
 
-http://jshirota.github.com/Earthworm/
+http://jshirota.github.io/Earthworm/
 
 The library reference is here:
 
-http://jshirota.github.com/Earthworm/Help/Index.html
+http://jshirota.github.io/Earthworm/Help/
 
 The NuGet package is here:
 
