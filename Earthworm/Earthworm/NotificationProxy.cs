@@ -34,20 +34,20 @@ namespace Earthworm
                 var attributes = MethodAttributes.Public | MethodAttributes.Virtual;
 
                 var getMethod = typeBuilder.DefineMethod("get_" + propertyInfo.Name, attributes, propertyInfo.PropertyType, null);
-                var getMethodGenerator = getMethod.GetILGenerator();
-                getMethodGenerator.Emit(OpCodes.Ldarg_0);
-                getMethodGenerator.Emit(OpCodes.Call, propertyInfo.GetGetMethod());
-                getMethodGenerator.Emit(OpCodes.Ret);
+                var getGenerator = getMethod.GetILGenerator();
+                getGenerator.Emit(OpCodes.Ldarg_0);
+                getGenerator.Emit(OpCodes.Call, propertyInfo.GetGetMethod());
+                getGenerator.Emit(OpCodes.Ret);
 
                 var setMethod = typeBuilder.DefineMethod("set_" + propertyInfo.Name, attributes, typeof(void), new[] { propertyInfo.PropertyType });
-                var setMethodGenerator = setMethod.GetILGenerator();
-                setMethodGenerator.Emit(OpCodes.Ldarg_0);
-                setMethodGenerator.Emit(OpCodes.Ldarg_1);
-                setMethodGenerator.Emit(OpCodes.Call, propertyInfo.GetSetMethod());
-                setMethodGenerator.Emit(OpCodes.Ldarg_0);
-                setMethodGenerator.Emit(OpCodes.Ldstr, propertyInfo.Name);
-                setMethodGenerator.Emit(OpCodes.Call, baseType.GetMethod("RaisePropertyChanged", BindingFlags.NonPublic | BindingFlags.Instance));
-                setMethodGenerator.Emit(OpCodes.Ret);
+                var setGenerator = setMethod.GetILGenerator();
+                setGenerator.Emit(OpCodes.Ldarg_0);
+                setGenerator.Emit(OpCodes.Ldarg_1);
+                setGenerator.Emit(OpCodes.Call, propertyInfo.GetSetMethod());
+                setGenerator.Emit(OpCodes.Ldarg_0);
+                setGenerator.Emit(OpCodes.Ldstr, propertyInfo.Name);
+                setGenerator.Emit(OpCodes.Call, baseType.GetMethod("RaisePropertyChanged", BindingFlags.NonPublic | BindingFlags.Instance));
+                setGenerator.Emit(OpCodes.Ret);
 
                 propertyBuilder.SetGetMethod(getMethod);
                 propertyBuilder.SetSetMethod(setMethod);

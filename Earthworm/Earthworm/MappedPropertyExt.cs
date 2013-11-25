@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Earthworm
 {
@@ -10,27 +11,7 @@ namespace Earthworm
 
         public static IEnumerable<MappedProperty> GetMappedProperties(this Type type)
         {
-            return TypeToMappedProperties.GetOrAdd(type, t =>
-            {
-                var mappedProperties = new List<MappedProperty>();
-                var mappedPropertyNames = new List<string>();
-
-                foreach (var p in type.GetProperties())
-                {
-                    if (mappedPropertyNames.Contains(p.Name))
-                        continue;
-
-                    var mappedProperty = new MappedProperty(p);
-
-                    if (mappedProperty.MappedField == null)
-                        continue;
-
-                    mappedProperties.Add(mappedProperty);
-                    mappedPropertyNames.Add(p.Name);
-                }
-
-                return mappedProperties;
-            });
+            return TypeToMappedProperties.GetOrAdd(type, t => type.GetProperties().Select(p => new MappedProperty(p)).Where(p => p.MappedField != null).ToList());
         }
     }
 }
