@@ -2,6 +2,10 @@ A simple .NET assembly that provides an object-relational mapping abstraction la
 
 *You will need ArcGIS Desktop, Engine or Server 10.0, 10.1 or 10.2.
 
+The ClickOnce installer is here:
+
+http://jshirota.github.io/Earthworm/ORMappingDeploy.application
+
 The project page is here:
 
 http://jshirota.github.io/Earthworm/
