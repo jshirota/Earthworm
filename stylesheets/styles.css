@@ -1,0 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+
+body
+{
+    padding: 50px;
+    font: 16px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    background: #252526;
+}
+
+a
+{
+    color: #096087;
+}
+
+dt
+{
+    font-size: x-large;
+    cursor: pointer;
+}
+
+dd
+{
+    margin: 0;
+}
+
+pre
+{
+    border: 2px solid #096087;
+    font-family: Consolas;
+    font-size: 16px;
+    color: black;
+    background: white;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    padding: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    word-wrap: break-word;
+}
