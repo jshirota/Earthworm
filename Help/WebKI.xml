@@ -261,7 +261,7 @@
   <HelpKINode Title="MappableFeature.MappableFeature constructor" Url="html/b13eae64-c941-4d63-f619-725389e0d98d.htm" />
   <HelpKINode Title="MappableFeature.OID property" Url="html/4c75f85a-2018-4ade-6636-cad00955c756.htm" />
   <HelpKINode Title="MappableFeature.PropertyChanged event" Url="html/766dc1bd-914f-981d-f789-1feb95a6eabf.htm" />
-  <HelpKINode Title="MappableFeature.RaisePropertyChanged method" Url="html/896116d9-ce32-a7b8-fed0-bd443b02016a.htm" />
+  <HelpKINode Title="MappableFeature.RaisePropertyChanged method" Url="html/58178f19-cffb-328a-fd35-827a063466cd.htm" />
   <HelpKINode Title="MappableFeature.Shape property" Url="html/e4361844-ad18-cace-5959-5bbfcdb4530c.htm" />
   <HelpKINode Title="MappableFeature.ToString method" Url="html/107275aa-6ce7-4fde-ba44-108dd0b61dc8.htm" />
   <HelpKINode Title="MappableFeature.ValueEquals method" Url="html/787dcba7-0289-43e3-ac0e-a9d5394b10ba.htm" />
@@ -309,7 +309,7 @@
   <HelpKINode Title="points property" Url="html/d5a9e12e-1585-e298-7e8a-ce2c760eb911.htm" />
   <HelpKINode Title="Project2 method" Url="html/31c0e39f-68a3-0ae5-52c3-2ba5942186f1.htm" />
   <HelpKINode Title="PropertyChanged event" Url="html/766dc1bd-914f-981d-f789-1feb95a6eabf.htm" />
-  <HelpKINode Title="RaisePropertyChanged method" Url="html/896116d9-ce32-a7b8-fed0-bd443b02016a.htm" />
+  <HelpKINode Title="RaisePropertyChanged method" Url="html/58178f19-cffb-328a-fd35-827a063466cd.htm" />
   <HelpKINode Title="Relation method" Url="html/e2334e50-c7cf-ff36-321e-05641fe1541c.htm" />
   <HelpKINode Title="RelationalOpExt class">
     <HelpKINode Title="RelationalOpExt Class" Url="html/ef4bf0e7-bb52-0776-7834-b234927a52c3.htm" />
