@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Linq.Expressions;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 using Earthworm.AO;
@@ -33,15 +34,28 @@ namespace Earthworm
         /// <param name="propertyName"></param>
         protected void RaisePropertyChanged(string propertyName)
         {
-            if (IsBeingSetByFeatureMapper || !IsDataBound)
+            if (IsBeingSetByFeatureMapper)
                 return;
 
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 
-            if (propertyName != "IsDirty")
+            if (propertyName != "IsDirty" && IsDataBound)
                 if (!ChangedProperties.ContainsKey(propertyName))
                     ChangedProperties.TryAdd(propertyName, null);
+        }
+
+        /// <summary>
+        /// Called from a property setter to notify the framework that a member has changed.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="propertySelector"></param>
+        public void RaisePropertyChanged<T>(Expression<Func<T>> propertySelector)
+        {
+            var memberExpression = propertySelector.Body as MemberExpression;
+
+            if (memberExpression != null)
+                RaisePropertyChanged(memberExpression.Member.Name);
         }
 
         #region Private
