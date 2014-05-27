@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 using Earthworm.AO;
@@ -153,6 +154,27 @@ namespace Earthworm
         }
 
         #endregion
+
+        private PropertyInfo FindProperty(string fieldName)
+        {
+            var property = GetType().GetMappedProperties().FirstOrDefault(p => p.MappedField.FieldName == fieldName);
+
+            if (property == null)
+                throw new Exception(string.Format("'{0}' does not exist.", fieldName));
+
+            return property.PropertyInfo;
+        }
+
+        /// <summary>
+        /// Gets or sets a field value based on the field name.
+        /// </summary>
+        /// <param name="fieldName"></param>
+        /// <returns></returns>
+        public object this[string fieldName]
+        {
+            get { return FindProperty(fieldName).GetValue(this, null); }
+            set { FindProperty(fieldName).SetValue(this, value, null); }
+        }
 
         /// <summary>
         /// Copies all mapped property values from another instance of the same type.  The OID will not change.  Byte arrays will be cloned.

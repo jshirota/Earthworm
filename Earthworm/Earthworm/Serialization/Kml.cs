@@ -11,6 +11,8 @@ namespace Earthworm.Serialization
     /// </summary>
     public static class Kml
     {
+        private static readonly XNamespace kml = "http://www.opengis.net/kml/2.2";
+
         #region Private
 
         private static string ToCoordinates(this JsonPoint shape, double z)
@@ -136,6 +138,51 @@ namespace Earthworm.Serialization
         public static XElement ToKml(this IGeometry shape)
         {
             return shape.ToKml("http://www.opengis.net/kml/2.2", 0);
+        }
+
+        /// <summary>
+        /// Converts the feature to KML.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="name"></param>
+        /// <param name="z"></param>
+        /// <param name="geometryElements"></param>
+        /// <param name="placemarkElements"></param>
+        /// <returns></returns>
+        public static XElement ToKml(this MappableFeature item, string name, double z = 0, XElement[] geometryElements = null, params XElement[] placemarkElements)
+        {
+            return new XElement(kml + "Placemark",
+                       new XElement(kml + "name", name), placemarkElements,
+                       new XElement(kml + "ExtendedData",
+                           from p in item.GetType().GetMappedProperties()
+                           select new XElement(kml + "Data", new XAttribute("name", p.MappedField.FieldName),
+                                      new XElement(kml + "value", item[p.MappedField.FieldName]))),
+                                          item.Shape.ToKml(kml, z, geometryElements));
+        }
+
+        /// <summary>
+        /// Converts the features to KML.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items"></param>
+        /// <param name="getName"></param>
+        /// <param name="getZ"></param>
+        /// <param name="getStyleUrl"></param>
+        /// <param name="documentElements"></param>
+        /// <returns></returns>
+        public static XElement ToKml<T>(this IEnumerable<T> items, Func<T, string> getName = null, Func<T, double> getZ = null, Func<T, string> getStyleUrl = null, params XElement[] documentElements) where T : MappableFeature
+        {
+            var geometryElements = getZ == null ? null : new[] { new XElement(kml + "extrude", 1), new XElement(kml + "altitudeMode", "relativeToGround") };
+
+            return new XElement(kml + "kml",
+                       new XElement(kml + "Document", documentElements,
+                           items.Select(f =>
+                           {
+                               var name = getName == null ? f.OID.ToString() : getName(f);
+                               var z = getZ == null ? 0 : getZ(f);
+                               var placemarkElements = getStyleUrl == null ? null : new XElement(kml + "styleUrl", getStyleUrl(f));
+                               return f.ToKml(name, z, geometryElements, placemarkElements);
+                           })));
         }
     }
 }
