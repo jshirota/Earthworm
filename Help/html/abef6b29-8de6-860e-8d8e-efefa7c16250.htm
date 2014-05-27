@@ -1,0 +1,99 @@
+﻿<html><head><link rel="shortcut icon" href="../icons/favicon.ico" /><style type="text/css">.OH_CodeSnippetContainerTabLeftActive, .OH_CodeSnippetContainerTabLeft,.OH_CodeSnippetContainerTabLeftDisabled { }.OH_CodeSnippetContainerTabRightActive, .OH_CodeSnippetContainerTabRight,.OH_CodeSnippetContainerTabRightDisabled { }.OH_footer { }</style><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Kml.ToKml(T) Method (IEnumerable(T), Func(T, String), Func(T, Double), Func(T, String), XElement[])</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="M:Earthworm.Serialization.Kml.ToKml``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.Func{``0,System.Double},System.Func{``0,System.String},System.Xml.Linq.XElement[])" /><meta name="Description" content="Converts the features to KML." /><meta name="Microsoft.Help.ContentType" content="Reference" /><meta name="BrandingAware" content="'true'" /><meta name="container" content="Earthworm.Serialization" /><meta name="file" content="abef6b29-8de6-860e-8d8e-efefa7c16250" /><meta name="guid" content="abef6b29-8de6-860e-8d8e-efefa7c16250" /><meta name="SelfBranded" content="true" /></head><body onload="onLoad()"><div class="OH_outerDiv"><div class="OH_outerContent"><table class="TitleTable"><tr><td class="OH_tdTitleColumn">Kml<span id="ID0E3BABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0E3BABABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>ToKml<span id="ID0E1BABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0E1BABABAA?vb=(Of |cpp=&lt;|cs=&lt;|fs=&lt;'|nu=(");
+				</script><span class="typeparameter">T</span><span id="ID0EYBABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EYBABABAA?vb=)|cpp=&gt;|cs=&gt;|fs=&gt;|nu=)");
+				</script> Method (IEnumerable<span id="ID0EWBABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EWBABABAA?vb=(Of |cpp=&lt;|cs=&lt;|fs=&lt;'|nu=(");
+				</script><span class="typeparameter">T</span><span id="ID0EUBABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EUBABABAA?vb=)|cpp=&gt;|cs=&gt;|fs=&gt;|nu=)");
+				</script>, Func<span id="ID0ESBABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ESBABABAA?vb=(Of |cpp=&lt;|cs=&lt;|fs=&lt;'|nu=(");
+				</script><span class="typeparameter">T</span>, String<span id="ID0EPBABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EPBABABAA?vb=)|cpp=&gt;|cs=&gt;|fs=&gt;|nu=)");
+				</script>, Func<span id="ID0ENBABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ENBABABAA?vb=(Of |cpp=&lt;|cs=&lt;|fs=&lt;'|nu=(");
+				</script><span class="typeparameter">T</span>, Double<span id="ID0EKBABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EKBABABAA?vb=)|cpp=&gt;|cs=&gt;|fs=&gt;|nu=)");
+				</script>, Func<span id="ID0EIBABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EIBABABAA?vb=(Of |cpp=&lt;|cs=&lt;|fs=&lt;'|nu=(");
+				</script><span class="typeparameter">T</span>, String<span id="ID0EFBABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFBABABAA?vb=)|cpp=&gt;|cs=&gt;|fs=&gt;|nu=)");
+				</script>, <span id="ID0EDBABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EDBABABAA?vb=|cpp=array&lt;|cs=|fs=|nu=");
+				</script>XElement<span id="ID0EBBABABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBBABABAA?vb=()|cpp=&gt;|cs=[]|fs=[]|nu=[]");
+				</script>)</td><td class="OH_tdRunningTitleColumn">Earthworm - An ORM for Esri Geodatabase</td></tr></table><div id="mainSection"><div id="mainBody"><span class="introStyle"></span><div class="summary">
+            Converts the features to KML.
+            </div><p></p><strong>Namespace:</strong> <a href="596e3794-f66f-dc37-953d-2b61425d2ee6.htm">Earthworm.Serialization</a><br /><strong>Assembly:</strong> Earthworm (in Earthworm.dll) Version: 1.8.9.8 (1.8.9.8)<div class="OH_CollapsibleAreaRegion"><div class="OH_regiontitle">Syntax</div><div class="OH_CollapsibleArea_HrDiv"><hr class="OH_CollapsibleArea_Hr" /></div></div><div class="OH_clear"></div><div id="snippetGroup_Syntax" class="code"><div id="ID0EBWCAAABAA" class="OH_CodeSnippetContainer"><div class="OH_CodeSnippetContainerTabs" id="ID0EBWCAAABAA_tabs"><div class="OH_CodeSnippetContainerTabLeftActive" id="ID0EBWCAAABAA_tabimgleft"></div><div id="ID0EBWCAAABAA_tab1" class="OH_CodeSnippetContainerTabActive" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EBWCAAABAA','C#','1','4');return false;">C#</a></div><div id="ID0EBWCAAABAA_tab2" class="OH_CodeSnippetContainerTab" EnableCopyCode="true"><a href="#" onclick="javascript:ChangeTab('ID0EBWCAAABAA','Visual Basic','2','4');return false;">VB</a></div><div id="ID0EBWCAAABAA_tab3" class="OH_CodeSnippetContainerTabDisabledNotFirst" EnableCopyCode="true" disabled="true"><a>C++</a></div><div id="ID0EBWCAAABAA_tab4" class="OH_CodeSnippetContainerTabDisabledNotFirst" EnableCopyCode="true" disabled="true"><a>F#</a></div><div class="OH_CodeSnippetContainerTabRight" id="ID0EBWCAAABAA_tabimgright"></div></div><div id="ID0EBWCAAABAA_codecollection" class="OH_CodeSnippetContainerCodeCollection"><div class="OH_CodeSnippetToolBar"><div class="OH_CodeSnippetToolBarText"><a id="ID0EBWCAAABAA_copycode" href="#" onclick="javascript:CopyToClipboard('ID0EBWCAAABAA','4')" title="Copy to Clipboard">Copy to Clipboard</a><a id="ID0EBWCAAABAA_PrintText" class="OH_PrintText" href="#" onclick="javascript:Print('ID0EBWCAAABAA','4')" title="Print">Print</a></div></div><div id="ID0EBWCAAABAA_code_Div1" class="OH_CodeSnippetContainerCode" style="display: block"><pre><span class="keyword">public</span> <span class="keyword">static</span> <span class="identifier">XElement</span> <span class="identifier">ToKml</span>&lt;T&gt;(
+	<span class="keyword">this</span> <span class="identifier">IEnumerable</span>&lt;T&gt; <span class="parameter">items</span>,
+	<span class="identifier">Func</span>&lt;T, <span class="identifier">string</span>&gt; <span class="parameter">getName</span> = <span class="keyword">null</span>,
+	<span class="identifier">Func</span>&lt;T, <span class="identifier">double</span>&gt; <span class="parameter">getZ</span> = <span class="keyword">null</span>,
+	<span class="identifier">Func</span>&lt;T, <span class="identifier">string</span>&gt; <span class="parameter">getStyleUrl</span> = <span class="keyword">null</span>,
+	<span class="keyword">params</span> <span class="identifier">XElement</span>[] <span class="parameter">documentElements</span>
+)
+<span class="keyword">where</span> T : <span class="identifier">MappableFeature</span> 
+</pre></div><div id="ID0EBWCAAABAA_code_Plain_Div1" class="OH_CodeSnippetContainerCode" style="display: none"><pre>public static XElement ToKml&lt;T&gt;(
+	this IEnumerable&lt;T&gt; items,
+	Func&lt;T, string&gt; getName = null,
+	Func&lt;T, double&gt; getZ = null,
+	Func&lt;T, string&gt; getStyleUrl = null,
+	params XElement[] documentElements
+)
+where T : MappableFeature 
+</pre></div><div id="ID0EBWCAAABAA_code_Div2" class="OH_CodeSnippetContainerCode" style="display: none"><pre>&lt;<span class="identifier">ExtensionAttribute</span>&gt; 
+<span class="keyword">Public</span> <span class="keyword">Shared</span> <span class="keyword">Function</span> <span class="identifier">ToKml</span>(<span class="keyword">Of</span> T <span class="keyword">As</span> <span class="identifier">MappableFeature</span>) ( 
+	<span class="parameter">items</span> <span class="keyword">As</span> <span class="identifier">IEnumerable</span>(<span class="keyword">Of</span> T),
+	Optional <span class="parameter">getName</span> <span class="keyword">As</span> <span class="identifier">Func</span>(<span class="keyword">Of</span> T, <span class="identifier">String</span>) = <span class="keyword">Nothing</span>,
+	Optional <span class="parameter">getZ</span> <span class="keyword">As</span> <span class="identifier">Func</span>(<span class="keyword">Of</span> T, <span class="identifier">Double</span>) = <span class="keyword">Nothing</span>,
+	Optional <span class="parameter">getStyleUrl</span> <span class="keyword">As</span> <span class="identifier">Func</span>(<span class="keyword">Of</span> T, <span class="identifier">String</span>) = <span class="keyword">Nothing</span>,
+	<span class="keyword">ParamArray</span> <span class="parameter">documentElements</span> <span class="keyword">As</span> <span class="identifier">XElement</span>()
+) <span class="keyword">As</span> <span class="identifier">XElement</span></pre></div><div id="ID0EBWCAAABAA_code_Plain_Div2" class="OH_CodeSnippetContainerCode" style="display: none"><pre>&lt;ExtensionAttribute&gt; 
+Public Shared Function ToKml(Of T As MappableFeature) ( 
+	items As IEnumerable(Of T),
+	Optional getName As Func(Of T, String) = Nothing,
+	Optional getZ As Func(Of T, Double) = Nothing,
+	Optional getStyleUrl As Func(Of T, String) = Nothing,
+	ParamArray documentElements As XElement()
+) As XElement</pre></div><div id="ID0EBWCAAABAA_code_Div3" class="OH_CodeSnippetContainerCode" style="display: none"><pre /></div><div id="ID0EBWCAAABAA_code_Plain_Div3" class="OH_CodeSnippetContainerCode" style="display: none"><pre /></div><div id="ID0EBWCAAABAA_code_Div4" class="OH_CodeSnippetContainerCode" style="display: none"><pre /></div><div id="ID0EBWCAAABAA_code_Plain_Div4" class="OH_CodeSnippetContainerCode" style="display: none"><pre /></div></div></div><script>addSpecificTextLanguageTagSet('ID0EBWCAAABAA');</script></div><h4 class="subHeading">Parameters</h4><dl paramName="items"><dt><span class="parameter">items</span></dt><dd>Type: <a href="http://msdn2.microsoft.com/en-us/library/9eekhta0" target="_blank">System.Collections.Generic<span id="ID0EBFAUCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBFAUCAAABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>IEnumerable</a><span id="ID0EEAUCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EEAUCAAABAA?vb=(Of |cpp=&lt;|cs=&lt;|fs=&lt;'|nu=(");
+				</script><span class="selflink"><span class="typeparameter">T</span></span><span id="ID0ECAUCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECAUCAAABAA?vb=)|cpp=&gt;|cs=&gt;|fs=&gt;|nu=)");
+				</script><br /><span></span></dd></dl><dl paramName="getName"><dt><span class="parameter">getName</span> (Optional)</dt><dd>Type: <a href="http://msdn2.microsoft.com/en-us/library/bb549151" target="_blank">System<span id="ID0EBHATCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBHATCAAABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>Func</a><span id="ID0EGATCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGATCAAABAA?vb=(Of |cpp=&lt;|cs=&lt;|fs=&lt;'|nu=(");
+				</script><span class="selflink"><span class="typeparameter">T</span></span>, <a href="http://msdn2.microsoft.com/en-us/library/s1wwdcbf" target="_blank">String</a><span id="ID0ECATCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECATCAAABAA?vb=)|cpp=&gt;|cs=&gt;|fs=&gt;|nu=)");
+				</script><br /><span></span></dd></dl><dl paramName="getZ"><dt><span class="parameter">getZ</span> (Optional)</dt><dd>Type: <a href="http://msdn2.microsoft.com/en-us/library/bb549151" target="_blank">System<span id="ID0EBHASCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBHASCAAABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>Func</a><span id="ID0EGASCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGASCAAABAA?vb=(Of |cpp=&lt;|cs=&lt;|fs=&lt;'|nu=(");
+				</script><span class="selflink"><span class="typeparameter">T</span></span>, <a href="http://msdn2.microsoft.com/en-us/library/643eft0t" target="_blank">Double</a><span id="ID0ECASCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECASCAAABAA?vb=)|cpp=&gt;|cs=&gt;|fs=&gt;|nu=)");
+				</script><br /><span></span></dd></dl><dl paramName="getStyleUrl"><dt><span class="parameter">getStyleUrl</span> (Optional)</dt><dd>Type: <a href="http://msdn2.microsoft.com/en-us/library/bb549151" target="_blank">System<span id="ID0EBHARCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBHARCAAABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>Func</a><span id="ID0EGARCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EGARCAAABAA?vb=(Of |cpp=&lt;|cs=&lt;|fs=&lt;'|nu=(");
+				</script><span class="selflink"><span class="typeparameter">T</span></span>, <a href="http://msdn2.microsoft.com/en-us/library/s1wwdcbf" target="_blank">String</a><span id="ID0ECARCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECARCAAABAA?vb=)|cpp=&gt;|cs=&gt;|fs=&gt;|nu=)");
+				</script><br /><span></span></dd></dl><dl paramName="documentElements"><dt><span class="parameter">documentElements</span></dt><dd>Type: <span id="ID0EEAQCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EEAQCAAABAA?vb=|cpp=array&lt;|cs=|fs=|nu=");
+				</script><a href="http://msdn2.microsoft.com/en-us/library/bb340098" target="_blank">System.Xml.Linq<span id="ID0EBDAQCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EBDAQCAAABAA?vb=.|cpp=::|cs=.|fs=.|nu=.");
+				</script>XElement</a><span id="ID0ECAQCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0ECAQCAAABAA?vb=()|cpp=&gt;|cs=[]|fs=[]|nu=[]");
+				</script><br /><span></span></dd></dl><div class="OH_CollapsibleAreaRegion"><div class="OH_regiontitle">Type Parameters</div><div class="OH_CollapsibleArea_HrDiv"><hr class="OH_CollapsibleArea_Hr" /></div></div><div class="OH_clear"></div><dl><dt><span class="parameter">T</span></dt><dd></dd></dl><h4 class="subHeading">Return Value</h4>Type: <a href="http://msdn2.microsoft.com/en-us/library/bb340098" target="_blank">XElement</a><br /><h4 class="subHeading">Usage Note</h4>In Visual Basic and C#, you can call this method as an instance method on any object of type <a href="http://msdn2.microsoft.com/en-us/library/9eekhta0" target="_blank">IEnumerable</a><span id="ID0EHCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EHCAAABAA?vb=(Of |cpp=&lt;|cs=&lt;|fs=&lt;'|nu=(");
+				</script><span class="selflink"><span class="typeparameter">T</span></span><span id="ID0EFCAAABAA"> </span><script type="text/javascript">
+					addToLanSpecTextIdSet("ID0EFCAAABAA?vb=)|cpp=&gt;|cs=&gt;|fs=&gt;|nu=)");
+				</script>. When you use instance method syntax to call this method, omit the first parameter. For more information, see <a href="http://msdn.microsoft.com/en-us/library/bb384936.aspx" target="_blank">Extension Methods (Visual Basic)</a> or <a href="http://msdn.microsoft.com/en-us/library/bb383977.aspx" target="_blank">Extension Methods (C# Programming Guide)</a>.<a name="seeAlsoSection"></a><div class="OH_CollapsibleAreaRegion"><div class="OH_regiontitle">See Also</div><div class="OH_CollapsibleArea_HrDiv"><hr class="OH_CollapsibleArea_Hr" /></div></div><div class="OH_clear"></div><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="48c7e4d2-9177-efee-d947-35608869c32b.htm">Kml Class</a></div><div class="seeAlsoStyle"><a href="c42ca110-d270-efc9-9120-1c7d1de3c317.htm">ToKml Overload</a></div><div class="seeAlsoStyle"><a href="596e3794-f66f-dc37-953d-2b61425d2ee6.htm">Earthworm.Serialization Namespace</a></div></div></div></div></div><div id="OH_footer" class="OH_footer"><div class="OH_feedbacklink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:jshirota%40gmail.com?Subject=Earthworm - An ORM for Esri Geodatabase">jshirota@gmail.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>
