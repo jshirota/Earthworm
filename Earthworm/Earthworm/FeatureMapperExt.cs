@@ -100,7 +100,7 @@ namespace Earthworm
                 .Partition(100)
                 .Select(batch => batch.ToArray())
                 .Select(array => string.Format("{0} in ({1})", table.OIDFieldName, array.Length == 0 ? "-1" : string.Join(",", array)))
-                .SelectMany(table.Map<T>);
+                .SelectMany(s => table.Map<T>(s)); //Do not convert to a method group.
         }
 
         /// <summary>
