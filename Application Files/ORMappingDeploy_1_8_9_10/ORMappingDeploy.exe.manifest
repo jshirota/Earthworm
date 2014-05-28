@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ORMappingDeploy.exe" size="1210880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ORMappingDeploy.exe" size="1105920">
       <assemblyIdentity name="ORMappingDeploy" version="1.8.9.10" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>YxLROkg2X8bALxuWqlxVwKATCW0=</dsig:DigestValue>
+        <dsig:DigestValue>oLiK45wVdtoxRU0jQed/5ERuDpU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
