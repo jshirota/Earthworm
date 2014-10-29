@@ -216,6 +216,28 @@ namespace Earthworm
         }
 
         /// <summary>
+        /// Inserts these items into a table.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items">The items to insert.</param>
+        /// <param name="table">The target table.</param>
+        public static void InsertManyInto<T>(this IEnumerable<T> items, ITable table) where T : MappableFeature, new()
+        {
+            new FeatureMapper<T>(table).Insert(items);
+        }
+
+        /// <summary>
+        /// Inserts these items into a feature class.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items">The items to insert.</param>
+        /// <param name="featureClass">The target feature class.</param>
+        public static void InsertManyInto<T>(this IEnumerable<T> items, IFeatureClass featureClass) where T : MappableFeature, new()
+        {
+            items.InsertManyInto((ITable)featureClass);
+        }
+
+        /// <summary>
         /// Updates this item in the underlying table.
         /// </summary>
         /// <typeparam name="T"></typeparam>

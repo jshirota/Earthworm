@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
+
 using ESRI.ArcGIS.Geodatabase;
 using Earthworm.AO;
 
@@ -40,6 +42,14 @@ namespace Earthworm
 
         private T Write(T item, IRow row, bool isUpdate)
         {
+            WriteRow(item, row, isUpdate);
+            row.Store();
+
+            return Read(_table.GetRow(row.OID));
+        }
+
+        private void WriteRow(T item, IRow row, bool isUpdate)
+        {
             foreach (var fieldIndex in _mapping.Keys)
             {
                 if (isUpdate && _keyFieldIndexes.Contains(fieldIndex))
@@ -59,10 +69,6 @@ namespace Earthworm
 
             if (_isSpatial && !(isUpdate && !item.ChangedProperties.ContainsKey("Shape")))
                 ((IFeature)row).Shape = item.Shape;
-
-            row.Store();
-
-            return Read(_table.GetRow(row.OID));
         }
 
         #endregion
@@ -122,6 +128,28 @@ namespace Earthworm
         public T Insert(T item)
         {
             return Write(item, _table.CreateRow(), false);
+        }
+
+        public void Insert(IEnumerable<T> items)
+        {
+            var cursor = _table.Insert(true);
+            var rowBuffer = _table.CreateRowBuffer();
+
+            try
+            {
+                foreach (var item in items)
+                {
+                    WriteRow(item, (IRow)rowBuffer, false);
+                    cursor.InsertRow(rowBuffer);
+                }
+
+                cursor.Flush();
+            }
+            finally
+            {
+                while (Marshal.ReleaseComObject(rowBuffer) != 0) { }
+                while (Marshal.ReleaseComObject(cursor) != 0) { }
+            }
         }
 
         public void Update(T item)
