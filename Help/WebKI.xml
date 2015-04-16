@@ -48,9 +48,14 @@
   <HelpKINode Title="Earthworm.Serialization.JsonPolygon class" Url="html/afe36bf8-2609-6b5d-8403-c57ff21cade8.htm" />
   <HelpKINode Title="Earthworm.Serialization.JsonPolyline class" Url="html/7bd129e8-e647-3eff-d83c-d48c6cac4f26.htm" />
   <HelpKINode Title="Earthworm.Serialization.Kml class" Url="html/48c7e4d2-9177-efee-d947-35608869c32b.htm" />
+  <HelpKINode Title="Earthworm.Serialization.KmlStyle class" Url="html/e4460ff1-8b32-9102-cad6-f199dfba59c6.htm" />
+  <HelpKINode Title="Earthworm.Serialization.Text class" Url="html/fe3dc97e-d2e8-83b2-9264-df5b640133a0.htm" />
   <HelpKINode Title="Earthworm.TableWriter class" Url="html/951eb67a-4fa1-bab6-a18c-03266c7b645d.htm" />
   <HelpKINode Title="Edit method" Url="html/b54e60ca-5cfd-ae90-ff73-810e66ca1ab9.htm" />
-  <HelpKINode Title="Equals method" Url="html/d3aee6aa-0495-8bb1-2499-6751034ffa0f.htm" />
+  <HelpKINode Title="Equals method">
+    <HelpKINode Title="KmlStyle.Equals Method " Url="html/1ce3e226-2a2d-c329-1548-574a9af32719.htm" />
+    <HelpKINode Title="MappableFeatureComparer(T).Equals Method " Url="html/d3aee6aa-0495-8bb1-2499-6751034ffa0f.htm" />
+  </HelpKINode>
   <HelpKINode Title="Equals2 method" Url="html/2fc9b962-e3f5-43d2-ba50-1d031cb63f8c.htm" />
   <HelpKINode Title="FeatureMapperExt class">
     <HelpKINode Title="FeatureMapperExt Class" Url="html/a3434bff-920e-58c7-919f-acd46c5d8262.htm" />
@@ -88,7 +93,13 @@
   </HelpKINode>
   <HelpKINode Title="GeometrySerializer.ToEsriGeometry method" Url="html/9696900f-77b1-a346-5429-7612a596ec8a.htm" />
   <HelpKINode Title="GeometrySerializer.ToJsonGeometry method" Url="html/e8217d3e-f31e-672a-10f5-fcc1ae1848fd.htm" />
-  <HelpKINode Title="GetHashCode method" Url="html/d41c9192-6781-ceb9-417f-7c1a81498bea.htm" />
+  <HelpKINode Title="GetHashCode method">
+    <HelpKINode Title="KmlStyle.GetHashCode Method " Url="html/e59b8051-240a-14ec-de6c-b5205c59884f.htm" />
+    <HelpKINode Title="MappableFeatureComparer(T).GetHashCode Method " Url="html/d41c9192-6781-ceb9-417f-7c1a81498bea.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IconColour property" Url="html/4362c517-23ea-1785-aac4-17a27ff2d56a.htm" />
+  <HelpKINode Title="IconScale property" Url="html/2f68779d-e62f-b424-fd63-f488cbee5c4c.htm" />
+  <HelpKINode Title="IconUrl property" Url="html/b07ceea5-aa67-1e20-95ec-6af8b062b479.htm" />
   <HelpKINode Title="IJsonGeometry interface">
     <HelpKINode Title="IJsonGeometry Interface" Url="html/5d74401e-42ba-0899-4e0d-474a604c2c5f.htm" />
     <HelpKINode Title="about IJsonGeometry interface" Url="html/5d74401e-42ba-0899-4e0d-474a604c2c5f.htm" />
@@ -111,7 +122,7 @@
   <HelpKINode Title="Json.Deserialize&lt;T&gt; method" Url="html/86ab09ad-00f8-f828-758a-143eb41c76e6.htm" />
   <HelpKINode Title="Json.Serialize method" Url="html/f391060b-7180-58ff-4018-ab7853ec6cab.htm" />
   <HelpKINode Title="Json.SerializingFunction property" Url="html/0613aa09-d7f5-c56d-ce71-71e7aae8f2f4.htm" />
-  <HelpKINode Title="Json.ToDictionary method" Url="html/dbd16303-841a-93a5-553a-d593bbe6b8fb.htm" />
+  <HelpKINode Title="Json.ToJsonObject method" Url="html/4c82c490-0626-5b1d-6bc8-f176cbb42af5.htm" />
   <HelpKINode Title="JsonGeometry class">
     <HelpKINode Title="JsonGeometry Class" Url="html/e03939a9-b4c6-bc45-509a-46e9583dcb00.htm" />
     <HelpKINode Title="about JsonGeometry class" Url="html/e03939a9-b4c6-bc45-509a-46e9583dcb00.htm" />
@@ -167,6 +178,24 @@
     <HelpKINode Title="methods" Url="html/6dba4184-d872-bc40-3069-d4cba8e5108e.htm" />
   </HelpKINode>
   <HelpKINode Title="Kml.ToKml method" Url="html/c42ca110-d270-efc9-9120-1c7d1de3c317.htm" />
+  <HelpKINode Title="KmlStyle class">
+    <HelpKINode Title="KmlStyle Class" Url="html/e4460ff1-8b32-9102-cad6-f199dfba59c6.htm" />
+    <HelpKINode Title="about KmlStyle class" Url="html/e4460ff1-8b32-9102-cad6-f199dfba59c6.htm" />
+    <HelpKINode Title="constructor" Url="html/85d3ea6f-3a9f-e16f-0600-e88e0dd2f290.htm" />
+    <HelpKINode Title="methods" Url="html/35213d64-7bc1-cd70-ef2b-13fdaf7b456a.htm" />
+    <HelpKINode Title="properties" Url="html/1b11ed71-67ba-f3ac-a819-778e0f974cac.htm" />
+  </HelpKINode>
+  <HelpKINode Title="KmlStyle.Equals method" Url="html/1ce3e226-2a2d-c329-1548-574a9af32719.htm" />
+  <HelpKINode Title="KmlStyle.GetHashCode method" Url="html/e59b8051-240a-14ec-de6c-b5205c59884f.htm" />
+  <HelpKINode Title="KmlStyle.IconColour property" Url="html/4362c517-23ea-1785-aac4-17a27ff2d56a.htm" />
+  <HelpKINode Title="KmlStyle.IconScale property" Url="html/2f68779d-e62f-b424-fd63-f488cbee5c4c.htm" />
+  <HelpKINode Title="KmlStyle.IconUrl property" Url="html/b07ceea5-aa67-1e20-95ec-6af8b062b479.htm" />
+  <HelpKINode Title="KmlStyle.KmlStyle constructor" Url="html/85d3ea6f-3a9f-e16f-0600-e88e0dd2f290.htm" />
+  <HelpKINode Title="KmlStyle.LineColour property" Url="html/352714ca-dd4d-b64c-16f8-4fff2378cb58.htm" />
+  <HelpKINode Title="KmlStyle.LineWidth property" Url="html/922d89f0-a187-2da7-4480-e2f96eb92fda.htm" />
+  <HelpKINode Title="KmlStyle.PolygonColour property" Url="html/919fed5f-dc6b-a1d7-a50c-27604559683a.htm" />
+  <HelpKINode Title="LineColour property" Url="html/352714ca-dd4d-b64c-16f8-4fff2378cb58.htm" />
+  <HelpKINode Title="LineWidth property" Url="html/922d89f0-a187-2da7-4480-e2f96eb92fda.htm" />
   <HelpKINode Title="Map method" Url="html/1b6dc383-e5a9-6171-80b7-c883ae2d5848.htm" />
   <HelpKINode Title="MappableFeature class">
     <HelpKINode Title="MappableFeature Class" Url="html/cccdd04c-57df-53b2-086c-4eff7dd7f420.htm" />
@@ -225,6 +254,7 @@
   <HelpKINode Title="Overlaps method" Url="html/ac6a9c14-4606-503c-f461-c7a41357e889.htm" />
   <HelpKINode Title="paths property" Url="html/fe402291-f436-1fef-8b03-74e3c04cf5e4.htm" />
   <HelpKINode Title="points property" Url="html/d5a9e12e-1585-e298-7e8a-ce2c760eb911.htm" />
+  <HelpKINode Title="PolygonColour property" Url="html/919fed5f-dc6b-a1d7-a50c-27604559683a.htm" />
   <HelpKINode Title="Project2 method" Url="html/31c0e39f-68a3-0ae5-52c3-2ba5942186f1.htm" />
   <HelpKINode Title="PropertyChanged event" Url="html/766dc1bd-914f-981d-f789-1feb95a6eabf.htm" />
   <HelpKINode Title="RaisePropertyChanged method" Url="html/58178f19-cffb-328a-fd35-827a063466cd.htm" />
@@ -255,11 +285,18 @@
   </HelpKINode>
   <HelpKINode Title="TableWriter.CreateFeatureClass method" Url="html/20d30a6c-26d0-ce02-91db-b13488838eb6.htm" />
   <HelpKINode Title="TableWriter.CreateTable method" Url="html/f81f2bc6-0eb6-7169-2ee8-48e5c930dfc6.htm" />
+  <HelpKINode Title="Text class">
+    <HelpKINode Title="Text Class" Url="html/fe3dc97e-d2e8-83b2-9264-df5b640133a0.htm" />
+    <HelpKINode Title="about Text class" Url="html/fe3dc97e-d2e8-83b2-9264-df5b640133a0.htm" />
+    <HelpKINode Title="methods" Url="html/d8e2d8e1-84f4-3ce7-aa2f-63fa00283fd5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Text.ToDelimitedText method" Url="html/6e8b79de-83f5-4f3b-9464-e5f5fc7eb861.htm" />
   <HelpKINode Title="TextLength property" Url="html/e1ee5b89-6d4c-5c38-2cb5-a610c50f8a3a.htm" />
   <HelpKINode Title="ToCSharp method" Url="html/88f89e15-3f00-095e-1a4a-33a2ce0d70d6.htm" />
-  <HelpKINode Title="ToDictionary method" Url="html/dbd16303-841a-93a5-553a-d593bbe6b8fb.htm" />
+  <HelpKINode Title="ToDelimitedText method" Url="html/6e8b79de-83f5-4f3b-9464-e5f5fc7eb861.htm" />
   <HelpKINode Title="ToEsriGeometry method" Url="html/9696900f-77b1-a346-5429-7612a596ec8a.htm" />
   <HelpKINode Title="ToJsonGeometry method" Url="html/e8217d3e-f31e-672a-10f5-fcc1ae1848fd.htm" />
+  <HelpKINode Title="ToJsonObject method" Url="html/4c82c490-0626-5b1d-6bc8-f176cbb42af5.htm" />
   <HelpKINode Title="ToKml method" Url="html/c42ca110-d270-efc9-9120-1c7d1de3c317.htm" />
   <HelpKINode Title="TopologicalOpExt class">
     <HelpKINode Title="TopologicalOpExt Class" Url="html/fbcf60c9-8e2e-2828-ff03-2b10292b99de.htm" />
