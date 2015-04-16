@@ -42,8 +42,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Earthworm.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
@@ -88,6 +87,8 @@
     <Compile Include="Serialization\JsonPolyline.cs" />
     <Compile Include="Serialization\GeometrySerializer.cs" />
     <Compile Include="Serialization\Kml.cs" />
+    <Compile Include="Serialization\KmlStyle.cs" />
+    <Compile Include="Serialization\Text.cs" />
     <Compile Include="TableWriter.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>

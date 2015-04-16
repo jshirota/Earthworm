@@ -26,17 +26,17 @@ namespace Earthworm.Serialization
         /// <summary>
         /// Returns the JSON-serializable representation of this feature as a .NET dictionary.  Use a weakly-typed JSON serializer to serialize this.
         /// </summary>
-        /// <param name="feature"></param>
+        /// <param name="item"></param>
         /// <param name="includeGeometry"></param>
         /// <returns></returns>
-        public static Dictionary<string, object> ToDictionary(this MappableFeature feature, bool includeGeometry = false)
+        public static Dictionary<string, object> ToJsonObject(this MappableFeature item, bool includeGeometry = false)
         {
             var attributes = new Dictionary<string, object>();
 
-            if (feature.IsDataBound)
-                attributes.Add(feature.Table.OIDFieldName, feature.OID);
+            if (item.IsDataBound)
+                attributes.Add(item.Table.OIDFieldName, item.OID);
 
-            foreach (var o in feature.ToKeyValuePairs(p => p.MappedField.IncludeInJson))
+            foreach (var o in item.ToKeyValuePairs(p => p.MappedField.IncludeInJson))
             {
                 var value = o.Value;
 
@@ -53,8 +53,8 @@ namespace Earthworm.Serialization
 
             var dictionary = new Dictionary<string, object> { { "attributes", attributes } };
 
-            if (includeGeometry && feature.Shape != null)
-                dictionary.Add("geometry", feature.Shape.ToJsonGeometry());
+            if (includeGeometry && item.Shape != null)
+                dictionary.Add("geometry", item.Shape.ToJsonGeometry());
 
             return dictionary;
         }
@@ -62,12 +62,12 @@ namespace Earthworm.Serialization
         /// <summary>
         /// Return the JSON representation of this feature.
         /// </summary>
-        /// <param name="feature"></param>
+        /// <param name="item"></param>
         /// <param name="includeGeometry"></param>
         /// <returns></returns>
-        public static string Serialize(MappableFeature feature, bool includeGeometry)
+        public static string Serialize(MappableFeature item, bool includeGeometry)
         {
-            return SerializingFunction(feature.ToDictionary(includeGeometry));
+            return SerializingFunction(item.ToJsonObject(includeGeometry));
         }
 
         /// <summary>

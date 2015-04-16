@@ -75,16 +75,7 @@ namespace Earthworm.Serialization
             return new XElement(kml + "MultiGeometry", polygons);
         }
 
-        #endregion
-
-        /// <summary>
-        /// Converts a serializable geometry into KML.
-        /// </summary>
-        /// <param name="shape"></param>
-        /// <param name="z">Altitude in meters</param>
-        /// <param name="extraElements">Array of extra elements (i.e. altitudeMode).</param>
-        /// <returns></returns>
-        public static XElement ToKml(this IJsonGeometry shape, double z = 0, params XElement[] extraElements)
+        private static XElement ToKml(this IJsonGeometry shape, double z = 0, params XElement[] extraElements)
         {
             var point = shape as JsonPoint;
             if (point != null)
@@ -105,6 +96,8 @@ namespace Earthworm.Serialization
             throw new Exception("This geometry type is not supported.");
         }
 
+        #endregion
+
         /// <summary>
         /// Converts an ArcObjects geometry into KML.
         /// </summary>
@@ -118,27 +111,54 @@ namespace Earthworm.Serialization
         }
 
         /// <summary>
+        /// Converts the style object to KML.
+        /// </summary>
+        /// <param name="style"></param>
+        /// <returns></returns>
+        public static XElement ToKml(this KmlStyle style)
+        {
+            return new XElement(kml + "Style", new XAttribute("id", style.GetHashCode()),
+                       new XElement(kml + "IconStyle",
+                           new XElement(kml + "color", style.IconColour),
+                           new XElement(kml + "scale", style.IconScale),
+                           new XElement(kml + "Icon", style.IconUrl)),
+                       new XElement(kml + "LineStyle",
+                           new XElement(kml + "color", style.LineColour),
+                           new XElement(kml + "width", style.LineWidth)),
+                       new XElement(kml + "PolyStyle",
+                           new XElement(kml + "color", style.PolygonColour)));
+        }
+
+        /// <summary>
         /// Converts the feature to KML.
         /// </summary>
         /// <param name="item"></param>
-        /// <param name="name"></param>
-        /// <param name="geometryConversion"></param>
-        /// <param name="z"></param>
-        /// <param name="geometryElements"></param>
-        /// <param name="placemarkElements"></param>
+        /// <param name="name">The name for the placemark.</param>
+        /// <param name="z">The altitude in meters.</param>
+        /// <param name="geometryElements">Any extra geometry elements (i.e. altitudeMode).</param>        
+        /// <param name="placemarkElements">Any extra placemark elements (i.e. styleUrl).</param>
         /// <returns></returns>
-        public static XElement ToKml(this MappableFeature item, string name, Func<IGeometry, IGeometry> geometryConversion = null, double z = 0, XElement[] geometryElements = null, params XElement[] placemarkElements)
+        public static XElement ToKml(this MappableFeature item, string name = null, double? z = null, XElement[] geometryElements = null, params XElement[] placemarkElements)
         {
-            if (geometryConversion == null)
-                geometryConversion = g => g;
-
-            return new XElement(kml + "Placemark",
+            return new XElement(kml + "Placemark", new XAttribute("id", item.OID),
                        new XElement(kml + "name", name), placemarkElements,
                        new XElement(kml + "ExtendedData",
                            from p in item.GetType().GetMappedProperties()
                            select new XElement(kml + "Data", new XAttribute("name", p.MappedField.FieldName),
                                       new XElement(kml + "value", item[p.MappedField.FieldName]))),
-                                          geometryConversion(item.Shape).ToKml(z, geometryElements));
+                                          item.Shape.ToKml(z ?? 0, geometryElements));
+        }
+
+        /// <summary>
+        /// Converts the feature to KML.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="name"></param>
+        /// <param name="style"></param>
+        /// <returns></returns>
+        public static XElement ToKml(this MappableFeature item, string name = null, KmlStyle style = null)
+        {
+            return item.ToKml(name, 0, null, style == null ? null : style.ToKml());
         }
 
         /// <summary>
@@ -146,25 +166,39 @@ namespace Earthworm.Serialization
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="items"></param>
-        /// <param name="getName"></param>
-        /// <param name="geometryConversion"></param>
-        /// <param name="getZ"></param>
-        /// <param name="getStyleUrl"></param>
-        /// <param name="documentElements"></param>
+        /// <param name="name">The name for the placemark.</param>
+        /// <param name="z">The altitude in meters.</param>
+        /// <param name="placemarkElements">Any extra placemark elements.</param>
+        /// <param name="documentElements">Any extra document elements.</param>
         /// <returns></returns>
-        public static XElement ToKml<T>(this IEnumerable<T> items, Func<T, string> getName = null, Func<IGeometry, IGeometry> geometryConversion = null, Func<T, double> getZ = null, Func<T, string> getStyleUrl = null, params XElement[] documentElements) where T : MappableFeature
+        public static XElement ToKml<T>(this IEnumerable<T> items, Func<T, string> name, Func<T, double?> z, Func<T, XElement[]> placemarkElements, params XElement[] documentElements) where T : MappableFeature
         {
-            var geometryElements = getZ == null ? null : new[] { new XElement(kml + "extrude", 1), new XElement(kml + "altitudeMode", "relativeToGround") };
-
             return new XElement(kml + "kml",
                        new XElement(kml + "Document", documentElements,
-                           items.Select(f =>
-                           {
-                               var name = getName == null ? f.OID.ToString() : getName(f);
-                               var z = getZ == null ? 0 : getZ(f);
-                               var placemarkElements = getStyleUrl == null ? null : new XElement(kml + "styleUrl", getStyleUrl(f));
-                               return f.ToKml(name, geometryConversion, z, geometryElements, placemarkElements);
-                           })));
+                           items.Select(i => i.ToKml(name == null ? null : name(i), z == null ? null : z(i), null, placemarkElements == null ? null : placemarkElements(i)))));
+        }
+
+        /// <summary>
+        /// Converts the features to KML.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items"></param>
+        /// <param name="name">The name for the placemark.</param>
+        /// <param name="z">The altitude in meters.</param>
+        /// <param name="style">The style for the placemark.</param>
+        /// <param name="placemarkElements">Any extra placemark elements.</param>
+        /// <param name="documentElements">Any extra document elements.</param>
+        /// <returns></returns>
+        public static XElement ToKml<T>(this IEnumerable<T> items, Func<T, string> name = null, Func<T, double?> z = null, Func<T, KmlStyle> style = null, Func<T, XElement[]> placemarkElements = null, params XElement[] documentElements) where T : MappableFeature
+        {
+            if (style == null)
+                return items.ToKml(name, z, placemarkElements, documentElements);
+
+            var dictionary = items.Distinct().ToDictionary(i => i, style);
+
+            return dictionary.Keys.ToKml(name, z,
+                i => new[] { new XElement(kml + "styleUrl", "#" + dictionary[i].GetHashCode()) }.Concat(placemarkElements == null ? new XElement[] { } : placemarkElements(i)).ToArray(),
+                dictionary.Values.Distinct().Select(ToKml).Concat(documentElements ?? new XElement[] { }).ToArray());
         }
     }
 }
