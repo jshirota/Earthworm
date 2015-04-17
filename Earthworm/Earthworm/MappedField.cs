@@ -10,7 +10,7 @@ namespace Earthworm
         /// <summary>
         /// The function used to retieve the field name.  If this is set to null (default), the text sent to the MappedField constructor is the actual field name.  This can be replaced by another function such as s => ConfigurationManager.AppSettings[s], which will use the string to retrieve the real field name from app.config.
         /// </summary>
-        public static Func<string, string> FieldNameRetrievalFunction { get; set; }
+        public static Func<string, string> GetFieldName { get; set; }
 
         /// <summary>
         /// The name of the feature class field.
@@ -64,7 +64,7 @@ namespace Earthworm
         /// <param name="includeInJson">Indicates whether this field should be included in the JSON serialization.</param>
         public MappedField(string fieldName, int textLength, bool includeInJson)
         {
-            FieldName = FieldNameRetrievalFunction == null ? fieldName : FieldNameRetrievalFunction(fieldName);
+            FieldName = GetFieldName == null ? fieldName : GetFieldName(fieldName);
 
             if (textLength > 0)
                 TextLength = textLength;

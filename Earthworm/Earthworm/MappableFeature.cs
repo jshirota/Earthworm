@@ -5,10 +5,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using Earthworm.Serialization;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 using Earthworm.AO;
-using Earthworm.Serialization;
 
 namespace Earthworm
 {
@@ -23,6 +23,7 @@ namespace Earthworm
 
         internal ITable Table { get; set; }
         internal ConcurrentDictionary<string, object> ChangedProperties { get; set; }
+        internal bool IsBeingSetByFeatureMapper { get; set; }
 
         /// <summary>
         /// Represents the method that will handle the PropertyChanged event raised when a property is changed on a component.
@@ -38,12 +39,18 @@ namespace Earthworm
             if (IsBeingSetByFeatureMapper)
                 return;
 
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            var propertyChanged = PropertyChanged;
 
-            if (propertyName != "IsDirty" && IsDataBound)
-                if (!ChangedProperties.ContainsKey(propertyName))
-                    ChangedProperties.TryAdd(propertyName, null);
+            if (propertyChanged != null)
+                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+
+            if (propertyName == "IsDirty" || ChangedProperties.ContainsKey(propertyName))
+                return;
+
+            var added = ChangedProperties.TryAdd(propertyName, null);
+
+            if (added && ChangedProperties.Count == 1)
+                RaisePropertyChanged(() => IsDirty);
         }
 
         /// <summary>
@@ -107,18 +114,24 @@ namespace Earthworm
             OID = -1;
         }
 
-        #region Properties
+        /// <summary>
+        /// Instantiates a new object of the specified type.  Use this method instead of the constructor to ensure that the mapped properties automatically raise the PropertyChanged event.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static T Create<T>() where T : MappableFeature
+        {
+            return NotificationProxy.Create<T>();
+        }
 
         /// <summary>
         /// The OID of the item.  If an item is not bound to a feature class (if it is created from scratch), the OID is set to -1.
         /// </summary>
-        [BrowsableAttribute(false)]
         public int OID { get; internal set; }
 
         /// <summary>
         /// The geometry of the item.  The data assigned to this property is always cloned (unless overridden to behave differently).
         /// </summary>
-        [BrowsableAttribute(false)]
         public virtual IGeometry Shape
         {
             get { return _shape; }
@@ -130,15 +143,8 @@ namespace Earthworm
         }
 
         /// <summary>
-        /// Indicates if the properties are being set by FeatureMapper.  Use this in the property setter of a derived class to prevent custom actions from being executed when the setter is accessed by FeatureMapper.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        public bool IsBeingSetByFeatureMapper { get; internal set; }
-
-        /// <summary>
         /// Indicates if the object is bound to an actual row in the underlying table.
         /// </summary>
-        [BrowsableAttribute(false)]
         public bool IsDataBound
         {
             get { return Table != null; }
@@ -147,13 +153,10 @@ namespace Earthworm
         /// <summary>
         /// Indicates if any of the mapped properties has been changed via the property setter.  Mutating reference type properties (i.e. shape, byte array) does not change this property.
         /// </summary>
-        [BrowsableAttribute(false)]
         public bool IsDirty
         {
             get { return ChangedProperties.Count > 0; }
         }
-
-        #endregion
 
         private PropertyInfo FindProperty(string fieldName)
         {
@@ -232,7 +235,7 @@ namespace Earthworm
         /// <returns></returns>
         public override string ToString()
         {
-            return Json.Serialize(this, false);
+            return this.ToJson(false);
         }
 
         /// <summary>
@@ -242,7 +245,7 @@ namespace Earthworm
         /// <returns></returns>
         public string ToString(bool includeGeometry)
         {
-            return Json.Serialize(this, includeGeometry);
+            return this.ToJson(includeGeometry);
         }
     }
 }
