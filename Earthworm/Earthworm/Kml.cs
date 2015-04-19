@@ -4,7 +4,7 @@ using System.Linq;
 using System.Xml.Linq;
 using ESRI.ArcGIS.Geometry;
 
-namespace Earthworm.Serialization
+namespace Earthworm
 {
     /// <summary>
     /// Provides extension methods for converting geometries into KML.

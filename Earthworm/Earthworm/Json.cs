@@ -5,7 +5,7 @@ using System.Web.Script.Serialization;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Geometry;
 
-namespace Earthworm.Serialization
+namespace Earthworm
 {
     /// <summary>
     /// Provides extension methods for converting features and geometries into JSON strings.

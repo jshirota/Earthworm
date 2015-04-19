@@ -2,7 +2,7 @@
 using System.Linq;
 using ESRI.ArcGIS.Geometry;
 
-namespace Earthworm.Serialization
+namespace Earthworm
 {
     /// <summary>
     /// Provides extension methods for converting features to text formats.
