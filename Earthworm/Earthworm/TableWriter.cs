@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
-using Earthworm.AO;
 
 namespace Earthworm
 {
@@ -258,7 +257,7 @@ namespace Earthworm
         /// <returns></returns>
         public static IFeatureClass CreateFeatureClass<T>(this IFeatureWorkspace featureWorkspace, string name, esriGeometryType geometryType, int wkid, bool overwrite) where T : MappableFeature
         {
-            return CreateFeatureClass<T>(featureWorkspace, name, geometryType, TopologicalOpExt.GetSpatialReference(wkid), overwrite);
+            return CreateFeatureClass<T>(featureWorkspace, name, geometryType, AO.GetSpatialReference(wkid), overwrite);
         }
 
         /// <summary>
