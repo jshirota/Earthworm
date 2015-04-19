@@ -1,127 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpKI>
-  <HelpKINode Title="Boundary method" Url="html/c17eb2eb-77a8-0f72-09f5-f44630cdffe6.htm" />
-  <HelpKINode Title="Buffer method" Url="html/4b2a81a9-5411-2a8e-6ada-9f5ec103eaf4.htm" />
-  <HelpKINode Title="Clip method" Url="html/7dcc3c06-0fbb-1c50-6e80-eb7a8ce65fef.htm" />
-  <HelpKINode Title="CodeGeneratorExt class">
-    <HelpKINode Title="CodeGeneratorExt Class" Url="html/01040f20-43f5-746a-79e3-3c5415990877.htm" />
-    <HelpKINode Title="about CodeGeneratorExt class" Url="html/01040f20-43f5-746a-79e3-3c5415990877.htm" />
-    <HelpKINode Title="methods" Url="html/4591bc45-a083-9504-bf41-dcad752fe15c.htm" />
+  <HelpKINode Title="AO class">
+    <HelpKINode Title="AO Class" Url="html/d093d090-d2b5-dfec-7332-6489450f09bb.htm" />
+    <HelpKINode Title="about AO class" Url="html/d093d090-d2b5-dfec-7332-6489450f09bb.htm" />
+    <HelpKINode Title="methods" Url="html/6d892112-539d-5d90-0c9b-ca2113af5750.htm" />
   </HelpKINode>
-  <HelpKINode Title="CodeGeneratorExt.ToCSharp method" Url="html/88f89e15-3f00-095e-1a4a-33a2ce0d70d6.htm" />
-  <HelpKINode Title="CodeGeneratorExt.ToVB method" Url="html/96761675-56b6-1f8b-cbd3-159252a604a6.htm" />
-  <HelpKINode Title="Contains method" Url="html/137c2482-901b-bdb6-0501-c264937bb53a.htm" />
-  <HelpKINode Title="ConvexHull method" Url="html/fc8ac539-8e98-8e78-5812-9b2f26fbdc67.htm" />
-  <HelpKINode Title="Copy(Of T) method" Url="html/9f8696a1-f71f-0fe7-c854-0da8b43e1e2b.htm" />
-  <HelpKINode Title="Copy&lt;T&gt; method" Url="html/9f8696a1-f71f-0fe7-c854-0da8b43e1e2b.htm" />
+  <HelpKINode Title="AO.Boundary method" Url="html/6d994c80-f08f-f4a0-873f-adb10e489336.htm" />
+  <HelpKINode Title="AO.Buffer method" Url="html/88e95fe0-239d-6fac-062f-903be278782d.htm" />
+  <HelpKINode Title="AO.Clip method" Url="html/4a1a399f-cd28-f21f-213c-b6ba854b6904.htm" />
+  <HelpKINode Title="AO.Contains method" Url="html/5239e724-e0b8-ee88-4057-d2787c4f353d.htm" />
+  <HelpKINode Title="AO.ConvexHull method" Url="html/0bfb8754-4375-ebfd-5974-7fbc3abb351b.htm" />
+  <HelpKINode Title="AO.Copy(Of T) method" Url="html/ac7fa417-59b9-8a30-29e0-1f90a9e472f6.htm" />
+  <HelpKINode Title="AO.Copy&lt;T&gt; method" Url="html/ac7fa417-59b9-8a30-29e0-1f90a9e472f6.htm" />
+  <HelpKINode Title="AO.Crosses method" Url="html/496e513e-cb3c-7563-2a05-e9864397ea5b.htm" />
+  <HelpKINode Title="AO.Difference method" Url="html/6e3311fe-6e90-0601-0ea0-402a888dd490.htm" />
+  <HelpKINode Title="AO.Disjoint method" Url="html/0308d760-34f6-7381-82d6-e551091711c5.htm" />
+  <HelpKINode Title="AO.DistanceTo method" Url="html/f68d5e67-d78d-b1f8-1d0e-9d7afcd1ec85.htm" />
+  <HelpKINode Title="AO.Edit method" Url="html/abe8e0c3-e96e-a43f-8640-ea4f5357ed3f.htm" />
+  <HelpKINode Title="AO.Equals2 method" Url="html/4124d4eb-af37-0c99-3fe4-ef50b95baff4.htm" />
+  <HelpKINode Title="AO.Intersect method" Url="html/f5deaa27-614c-ce27-fd52-d1447349979d.htm" />
+  <HelpKINode Title="AO.Intersects method" Url="html/617502a9-ffe9-9eed-46e3-53027919693a.htm" />
+  <HelpKINode Title="AO.OpenFeatureClass2 method" Url="html/d7a95c97-c5ae-eed9-bdfe-196af47be77f.htm" />
+  <HelpKINode Title="AO.OpenTable2 method" Url="html/b53a45e1-7d2a-206a-dd17-4ffcbe2f66f5.htm" />
+  <HelpKINode Title="AO.Overlaps method" Url="html/8d15ea7a-6c1c-7c60-74bb-8854073b4611.htm" />
+  <HelpKINode Title="AO.Project2 method" Url="html/7f23247f-da2c-a2c2-5c01-e9d0fc541968.htm" />
+  <HelpKINode Title="AO.Relation method" Url="html/98e15ea0-3ac9-364d-d873-b1410646bf82.htm" />
+  <HelpKINode Title="AO.Touches method" Url="html/3abf788c-06a3-664b-7284-384b3335bbf0.htm" />
+  <HelpKINode Title="AO.Union method" Url="html/6349fada-ecfb-787a-233c-fa550959cafc.htm" />
+  <HelpKINode Title="AO.Within method" Url="html/91e4a124-6d22-3951-aa01-edccecd9e236.htm" />
+  <HelpKINode Title="Boundary method" Url="html/6d994c80-f08f-f4a0-873f-adb10e489336.htm" />
+  <HelpKINode Title="Buffer method" Url="html/88e95fe0-239d-6fac-062f-903be278782d.htm" />
+  <HelpKINode Title="Clip method" Url="html/4a1a399f-cd28-f21f-213c-b6ba854b6904.htm" />
+  <HelpKINode Title="Contains method" Url="html/5239e724-e0b8-ee88-4057-d2787c4f353d.htm" />
+  <HelpKINode Title="ConvexHull method" Url="html/0bfb8754-4375-ebfd-5974-7fbc3abb351b.htm" />
+  <HelpKINode Title="Copy(Of T) method" Url="html/ac7fa417-59b9-8a30-29e0-1f90a9e472f6.htm" />
+  <HelpKINode Title="Copy&lt;T&gt; method" Url="html/ac7fa417-59b9-8a30-29e0-1f90a9e472f6.htm" />
   <HelpKINode Title="CopyDataFrom(Of T) method" Url="html/446cbfe2-4670-dddd-ff41-01f20fad746f.htm" />
   <HelpKINode Title="CopyDataFrom&lt;T&gt; method" Url="html/446cbfe2-4670-dddd-ff41-01f20fad746f.htm" />
   <HelpKINode Title="Create(Of T) method" Url="html/f1882ec3-9253-ee23-9cbb-ebf6a18588d0.htm" />
   <HelpKINode Title="Create&lt;T&gt; method" Url="html/f1882ec3-9253-ee23-9cbb-ebf6a18588d0.htm" />
   <HelpKINode Title="CreateFeatureClass method" Url="html/20d30a6c-26d0-ce02-91db-b13488838eb6.htm" />
   <HelpKINode Title="CreateTable method" Url="html/f81f2bc6-0eb6-7169-2ee8-48e5c930dfc6.htm" />
-  <HelpKINode Title="Crosses method" Url="html/31abcd41-8a41-7d2c-3ff4-a42d996987fe.htm" />
-  <HelpKINode Title="Delete(Of T) method" Url="html/1c3be56a-8026-356c-deae-378417ea4bf4.htm" />
-  <HelpKINode Title="Delete&lt;T&gt; method" Url="html/1c3be56a-8026-356c-deae-378417ea4bf4.htm" />
-  <HelpKINode Title="Difference method" Url="html/b6fcbce7-f346-9eae-1a13-5311c404cc0a.htm" />
-  <HelpKINode Title="Disjoint method" Url="html/9be36ede-8262-d5b0-28fe-6185a3f24fae.htm" />
-  <HelpKINode Title="DistanceTo method" Url="html/b160d1f2-c20d-b3f4-19b3-a00f12489474.htm" />
+  <HelpKINode Title="Crosses method" Url="html/496e513e-cb3c-7563-2a05-e9864397ea5b.htm" />
+  <HelpKINode Title="Delete(Of T) method" Url="html/306220e7-e5ff-929f-8c12-739fcf077076.htm" />
+  <HelpKINode Title="Delete&lt;T&gt; method" Url="html/306220e7-e5ff-929f-8c12-739fcf077076.htm" />
+  <HelpKINode Title="Difference method" Url="html/6e3311fe-6e90-0601-0ea0-402a888dd490.htm" />
+  <HelpKINode Title="Disjoint method" Url="html/0308d760-34f6-7381-82d6-e551091711c5.htm" />
+  <HelpKINode Title="DistanceTo method" Url="html/f68d5e67-d78d-b1f8-1d0e-9d7afcd1ec85.htm" />
   <HelpKINode Title="Earthworm namespace" Url="html/060cc0cc-dcfa-15e2-1176-230e46750a3f.htm" />
-  <HelpKINode Title="Earthworm.AO namespace" Url="html/3bc2443f-a9f3-b748-b9d9-0bd4fb2c4a93.htm" />
-  <HelpKINode Title="Earthworm.AO.GeodatabaseExt class" Url="html/95c2b8da-021e-6485-b3f1-08c5fca7f97f.htm" />
-  <HelpKINode Title="Earthworm.AO.RelationalOpExt class" Url="html/ef4bf0e7-bb52-0776-7834-b234927a52c3.htm" />
-  <HelpKINode Title="Earthworm.AO.TopologicalOpExt class" Url="html/fbcf60c9-8e2e-2828-ff03-2b10292b99de.htm" />
-  <HelpKINode Title="Earthworm.FeatureMapperExt class" Url="html/a3434bff-920e-58c7-919f-acd46c5d8262.htm" />
+  <HelpKINode Title="Earthworm.AO class" Url="html/d093d090-d2b5-dfec-7332-6489450f09bb.htm" />
+  <HelpKINode Title="Earthworm.FeatureMapper class" Url="html/d512f313-bd93-bbd7-95f1-664dec7f669d.htm" />
+  <HelpKINode Title="Earthworm.Json class" Url="html/e920a60e-c235-3051-f240-6b070381fb62.htm" />
+  <HelpKINode Title="Earthworm.Kml class" Url="html/fb4778dc-15b5-982b-d66d-1d2d7dd986fe.htm" />
+  <HelpKINode Title="Earthworm.KmlStyle class" Url="html/a9c5d98a-7d5e-0ea7-16f7-c58d9695e35e.htm" />
   <HelpKINode Title="Earthworm.MappableFeature class" Url="html/cccdd04c-57df-53b2-086c-4eff7dd7f420.htm" />
   <HelpKINode Title="Earthworm.MappableFeatureComparer(Of T) class" Url="html/6c65061b-0a9c-00ea-2aad-0a20ecf7f8d1.htm" />
   <HelpKINode Title="Earthworm.MappableFeatureComparer&lt;T&gt; class" Url="html/6c65061b-0a9c-00ea-2aad-0a20ecf7f8d1.htm" />
   <HelpKINode Title="Earthworm.MappedField class" Url="html/fffcfafa-b0f5-6630-50cf-37371150f53e.htm" />
-  <HelpKINode Title="Earthworm.Meta namespace" Url="html/628d4bcf-0dbd-a74d-9e6e-064769f1cd2c.htm" />
-  <HelpKINode Title="Earthworm.Meta.CodeGeneratorExt class" Url="html/01040f20-43f5-746a-79e3-3c5415990877.htm" />
-  <HelpKINode Title="Earthworm.Serialization namespace" Url="html/596e3794-f66f-dc37-953d-2b61425d2ee6.htm" />
-  <HelpKINode Title="Earthworm.Serialization.Json class" Url="html/dda0483d-6b37-fa01-83b2-7801434f35b7.htm" />
-  <HelpKINode Title="Earthworm.Serialization.Kml class" Url="html/48c7e4d2-9177-efee-d947-35608869c32b.htm" />
-  <HelpKINode Title="Earthworm.Serialization.KmlStyle class" Url="html/e4460ff1-8b32-9102-cad6-f199dfba59c6.htm" />
-  <HelpKINode Title="Earthworm.Serialization.Text class" Url="html/fe3dc97e-d2e8-83b2-9264-df5b640133a0.htm" />
   <HelpKINode Title="Earthworm.TableWriter class" Url="html/951eb67a-4fa1-bab6-a18c-03266c7b645d.htm" />
-  <HelpKINode Title="Edit method" Url="html/b54e60ca-5cfd-ae90-ff73-810e66ca1ab9.htm" />
+  <HelpKINode Title="Earthworm.Text class" Url="html/81151b2c-3fa9-cc67-f8b2-f7673b0b4651.htm" />
+  <HelpKINode Title="Edit method" Url="html/abe8e0c3-e96e-a43f-8640-ea4f5357ed3f.htm" />
   <HelpKINode Title="Equals method">
-    <HelpKINode Title="KmlStyle.Equals Method " Url="html/1ce3e226-2a2d-c329-1548-574a9af32719.htm" />
+    <HelpKINode Title="KmlStyle.Equals Method " Url="html/4bc2f870-a345-6e68-3802-4f3236f4a7d0.htm" />
     <HelpKINode Title="MappableFeatureComparer(T).Equals Method " Url="html/d3aee6aa-0495-8bb1-2499-6751034ffa0f.htm" />
   </HelpKINode>
-  <HelpKINode Title="Equals2 method" Url="html/2fc9b962-e3f5-43d2-ba50-1d031cb63f8c.htm" />
-  <HelpKINode Title="FeatureMapperExt class">
-    <HelpKINode Title="FeatureMapperExt Class" Url="html/a3434bff-920e-58c7-919f-acd46c5d8262.htm" />
-    <HelpKINode Title="about FeatureMapperExt class" Url="html/a3434bff-920e-58c7-919f-acd46c5d8262.htm" />
-    <HelpKINode Title="methods" Url="html/88c7c236-85ae-0d5b-1b56-188c2c624891.htm" />
+  <HelpKINode Title="Equals2 method" Url="html/4124d4eb-af37-0c99-3fe4-ef50b95baff4.htm" />
+  <HelpKINode Title="FeatureMapper class">
+    <HelpKINode Title="FeatureMapper Class" Url="html/d512f313-bd93-bbd7-95f1-664dec7f669d.htm" />
+    <HelpKINode Title="about FeatureMapper class" Url="html/d512f313-bd93-bbd7-95f1-664dec7f669d.htm" />
+    <HelpKINode Title="methods" Url="html/4e4c9a3b-e6b8-9da3-e7f1-331a6e29eaf7.htm" />
   </HelpKINode>
-  <HelpKINode Title="FeatureMapperExt.Delete(Of T) method" Url="html/1c3be56a-8026-356c-deae-378417ea4bf4.htm" />
-  <HelpKINode Title="FeatureMapperExt.Delete&lt;T&gt; method" Url="html/1c3be56a-8026-356c-deae-378417ea4bf4.htm" />
-  <HelpKINode Title="FeatureMapperExt.FindItemByOID method" Url="html/988fc632-8b1e-21a2-8023-c8e1a1ce48de.htm" />
-  <HelpKINode Title="FeatureMapperExt.InsertInto method" Url="html/335f1b62-5bcc-e10b-23c2-eec93cf14da2.htm" />
-  <HelpKINode Title="FeatureMapperExt.Map method" Url="html/1b6dc383-e5a9-6171-80b7-c883ae2d5848.htm" />
-  <HelpKINode Title="FeatureMapperExt.Update(Of T) method" Url="html/8cb72cd6-31a2-4f9e-3bc5-658e3e987379.htm" />
-  <HelpKINode Title="FeatureMapperExt.Update&lt;T&gt; method" Url="html/8cb72cd6-31a2-4f9e-3bc5-658e3e987379.htm" />
+  <HelpKINode Title="FeatureMapper.Delete(Of T) method" Url="html/306220e7-e5ff-929f-8c12-739fcf077076.htm" />
+  <HelpKINode Title="FeatureMapper.Delete&lt;T&gt; method" Url="html/306220e7-e5ff-929f-8c12-739fcf077076.htm" />
+  <HelpKINode Title="FeatureMapper.FindItemByOID method" Url="html/a442375f-b1c9-5bfb-8eb3-3579c770a016.htm" />
+  <HelpKINode Title="FeatureMapper.InsertInto method" Url="html/ec61837d-5a66-895b-7112-62771d704a18.htm" />
+  <HelpKINode Title="FeatureMapper.Map method" Url="html/3d978408-c3e0-6b10-bf0b-cf8228cd7d83.htm" />
+  <HelpKINode Title="FeatureMapper.Update(Of T) method" Url="html/171da588-c090-8914-eca2-9b7cfa156801.htm" />
+  <HelpKINode Title="FeatureMapper.Update&lt;T&gt; method" Url="html/171da588-c090-8914-eca2-9b7cfa156801.htm" />
   <HelpKINode Title="FieldName property" Url="html/2d26640f-d0e1-7889-8a2b-16bbe84b5f03.htm" />
-  <HelpKINode Title="FindItemByOID method" Url="html/988fc632-8b1e-21a2-8023-c8e1a1ce48de.htm" />
-  <HelpKINode Title="GeodatabaseExt class">
-    <HelpKINode Title="GeodatabaseExt Class" Url="html/95c2b8da-021e-6485-b3f1-08c5fca7f97f.htm" />
-    <HelpKINode Title="about GeodatabaseExt class" Url="html/95c2b8da-021e-6485-b3f1-08c5fca7f97f.htm" />
-    <HelpKINode Title="methods" Url="html/84c4967f-9d3e-7a97-23c6-abf468c6cbea.htm" />
-  </HelpKINode>
-  <HelpKINode Title="GeodatabaseExt.Edit method" Url="html/b54e60ca-5cfd-ae90-ff73-810e66ca1ab9.htm" />
-  <HelpKINode Title="GeodatabaseExt.OpenFeatureClass2 method" Url="html/5df8a0dd-a7f7-74c9-0d7f-ce117f0e9878.htm" />
-  <HelpKINode Title="GeodatabaseExt.OpenTable2 method" Url="html/fb3a0ba3-a0a4-5b6f-e821-bf84f95b4fa8.htm" />
+  <HelpKINode Title="FindItemByOID method" Url="html/a442375f-b1c9-5bfb-8eb3-3579c770a016.htm" />
   <HelpKINode Title="GetFieldName property" Url="html/80a24fab-4a6b-8c39-ab00-b1d4662bc104.htm" />
   <HelpKINode Title="GetHashCode method">
-    <HelpKINode Title="KmlStyle.GetHashCode Method " Url="html/e59b8051-240a-14ec-de6c-b5205c59884f.htm" />
+    <HelpKINode Title="KmlStyle.GetHashCode Method " Url="html/4e127d80-013f-383a-5a0a-f3d7e563ab2d.htm" />
     <HelpKINode Title="MappableFeatureComparer(T).GetHashCode Method " Url="html/d41c9192-6781-ceb9-417f-7c1a81498bea.htm" />
   </HelpKINode>
-  <HelpKINode Title="IconColour property" Url="html/4362c517-23ea-1785-aac4-17a27ff2d56a.htm" />
-  <HelpKINode Title="IconScale property" Url="html/2f68779d-e62f-b424-fd63-f488cbee5c4c.htm" />
-  <HelpKINode Title="IconUrl property" Url="html/b07ceea5-aa67-1e20-95ec-6af8b062b479.htm" />
+  <HelpKINode Title="IconColour property" Url="html/9d96ae6a-fa4b-df2f-c281-c9e27c9ab56c.htm" />
+  <HelpKINode Title="IconScale property" Url="html/7a3668f9-a37d-bb5c-7e16-dc7f40cdd607.htm" />
+  <HelpKINode Title="IconUrl property" Url="html/9db0d752-16e2-455d-6546-05e5c7d9ef8c.htm" />
   <HelpKINode Title="IncludeInJson property" Url="html/b7f550bf-e9d4-56c3-f6d1-ca5c9198750c.htm" />
-  <HelpKINode Title="InsertInto method" Url="html/335f1b62-5bcc-e10b-23c2-eec93cf14da2.htm" />
-  <HelpKINode Title="Intersect method" Url="html/045e28b4-a4f0-803e-0e1c-8b500bdf7fb8.htm" />
-  <HelpKINode Title="Intersects method" Url="html/15b5cf77-2d5d-a3ec-bd1a-029d4a4ff7e0.htm" />
+  <HelpKINode Title="InsertInto method" Url="html/ec61837d-5a66-895b-7112-62771d704a18.htm" />
+  <HelpKINode Title="Intersect method" Url="html/f5deaa27-614c-ce27-fd52-d1447349979d.htm" />
+  <HelpKINode Title="Intersects method" Url="html/617502a9-ffe9-9eed-46e3-53027919693a.htm" />
   <HelpKINode Title="IsDataBound property" Url="html/49196875-2bab-f437-37ca-f53f1f820ce4.htm" />
   <HelpKINode Title="IsDirty property" Url="html/c1d2a422-94d7-83a2-c90f-18831e2c2ee4.htm" />
   <HelpKINode Title="Item property" Url="html/c10ad79f-6584-4648-222d-49f41ca0c23a.htm" />
   <HelpKINode Title="Json class">
-    <HelpKINode Title="Json Class" Url="html/dda0483d-6b37-fa01-83b2-7801434f35b7.htm" />
-    <HelpKINode Title="about Json class" Url="html/dda0483d-6b37-fa01-83b2-7801434f35b7.htm" />
-    <HelpKINode Title="methods" Url="html/df930ccf-93d2-b5da-ebed-31ec3860fa38.htm" />
+    <HelpKINode Title="Json Class" Url="html/e920a60e-c235-3051-f240-6b070381fb62.htm" />
+    <HelpKINode Title="about Json class" Url="html/e920a60e-c235-3051-f240-6b070381fb62.htm" />
+    <HelpKINode Title="methods" Url="html/aedc089d-f785-3a7b-a8fa-4b4a70bb6de2.htm" />
   </HelpKINode>
-  <HelpKINode Title="Json.ToJson method" Url="html/043c48c6-b343-869b-91d0-b6bb4d3722cb.htm" />
-  <HelpKINode Title="Json.ToMultipoint method" Url="html/28bcad01-a5f4-4ac7-c040-ae80acf1c89d.htm" />
-  <HelpKINode Title="Json.ToPoint method" Url="html/364c6baf-a473-ac56-e194-b8bc9b9e774d.htm" />
-  <HelpKINode Title="Json.ToPolygon method" Url="html/c9c01363-b3e2-20f2-82fe-c219ecbee9f2.htm" />
-  <HelpKINode Title="Json.ToPolyline method" Url="html/df147d2d-5f24-1edf-ea5b-5ad14dc53672.htm" />
+  <HelpKINode Title="Json.ToJson method" Url="html/6df681f0-a291-62d3-3f5b-0d9d3a40c534.htm" />
+  <HelpKINode Title="Json.ToMultipoint method" Url="html/71e1ab52-b886-8d62-48fa-3c4a05928a1e.htm" />
+  <HelpKINode Title="Json.ToPoint method" Url="html/54f48543-37a4-1b6f-db61-4e36f7c1734c.htm" />
+  <HelpKINode Title="Json.ToPolygon method" Url="html/0ec2fb15-2d21-3a86-3fcf-03e4aaa29da4.htm" />
+  <HelpKINode Title="Json.ToPolyline method" Url="html/06f2a470-2042-779d-4bb6-6e98b0146a1e.htm" />
   <HelpKINode Title="Kml class">
-    <HelpKINode Title="Kml Class" Url="html/48c7e4d2-9177-efee-d947-35608869c32b.htm" />
-    <HelpKINode Title="about Kml class" Url="html/48c7e4d2-9177-efee-d947-35608869c32b.htm" />
-    <HelpKINode Title="methods" Url="html/6dba4184-d872-bc40-3069-d4cba8e5108e.htm" />
+    <HelpKINode Title="Kml Class" Url="html/fb4778dc-15b5-982b-d66d-1d2d7dd986fe.htm" />
+    <HelpKINode Title="about Kml class" Url="html/fb4778dc-15b5-982b-d66d-1d2d7dd986fe.htm" />
+    <HelpKINode Title="methods" Url="html/7b59d008-4007-1aa3-4577-4457fb95831e.htm" />
   </HelpKINode>
-  <HelpKINode Title="Kml.ToKml method" Url="html/c42ca110-d270-efc9-9120-1c7d1de3c317.htm" />
+  <HelpKINode Title="Kml.ToKml method" Url="html/28bfabb1-d068-add1-ed44-089aac0b6756.htm" />
   <HelpKINode Title="KmlStyle class">
-    <HelpKINode Title="KmlStyle Class" Url="html/e4460ff1-8b32-9102-cad6-f199dfba59c6.htm" />
-    <HelpKINode Title="about KmlStyle class" Url="html/e4460ff1-8b32-9102-cad6-f199dfba59c6.htm" />
-    <HelpKINode Title="constructor" Url="html/85d3ea6f-3a9f-e16f-0600-e88e0dd2f290.htm" />
-    <HelpKINode Title="methods" Url="html/35213d64-7bc1-cd70-ef2b-13fdaf7b456a.htm" />
-    <HelpKINode Title="properties" Url="html/1b11ed71-67ba-f3ac-a819-778e0f974cac.htm" />
+    <HelpKINode Title="KmlStyle Class" Url="html/a9c5d98a-7d5e-0ea7-16f7-c58d9695e35e.htm" />
+    <HelpKINode Title="about KmlStyle class" Url="html/a9c5d98a-7d5e-0ea7-16f7-c58d9695e35e.htm" />
+    <HelpKINode Title="constructor" Url="html/ef3cbbf5-c78f-21fa-9d64-d8709d339039.htm" />
+    <HelpKINode Title="methods" Url="html/e89f85e2-ba3d-44c1-a7d3-c56ae980fd3e.htm" />
+    <HelpKINode Title="properties" Url="html/ff29e61f-bfaf-3826-259e-02eb2795fd7a.htm" />
   </HelpKINode>
-  <HelpKINode Title="KmlStyle.Equals method" Url="html/1ce3e226-2a2d-c329-1548-574a9af32719.htm" />
-  <HelpKINode Title="KmlStyle.GetHashCode method" Url="html/e59b8051-240a-14ec-de6c-b5205c59884f.htm" />
-  <HelpKINode Title="KmlStyle.IconColour property" Url="html/4362c517-23ea-1785-aac4-17a27ff2d56a.htm" />
-  <HelpKINode Title="KmlStyle.IconScale property" Url="html/2f68779d-e62f-b424-fd63-f488cbee5c4c.htm" />
-  <HelpKINode Title="KmlStyle.IconUrl property" Url="html/b07ceea5-aa67-1e20-95ec-6af8b062b479.htm" />
-  <HelpKINode Title="KmlStyle.KmlStyle constructor" Url="html/85d3ea6f-3a9f-e16f-0600-e88e0dd2f290.htm" />
-  <HelpKINode Title="KmlStyle.LineColour property" Url="html/352714ca-dd4d-b64c-16f8-4fff2378cb58.htm" />
-  <HelpKINode Title="KmlStyle.LineWidth property" Url="html/922d89f0-a187-2da7-4480-e2f96eb92fda.htm" />
-  <HelpKINode Title="KmlStyle.PolygonColour property" Url="html/919fed5f-dc6b-a1d7-a50c-27604559683a.htm" />
-  <HelpKINode Title="LineColour property" Url="html/352714ca-dd4d-b64c-16f8-4fff2378cb58.htm" />
-  <HelpKINode Title="LineWidth property" Url="html/922d89f0-a187-2da7-4480-e2f96eb92fda.htm" />
-  <HelpKINode Title="Map method" Url="html/1b6dc383-e5a9-6171-80b7-c883ae2d5848.htm" />
+  <HelpKINode Title="KmlStyle.Equals method" Url="html/4bc2f870-a345-6e68-3802-4f3236f4a7d0.htm" />
+  <HelpKINode Title="KmlStyle.GetHashCode method" Url="html/4e127d80-013f-383a-5a0a-f3d7e563ab2d.htm" />
+  <HelpKINode Title="KmlStyle.IconColour property" Url="html/9d96ae6a-fa4b-df2f-c281-c9e27c9ab56c.htm" />
+  <HelpKINode Title="KmlStyle.IconScale property" Url="html/7a3668f9-a37d-bb5c-7e16-dc7f40cdd607.htm" />
+  <HelpKINode Title="KmlStyle.IconUrl property" Url="html/9db0d752-16e2-455d-6546-05e5c7d9ef8c.htm" />
+  <HelpKINode Title="KmlStyle.KmlStyle constructor" Url="html/ef3cbbf5-c78f-21fa-9d64-d8709d339039.htm" />
+  <HelpKINode Title="KmlStyle.LineColour property" Url="html/c6a4692e-26f4-f2fd-6ecf-074b7efe3b11.htm" />
+  <HelpKINode Title="KmlStyle.LineWidth property" Url="html/61ffd060-ef1b-4702-64de-863cebd236ea.htm" />
+  <HelpKINode Title="KmlStyle.PolygonColour property" Url="html/fdfd7f4f-4352-54ac-25e4-e1b3d8fe6337.htm" />
+  <HelpKINode Title="LineColour property" Url="html/c6a4692e-26f4-f2fd-6ecf-074b7efe3b11.htm" />
+  <HelpKINode Title="LineWidth property" Url="html/61ffd060-ef1b-4702-64de-863cebd236ea.htm" />
+  <HelpKINode Title="Map method" Url="html/3d978408-c3e0-6b10-bf0b-cf8228cd7d83.htm" />
   <HelpKINode Title="MappableFeature class">
     <HelpKINode Title="MappableFeature Class" Url="html/cccdd04c-57df-53b2-086c-4eff7dd7f420.htm" />
     <HelpKINode Title="about MappableFeature class" Url="html/cccdd04c-57df-53b2-086c-4eff7dd7f420.htm" />
@@ -175,29 +182,14 @@
   <HelpKINode Title="MappedField.MappedField constructor" Url="html/629b9fb3-94ca-0163-6d87-3bc98b9f3388.htm" />
   <HelpKINode Title="MappedField.TextLength property" Url="html/e1ee5b89-6d4c-5c38-2cb5-a610c50f8a3a.htm" />
   <HelpKINode Title="OID property" Url="html/4c75f85a-2018-4ade-6636-cad00955c756.htm" />
-  <HelpKINode Title="OpenFeatureClass2 method" Url="html/5df8a0dd-a7f7-74c9-0d7f-ce117f0e9878.htm" />
-  <HelpKINode Title="OpenTable2 method" Url="html/fb3a0ba3-a0a4-5b6f-e821-bf84f95b4fa8.htm" />
-  <HelpKINode Title="Overlaps method" Url="html/ac6a9c14-4606-503c-f461-c7a41357e889.htm" />
-  <HelpKINode Title="PolygonColour property" Url="html/919fed5f-dc6b-a1d7-a50c-27604559683a.htm" />
-  <HelpKINode Title="Project2 method" Url="html/31c0e39f-68a3-0ae5-52c3-2ba5942186f1.htm" />
+  <HelpKINode Title="OpenFeatureClass2 method" Url="html/d7a95c97-c5ae-eed9-bdfe-196af47be77f.htm" />
+  <HelpKINode Title="OpenTable2 method" Url="html/b53a45e1-7d2a-206a-dd17-4ffcbe2f66f5.htm" />
+  <HelpKINode Title="Overlaps method" Url="html/8d15ea7a-6c1c-7c60-74bb-8854073b4611.htm" />
+  <HelpKINode Title="PolygonColour property" Url="html/fdfd7f4f-4352-54ac-25e4-e1b3d8fe6337.htm" />
+  <HelpKINode Title="Project2 method" Url="html/7f23247f-da2c-a2c2-5c01-e9d0fc541968.htm" />
   <HelpKINode Title="PropertyChanged event" Url="html/766dc1bd-914f-981d-f789-1feb95a6eabf.htm" />
   <HelpKINode Title="RaisePropertyChanged method" Url="html/58178f19-cffb-328a-fd35-827a063466cd.htm" />
-  <HelpKINode Title="Relation method" Url="html/e2334e50-c7cf-ff36-321e-05641fe1541c.htm" />
-  <HelpKINode Title="RelationalOpExt class">
-    <HelpKINode Title="RelationalOpExt Class" Url="html/ef4bf0e7-bb52-0776-7834-b234927a52c3.htm" />
-    <HelpKINode Title="about RelationalOpExt class" Url="html/ef4bf0e7-bb52-0776-7834-b234927a52c3.htm" />
-    <HelpKINode Title="methods" Url="html/a8b1c985-0003-d1f3-722a-138d22591426.htm" />
-  </HelpKINode>
-  <HelpKINode Title="RelationalOpExt.Contains method" Url="html/137c2482-901b-bdb6-0501-c264937bb53a.htm" />
-  <HelpKINode Title="RelationalOpExt.Crosses method" Url="html/31abcd41-8a41-7d2c-3ff4-a42d996987fe.htm" />
-  <HelpKINode Title="RelationalOpExt.Disjoint method" Url="html/9be36ede-8262-d5b0-28fe-6185a3f24fae.htm" />
-  <HelpKINode Title="RelationalOpExt.DistanceTo method" Url="html/b160d1f2-c20d-b3f4-19b3-a00f12489474.htm" />
-  <HelpKINode Title="RelationalOpExt.Equals2 method" Url="html/2fc9b962-e3f5-43d2-ba50-1d031cb63f8c.htm" />
-  <HelpKINode Title="RelationalOpExt.Intersects method" Url="html/15b5cf77-2d5d-a3ec-bd1a-029d4a4ff7e0.htm" />
-  <HelpKINode Title="RelationalOpExt.Overlaps method" Url="html/ac6a9c14-4606-503c-f461-c7a41357e889.htm" />
-  <HelpKINode Title="RelationalOpExt.Relation method" Url="html/e2334e50-c7cf-ff36-321e-05641fe1541c.htm" />
-  <HelpKINode Title="RelationalOpExt.Touches method" Url="html/b1777641-c04b-2450-4169-8a2d65e1a3a6.htm" />
-  <HelpKINode Title="RelationalOpExt.Within method" Url="html/fed07653-f5db-0d26-dd48-b40fd8afadbc.htm" />
+  <HelpKINode Title="Relation method" Url="html/98e15ea0-3ac9-364d-d873-b1410646bf82.htm" />
   <HelpKINode Title="Shape property" Url="html/e4361844-ad18-cace-5959-5bbfcdb4530c.htm" />
   <HelpKINode Title="TableWriter class">
     <HelpKINode Title="TableWriter Class" Url="html/951eb67a-4fa1-bab6-a18c-03266c7b645d.htm" />
@@ -207,41 +199,24 @@
   <HelpKINode Title="TableWriter.CreateFeatureClass method" Url="html/20d30a6c-26d0-ce02-91db-b13488838eb6.htm" />
   <HelpKINode Title="TableWriter.CreateTable method" Url="html/f81f2bc6-0eb6-7169-2ee8-48e5c930dfc6.htm" />
   <HelpKINode Title="Text class">
-    <HelpKINode Title="Text Class" Url="html/fe3dc97e-d2e8-83b2-9264-df5b640133a0.htm" />
-    <HelpKINode Title="about Text class" Url="html/fe3dc97e-d2e8-83b2-9264-df5b640133a0.htm" />
-    <HelpKINode Title="methods" Url="html/d8e2d8e1-84f4-3ce7-aa2f-63fa00283fd5.htm" />
+    <HelpKINode Title="Text Class" Url="html/81151b2c-3fa9-cc67-f8b2-f7673b0b4651.htm" />
+    <HelpKINode Title="about Text class" Url="html/81151b2c-3fa9-cc67-f8b2-f7673b0b4651.htm" />
+    <HelpKINode Title="methods" Url="html/d94c6753-9113-0a89-4994-ff085eaa78a9.htm" />
   </HelpKINode>
-  <HelpKINode Title="Text.ToDelimitedText method" Url="html/6e8b79de-83f5-4f3b-9464-e5f5fc7eb861.htm" />
+  <HelpKINode Title="Text.ToDelimitedText method" Url="html/9644f8f2-03eb-d4fb-f935-04ae0c2c7081.htm" />
   <HelpKINode Title="TextLength property" Url="html/e1ee5b89-6d4c-5c38-2cb5-a610c50f8a3a.htm" />
-  <HelpKINode Title="ToCSharp method" Url="html/88f89e15-3f00-095e-1a4a-33a2ce0d70d6.htm" />
-  <HelpKINode Title="ToDelimitedText method" Url="html/6e8b79de-83f5-4f3b-9464-e5f5fc7eb861.htm" />
-  <HelpKINode Title="ToJson method" Url="html/043c48c6-b343-869b-91d0-b6bb4d3722cb.htm" />
-  <HelpKINode Title="ToKml method" Url="html/c42ca110-d270-efc9-9120-1c7d1de3c317.htm" />
-  <HelpKINode Title="ToMultipoint method" Url="html/28bcad01-a5f4-4ac7-c040-ae80acf1c89d.htm" />
-  <HelpKINode Title="ToPoint method" Url="html/364c6baf-a473-ac56-e194-b8bc9b9e774d.htm" />
-  <HelpKINode Title="TopologicalOpExt class">
-    <HelpKINode Title="TopologicalOpExt Class" Url="html/fbcf60c9-8e2e-2828-ff03-2b10292b99de.htm" />
-    <HelpKINode Title="about TopologicalOpExt class" Url="html/fbcf60c9-8e2e-2828-ff03-2b10292b99de.htm" />
-    <HelpKINode Title="methods" Url="html/35e52d64-ecd1-1d6f-b879-0a203fdacf73.htm" />
-  </HelpKINode>
-  <HelpKINode Title="TopologicalOpExt.Boundary method" Url="html/c17eb2eb-77a8-0f72-09f5-f44630cdffe6.htm" />
-  <HelpKINode Title="TopologicalOpExt.Buffer method" Url="html/4b2a81a9-5411-2a8e-6ada-9f5ec103eaf4.htm" />
-  <HelpKINode Title="TopologicalOpExt.Clip method" Url="html/7dcc3c06-0fbb-1c50-6e80-eb7a8ce65fef.htm" />
-  <HelpKINode Title="TopologicalOpExt.ConvexHull method" Url="html/fc8ac539-8e98-8e78-5812-9b2f26fbdc67.htm" />
-  <HelpKINode Title="TopologicalOpExt.Copy(Of T) method" Url="html/9f8696a1-f71f-0fe7-c854-0da8b43e1e2b.htm" />
-  <HelpKINode Title="TopologicalOpExt.Copy&lt;T&gt; method" Url="html/9f8696a1-f71f-0fe7-c854-0da8b43e1e2b.htm" />
-  <HelpKINode Title="TopologicalOpExt.Difference method" Url="html/b6fcbce7-f346-9eae-1a13-5311c404cc0a.htm" />
-  <HelpKINode Title="TopologicalOpExt.Intersect method" Url="html/045e28b4-a4f0-803e-0e1c-8b500bdf7fb8.htm" />
-  <HelpKINode Title="TopologicalOpExt.Project2 method" Url="html/31c0e39f-68a3-0ae5-52c3-2ba5942186f1.htm" />
-  <HelpKINode Title="TopologicalOpExt.Union method" Url="html/e217200a-9463-cfe3-3df0-a882d9a743af.htm" />
-  <HelpKINode Title="ToPolygon method" Url="html/c9c01363-b3e2-20f2-82fe-c219ecbee9f2.htm" />
-  <HelpKINode Title="ToPolyline method" Url="html/df147d2d-5f24-1edf-ea5b-5ad14dc53672.htm" />
+  <HelpKINode Title="ToDelimitedText method" Url="html/9644f8f2-03eb-d4fb-f935-04ae0c2c7081.htm" />
+  <HelpKINode Title="ToJson method" Url="html/6df681f0-a291-62d3-3f5b-0d9d3a40c534.htm" />
+  <HelpKINode Title="ToKml method" Url="html/28bfabb1-d068-add1-ed44-089aac0b6756.htm" />
+  <HelpKINode Title="ToMultipoint method" Url="html/71e1ab52-b886-8d62-48fa-3c4a05928a1e.htm" />
+  <HelpKINode Title="ToPoint method" Url="html/54f48543-37a4-1b6f-db61-4e36f7c1734c.htm" />
+  <HelpKINode Title="ToPolygon method" Url="html/0ec2fb15-2d21-3a86-3fcf-03e4aaa29da4.htm" />
+  <HelpKINode Title="ToPolyline method" Url="html/06f2a470-2042-779d-4bb6-6e98b0146a1e.htm" />
   <HelpKINode Title="ToString method" Url="html/107275aa-6ce7-4fde-ba44-108dd0b61dc8.htm" />
-  <HelpKINode Title="Touches method" Url="html/b1777641-c04b-2450-4169-8a2d65e1a3a6.htm" />
-  <HelpKINode Title="ToVB method" Url="html/96761675-56b6-1f8b-cbd3-159252a604a6.htm" />
-  <HelpKINode Title="Union method" Url="html/e217200a-9463-cfe3-3df0-a882d9a743af.htm" />
-  <HelpKINode Title="Update(Of T) method" Url="html/8cb72cd6-31a2-4f9e-3bc5-658e3e987379.htm" />
-  <HelpKINode Title="Update&lt;T&gt; method" Url="html/8cb72cd6-31a2-4f9e-3bc5-658e3e987379.htm" />
+  <HelpKINode Title="Touches method" Url="html/3abf788c-06a3-664b-7284-384b3335bbf0.htm" />
+  <HelpKINode Title="Union method" Url="html/6349fada-ecfb-787a-233c-fa550959cafc.htm" />
+  <HelpKINode Title="Update(Of T) method" Url="html/171da588-c090-8914-eca2-9b7cfa156801.htm" />
+  <HelpKINode Title="Update&lt;T&gt; method" Url="html/171da588-c090-8914-eca2-9b7cfa156801.htm" />
   <HelpKINode Title="ValueEquals method" Url="html/787dcba7-0289-43e3-ac0e-a9d5394b10ba.htm" />
-  <HelpKINode Title="Within method" Url="html/fed07653-f5db-0d26-dd48-b40fd8afadbc.htm" />
+  <HelpKINode Title="Within method" Url="html/91e4a124-6d22-3951-aa01-edccecd9e236.htm" />
 </HelpKI>
