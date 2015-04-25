@@ -42,36 +42,54 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Earthworm.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.3.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.3.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="ESRI.ArcGIS.System, Version=10.3.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+    <Reference Include="ESRI.ArcGIS.System, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AO.cs" />
-    <Compile Include="Entity.cs" />
-    <Compile Include="IEntity.cs" />
-    <Compile Include="Json.cs" />
-    <Compile Include="Kml.cs" />
-    <Compile Include="Mapped.cs" />
-    <Compile Include="Memoization.cs" />
+    <Compile Include="AO\GeodatabaseExt.cs" />
+    <Compile Include="AO\RelationalOpExt.cs" />
+    <Compile Include="AO\TopologicalOpExt.cs" />
+    <Compile Include="FeatureMapper.cs" />
+    <Compile Include="FeatureMapperExt.cs" />
+    <Compile Include="MappableFeature.cs" />
+    <Compile Include="MappableFeatureComparer.cs" />
+    <Compile Include="MappedField.cs" />
+    <Compile Include="MappedProperty.cs" />
+    <Compile Include="MappedPropertyExt.cs" />
+    <Compile Include="Meta\CodeGenerator.cs" />
+    <Compile Include="Meta\CodeGeneratorExt.cs" />
+    <Compile Include="NotificationProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proxy.cs" />
+    <Compile Include="Serialization\IJsonGeometry.cs" />
+    <Compile Include="Serialization\Json.cs" />
+    <Compile Include="Serialization\Graphic.cs" />
+    <Compile Include="Serialization\JsonGeometry.cs" />
+    <Compile Include="Serialization\JsonMultipoint.cs" />
+    <Compile Include="Serialization\JsonPoint.cs" />
+    <Compile Include="Serialization\JsonPolygon.cs" />
+    <Compile Include="Serialization\JsonPolyline.cs" />
+    <Compile Include="Serialization\GeometrySerializer.cs" />
+    <Compile Include="Serialization\Kml.cs" />
     <Compile Include="TableWriter.cs" />
-    <Compile Include="Text.cs" />
+    <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Earthworm.snk" />
