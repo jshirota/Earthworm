@@ -67,6 +67,9 @@ namespace Earthworm
                 if (shape.rings.Length == 1 || !isInnerRing)
                     polygons.Add(new XElement(kml + "Polygon", extraElements));
 
+                if (polygons.Count == 0)
+                    throw new ArgumentException("The first ring of a polygon must be an outer ring.");
+
                 polygons.Last().Add(new XElement(kml + (isInnerRing ? "innerBoundaryIs" : "outerBoundaryIs"),
                     new XElement(kml + "LinearRing",
                         new XElement(kml + "coordinates", ring.ToCoordinates(z)))));
@@ -93,7 +96,7 @@ namespace Earthworm
             if (polygon != null)
                 return polygon.ToKmlPolygon(z, extraElements);
 
-            throw new Exception("This geometry type is not supported.");
+            throw new ArgumentException("This geometry type is not supported.", "shape");
         }
 
         #endregion
@@ -138,15 +141,15 @@ namespace Earthworm
         /// <param name="geometryElements">Any extra geometry elements (i.e. altitudeMode).</param>        
         /// <param name="placemarkElements">Any extra placemark elements (i.e. styleUrl).</param>
         /// <returns></returns>
-        public static XElement ToKml(this MappableFeature item, string name = null, double? z = null, XElement[] geometryElements = null, params XElement[] placemarkElements)
+        public static XElement ToKml(this IEntity<IGeometry> item, string name = null, double z = 0, XElement[] geometryElements = null, params XElement[] placemarkElements)
         {
             return new XElement(kml + "Placemark", new XAttribute("id", item.OID),
                        new XElement(kml + "name", name), placemarkElements,
                        new XElement(kml + "ExtendedData",
-                           from p in item.GetType().GetMappedProperties()
-                           select new XElement(kml + "Data", new XAttribute("name", p.MappedField.FieldName),
-                                      new XElement(kml + "value", item[p.MappedField.FieldName]))),
-                                          item.Shape.ToKml(z ?? 0, geometryElements));
+                           from f in item.GetFieldNames(true, true, false)
+                           select new XElement(kml + "Data", new XAttribute("name", f),
+                                      new XElement(kml + "value", item[f]))),
+                                         item.Shape.ToKml(z, geometryElements));
         }
 
         /// <summary>
@@ -156,7 +159,7 @@ namespace Earthworm
         /// <param name="name"></param>
         /// <param name="style"></param>
         /// <returns></returns>
-        public static XElement ToKml(this MappableFeature item, string name = null, KmlStyle style = null)
+        public static XElement ToKml(this IEntity<IGeometry> item, string name = null, KmlStyle style = null)
         {
             return item.ToKml(name, 0, null, style == null ? null : style.ToKml());
         }
@@ -171,11 +174,11 @@ namespace Earthworm
         /// <param name="placemarkElements">Any extra placemark elements.</param>
         /// <param name="documentElements">Any extra document elements.</param>
         /// <returns></returns>
-        public static XElement ToKml<T>(this IEnumerable<T> items, Func<T, string> name, Func<T, double?> z, Func<T, XElement[]> placemarkElements, params XElement[] documentElements) where T : MappableFeature
+        public static XElement ToKml<T>(this IEnumerable<T> items, Func<T, string> name, Func<T, double> z, Func<T, XElement[]> placemarkElements, params XElement[] documentElements) where T : IEntity<IGeometry>
         {
             return new XElement(kml + "kml",
                        new XElement(kml + "Document", documentElements,
-                           items.Select(i => i.ToKml(name == null ? null : name(i), z == null ? null : z(i), null, placemarkElements == null ? null : placemarkElements(i)))));
+                           items.Select(i => i.ToKml(name == null ? null : name(i), z == null ? 0 : z(i), null, placemarkElements == null ? null : placemarkElements(i)))));
         }
 
         /// <summary>
@@ -189,7 +192,7 @@ namespace Earthworm
         /// <param name="placemarkElements">Any extra placemark elements.</param>
         /// <param name="documentElements">Any extra document elements.</param>
         /// <returns></returns>
-        public static XElement ToKml<T>(this IEnumerable<T> items, Func<T, string> name = null, Func<T, double?> z = null, Func<T, KmlStyle> style = null, Func<T, XElement[]> placemarkElements = null, params XElement[] documentElements) where T : MappableFeature
+        public static XElement ToKml<T>(this IEnumerable<T> items, Func<T, string> name = null, Func<T, double> z = null, Func<T, KmlStyle> style = null, Func<T, XElement[]> placemarkElements = null, params XElement[] documentElements) where T : IEntity<IGeometry>
         {
             if (style == null)
                 return items.ToKml(name, z, placemarkElements, documentElements);

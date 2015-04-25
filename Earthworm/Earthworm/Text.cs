@@ -18,23 +18,22 @@ namespace Earthworm
         /// <param name="dateFormatter"></param>
         /// <param name="geometrySelector"></param>
         /// <returns></returns>
-        public static string ToDelimitedText(this MappableFeature item, string delimiter = ",", char? qualifier = '"', Func<DateTime, string> dateFormatter = null, Func<IGeometry, object> geometrySelector = null)
+        public static string ToText(this IEntity item, string delimiter = ",", char? qualifier = '"', Func<DateTime, string> dateFormatter = null, Func<IGeometry, object> geometrySelector = null)
         {
             if (string.IsNullOrEmpty(delimiter))
-                throw new Exception("The delimiter is required.");
+                throw new ArgumentException("The delimiter is required.", "delimiter");
 
             var q = qualifier.ToString();
 
             if (q != "" && delimiter.Contains(q))
-                throw new Exception("The qualifier is not valid.");
+                throw new ArgumentException("The qualifier is not valid.", "delimiter");
 
-            var values = item.ToKeyValuePairs().Select(o => o.Value).ToList();
+            var fieldNames = item.GetFieldNames(true, true, false);
 
-            if (geometrySelector != null)
-                values.Add(item.Shape);
-
-            return string.Join(delimiter, values.Select(o =>
+            return string.Join(delimiter, fieldNames.Select(n =>
             {
+                var o = item[n];
+
                 if (dateFormatter != null && o is DateTime)
                     o = dateFormatter((DateTime)o);
 

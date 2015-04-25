@@ -7,7 +7,7 @@ using ESRI.ArcGIS.Geometry;
 namespace Earthworm
 {
     /// <summary>
-    /// Provides extension methods for creating geodatabase tables from a MappableFeature type (a.k.a. "code first").
+    /// Provides extension methods for creating geodatabase tables based on the entity type (a.k.a. "code first").
     /// </summary>
     public static class TableWriter
     {
@@ -63,12 +63,11 @@ namespace Earthworm
             return field;
         }
 
-        private static IField CreateField(MappedProperty mappedProperty)
+        private static IField CreateField(Type propertyType, string fieldName, int? textLength)
         {
-            var t = mappedProperty.PropertyType;
+            var t = propertyType;
 
-            var name = mappedProperty.MappedField.FieldName;
-            var textLength = mappedProperty.MappedField.TextLength;
+            var name = fieldName;
 
             if (t == typeof(string))
                 return CreateField(name, esriFieldType.esriFieldTypeString, true, textLength);
@@ -112,7 +111,7 @@ namespace Earthworm
             if (t == typeof(Guid?))
                 return CreateField(name, esriFieldType.esriFieldTypeGUID, true, null);
 
-            throw new Exception("This property type is not supported.");
+            throw new ArgumentException(string.Format("This property type '{0}' is not supported.", propertyType.Name), "propertyType");
         }
 
         private static ITable CreateTable(object container, string name, string oidField, bool isSpatial, esriGeometryType geometryType, ISpatialReference spatialReference, List<IField> customFields)
@@ -143,24 +142,12 @@ namespace Earthworm
             if (fds != null)
                 return fds.CreateFeatureClass(name, fields, ocDesc.InstanceCLSID, ocDesc.ClassExtensionCLSID, esriFeatureType.esriFTSimple, "Shape", "") as ITable;
 
-            throw new Exception("An unexpected error has occurred.");
+            return null;
         }
 
-        private static ITable CreateTable<T>(object container, string name, bool isSpatial, esriGeometryType geometryType, ISpatialReference spatialReference, bool overwrite) where T : MappableFeature
+        private static ITable CreateTable<T>(object container, string name, bool isSpatial, esriGeometryType geometryType, ISpatialReference spatialReference) where T : IEntity
         {
-            if (overwrite)
-            {
-                var featureWorkspace = container as IFeatureWorkspace
-                    ?? ((IFeatureDataset)container).Workspace as IFeatureWorkspace;
-
-                var table = featureWorkspace.OpenTable2(name);
-
-                if (table != null)
-                    ((IDataset)table).Delete();
-            }
-
-            var fields = typeof(T).GetMappedProperties()
-                .Select(CreateField).ToList();
+            var fields = Entity.GetMappings(typeof(T)).Select(m => CreateField(m.Value.PropertyType, m.Key.FieldName, m.Key.Length)).ToList();
 
             var fieldNames = fields.Select(f => f.Name.ToUpper()).ToList();
 
@@ -178,32 +165,19 @@ namespace Earthworm
         #endregion
 
         /// <summary>
-        /// Creates a new table based on the MappableFeature type.
+        /// Creates a new table based on the entity type.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="featureWorkspace"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        public static ITable CreateTable<T>(this IFeatureWorkspace featureWorkspace, string name) where T : MappableFeature
+        public static ITable CreateTable<T>(this IFeatureWorkspace featureWorkspace, string name) where T : IEntity
         {
-            return featureWorkspace.CreateTable<T>(name, false);
+            return CreateTable<T>(featureWorkspace, name, false, esriGeometryType.esriGeometryNull, null);
         }
 
         /// <summary>
-        /// Creates a new table based on the MappableFeature type.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="featureWorkspace"></param>
-        /// <param name="name"></param>
-        /// <param name="overwrite">If set to true, the exsiting table with the same name will be deleted first.</param>
-        /// <returns></returns>
-        public static ITable CreateTable<T>(this IFeatureWorkspace featureWorkspace, string name, bool overwrite) where T : MappableFeature
-        {
-            return CreateTable<T>(featureWorkspace, name, false, esriGeometryType.esriGeometryNull, null, overwrite);
-        }
-
-        /// <summary>
-        /// Creates a new feature class based on the MappableFeature type.
+        /// Creates a new feature class based on the entity type.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="featureWorkspace"></param>
@@ -211,28 +185,13 @@ namespace Earthworm
         /// <param name="geometryType"></param>
         /// <param name="spatialReference"></param>
         /// <returns></returns>
-        public static IFeatureClass CreateFeatureClass<T>(this IFeatureWorkspace featureWorkspace, string name, esriGeometryType geometryType, ISpatialReference spatialReference) where T : MappableFeature
+        public static IFeatureClass CreateFeatureClass<T>(this IFeatureWorkspace featureWorkspace, string name, esriGeometryType geometryType, ISpatialReference spatialReference) where T : IEntity<IGeometry>
         {
-            return featureWorkspace.CreateFeatureClass<T>(name, geometryType, spatialReference, false);
+            return CreateTable<T>(featureWorkspace, name, true, geometryType, spatialReference) as IFeatureClass;
         }
 
         /// <summary>
-        /// Creates a new feature class based on the MappableFeature type.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="featureWorkspace"></param>
-        /// <param name="name"></param>
-        /// <param name="geometryType"></param>
-        /// <param name="spatialReference"></param>
-        /// <param name="overwrite">If set to true, the exsiting feature class with the same name will be deleted first.</param>
-        /// <returns></returns>
-        public static IFeatureClass CreateFeatureClass<T>(this IFeatureWorkspace featureWorkspace, string name, esriGeometryType geometryType, ISpatialReference spatialReference, bool overwrite) where T : MappableFeature
-        {
-            return CreateTable<T>(featureWorkspace, name, true, geometryType, spatialReference, overwrite) as IFeatureClass;
-        }
-
-        /// <summary>
-        /// Creates a new feature class based on the MappableFeature type.
+        /// Creates a new feature class based on the entity type.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="featureWorkspace"></param>
@@ -240,51 +199,22 @@ namespace Earthworm
         /// <param name="geometryType"></param>
         /// <param name="wkid"></param>
         /// <returns></returns>
-        public static IFeatureClass CreateFeatureClass<T>(this IFeatureWorkspace featureWorkspace, string name, esriGeometryType geometryType, int wkid) where T : MappableFeature
+        public static IFeatureClass CreateFeatureClass<T>(this IFeatureWorkspace featureWorkspace, string name, esriGeometryType geometryType, int wkid) where T : IEntity<IGeometry>
         {
-            return featureWorkspace.CreateFeatureClass<T>(name, geometryType, wkid, false);
+            return CreateTable<T>(featureWorkspace, name, true, geometryType, AO.GetSpatialReference(wkid)) as IFeatureClass;
         }
 
         /// <summary>
-        /// Creates a new feature class based on the MappableFeature type.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="featureWorkspace"></param>
-        /// <param name="name"></param>
-        /// <param name="geometryType"></param>
-        /// <param name="wkid"></param>
-        /// <param name="overwrite">If set to true, the exsiting feature class with the same name will be deleted first.</param>
-        /// <returns></returns>
-        public static IFeatureClass CreateFeatureClass<T>(this IFeatureWorkspace featureWorkspace, string name, esriGeometryType geometryType, int wkid, bool overwrite) where T : MappableFeature
-        {
-            return CreateFeatureClass<T>(featureWorkspace, name, geometryType, AO.GetSpatialReference(wkid), overwrite);
-        }
-
-        /// <summary>
-        /// Creates a new feature class based on the MappableFeature type.
+        /// Creates a new feature class based on the entity type.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="featureDataset"></param>
         /// <param name="name"></param>
         /// <param name="geometryType"></param>
         /// <returns></returns>
-        public static IFeatureClass CreateFeatureClass<T>(this IFeatureDataset featureDataset, string name, esriGeometryType geometryType) where T : MappableFeature
+        public static IFeatureClass CreateFeatureClass<T>(this IFeatureDataset featureDataset, string name, esriGeometryType geometryType) where T : IEntity<IGeometry>
         {
-            return featureDataset.CreateFeatureClass<T>(name, geometryType, false);
-        }
-
-        /// <summary>
-        /// Creates a new feature class based on the MappableFeature type.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="featureDataset"></param>
-        /// <param name="name"></param>
-        /// <param name="geometryType"></param>
-        /// <param name="overwrite">If set to true, the exsiting feature class with the same name will be deleted first.</param>
-        /// <returns></returns>
-        public static IFeatureClass CreateFeatureClass<T>(this IFeatureDataset featureDataset, string name, esriGeometryType geometryType, bool overwrite) where T : MappableFeature
-        {
-            return CreateTable<T>(featureDataset, name, true, geometryType, ((IGeoDataset)featureDataset).SpatialReference, overwrite) as IFeatureClass;
+            return CreateTable<T>(featureDataset, name, true, geometryType, ((IGeoDataset)featureDataset).SpatialReference) as IFeatureClass;
         }
     }
 }

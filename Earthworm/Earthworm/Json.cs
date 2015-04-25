@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web.Script.Serialization;
 using ESRI.ArcGIS.esriSystem;
@@ -8,12 +7,10 @@ using ESRI.ArcGIS.Geometry;
 namespace Earthworm
 {
     /// <summary>
-    /// Provides extension methods for converting features and geometries into JSON strings.
+    /// Provides extension methods for converting geometries into JSON strings.
     /// </summary>
     public static class Json
     {
-        internal static readonly DateTime BaseTime = new DateTime(1970, 1, 1, 0, 0, 0);
-
         #region Private
 
         private static T Deserialize<T>(this string json)
@@ -82,37 +79,7 @@ namespace Earthworm
             if (polygon != null)
                 return polygon.ToPolygon();
 
-            throw new Exception("This geometry type is not supported.");
-        }
-
-        internal static string ToJson(this MappableFeature item, bool includeGeometry)
-        {
-            var attributes = new Dictionary<string, object>();
-
-            if (item.IsDataBound)
-                attributes.Add(item.Table.OIDFieldName, item.OID);
-
-            foreach (var o in item.ToKeyValuePairs(p => p.MappedField.IncludeInJson))
-            {
-                var value = o.Value;
-
-                if (value != null)
-                {
-                    if (value is DateTime)
-                        value = Convert.ToInt64(((DateTime)value).Subtract(BaseTime).TotalMilliseconds);
-                    else if (value is Guid)
-                        value = ((Guid)value).ToString("B").ToUpper();
-                }
-
-                attributes.Add(o.Key, value);
-            }
-
-            var dictionary = new Dictionary<string, object> { { "attributes", attributes } };
-
-            if (includeGeometry && item.Shape != null)
-                dictionary.Add("geometry", item.Shape.ToJsonGeometry());
-
-            return Serialize(dictionary);
+            throw new ArgumentException("This geometry type is not supported.", "shape");
         }
 
         private static IGeometry Load<T>(this T shape, double[][] array)

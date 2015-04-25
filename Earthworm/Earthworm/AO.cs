@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
@@ -15,51 +12,95 @@ namespace Earthworm
     {
         #region Private
 
-        internal static IEnumerable<IRow> ReadRows(this ITable table, IQueryFilter filter)
-        {
-            var cursor = table.Search(filter, false);
-
-            try
-            {
-                IRow row;
-
-                while (true)
-                {
-                    row = cursor.NextRow();
-
-                    if (row == null)
-                        yield break;
-
-                    yield return row;
-                }
-            }
-            finally
-            {
-                while (Marshal.ReleaseComObject(cursor) != 0) { }
-            }
-        }
+        internal static readonly Func<ITable, string, int> GetFieldIndex =
+            Memoization.Memoize<ITable, string, int>((table, fieldName) => table.Fields.FindField(fieldName));
 
         internal static object GetValue(this IRow row, int fieldIndex)
         {
-            var o = row.Value[fieldIndex];
-            return o == DBNull.Value ? null : o;
+            var value = row.Value[fieldIndex];
+
+            if (value == DBNull.Value)
+            {
+                return null;
+            }
+
+            var fieldType = row.Fields.Field[fieldIndex].Type;
+
+            if (fieldType == esriFieldType.esriFieldTypeBlob)
+            {
+                var ms = (IMemoryBlobStreamVariant)value;
+                ms.ExportToVariant(out value);
+            }
+
+            else if (fieldType == esriFieldType.esriFieldTypeGUID)
+            {
+                value = new Guid((string)value);
+            }
+
+            return value;
+        }
+
+        internal static object GetValue(this IRow row, string fieldName)
+        {
+            var fieldIndex = GetFieldIndex(row.Table, fieldName);
+
+            if (fieldIndex == -1)
+                throw new MissingFieldException(string.Format("Field '{0}' does not exist in Table '{1}'.", fieldName, ((IDataset)row.Table).Name));
+
+            return row.GetValue(fieldIndex);
         }
 
         internal static void SetValue(this IRow row, int fieldIndex, object value)
         {
-            row.Value[fieldIndex] = value ?? DBNull.Value;
+            if (value == null)
+            {
+                row.Value[fieldIndex] = DBNull.Value;
+                return;
+            }
+
+            if (value is byte[])
+            {
+                var ms = (IMemoryBlobStreamVariant)new MemoryBlobStream();
+                ms.ImportFromVariant(value);
+                value = ms;
+            }
+
+            else if (value is Guid)
+            {
+                value = ((Guid)value).ToString("B").ToUpper();
+            }
+
+            row.Value[fieldIndex] = value;
         }
+
+        internal static void SetValue(this IRow row, string fieldName, object value)
+        {
+            var fieldIndex = GetFieldIndex(row.Table, fieldName);
+
+            if (fieldIndex == -1)
+                throw new MissingFieldException(string.Format("Field '{0}' does not exist in Table '{1}'.", fieldName, ((IDataset)row.Table).Name));
+
+            row.SetValue(fieldIndex, value);
+        }
+
+        internal static readonly Func<int, ISpatialReference> GetSpatialReference =
+            Memoization.Memoize<int, ISpatialReference>(wkid =>
+            {
+                var spatialReferenceEnvironment = new SpatialReferenceEnvironment();
+
+                try { return spatialReferenceEnvironment.CreateGeographicCoordinateSystem(wkid); }
+                catch { return spatialReferenceEnvironment.CreateProjectedCoordinateSystem(wkid); }
+            });
 
         #endregion
 
         /// <summary>
-        /// Encapsulates a workspace edit session (or an edit operation).  The edits will not be saved if an exception is thrown.  If the workspace is already being edited before this method is called, the edit session will not be stopped at the end of the method.
+        /// Encapsulates a workspace edit session (or an edit operation).  The session rolls back if an exception is thrown.  If the workspace is already being edited before this method is called, the edit session will not be stopped at the end of the method.
         /// </summary>
         /// <param name="workspace">The workspace in which edits are performed.</param>
         /// <param name="action">The editing action.</param>
-        /// <param name="exception">Any exception that may be thrown within the edit session.</param>
         /// <returns></returns>
-        public static bool Edit(this IWorkspace workspace, Action action, out Exception exception)
+        public static void Edit(this IWorkspace workspace, Action action)
         {
             var workspaceEdit = (IWorkspaceEdit)workspace;
 
@@ -78,56 +119,17 @@ namespace Earthworm
                 workspaceEdit.StopEditOperation();
 
                 success = true;
-                exception = null;
             }
-            catch (Exception ex)
+            catch
             {
                 workspaceEdit.AbortEditOperation();
-                exception = ex;
+                throw;
             }
             finally
             {
                 if (workspaceEdit.IsBeingEdited() && !isBeingEditedAtStart)
                     workspaceEdit.StopEditing(success);
             }
-
-            return success;
-        }
-
-        /// <summary>
-        /// Encapsulates a workspace edit session (or an edit operation).  The edits will not be saved if an exception is thrown.  If the workspace is already being edited before this method is called, the edit session will not be stopped at the end of the method.
-        /// </summary>
-        /// <param name="workspace">The workspace in which edits are performed.</param>
-        /// <param name="action">The editing action.</param>
-        /// <returns></returns>
-        public static bool Edit(this IWorkspace workspace, Action action)
-        {
-            Exception ex;
-            return workspace.Edit(action, out ex);
-        }
-
-        /// <summary>
-        /// Opens an existing table.  If the table with the specified name does not exist, returns null.
-        /// </summary>
-        /// <param name="featureWorkspace"></param>
-        /// <param name="tableName"></param>
-        /// <returns></returns>
-        public static ITable OpenTable2(this IFeatureWorkspace featureWorkspace, string tableName)
-        {
-            try { return featureWorkspace.OpenTable(tableName); }
-            catch { return null; }
-        }
-
-        /// <summary>
-        /// Opens an existing feature class.  If the feature class with the specified name does not exist, returns null.
-        /// </summary>
-        /// <param name="featureWorkspace"></param>
-        /// <param name="featureClassName"></param>
-        /// <returns></returns>
-        public static IFeatureClass OpenFeatureClass2(this IFeatureWorkspace featureWorkspace, string featureClassName)
-        {
-            try { return featureWorkspace.OpenFeatureClass(featureClassName); }
-            catch { return null; }
         }
 
         /// <summary>
@@ -268,35 +270,6 @@ namespace Earthworm
             return ((IProximityOperator)shape).ReturnDistance(comparisonShape);
         }
 
-        private static readonly ConcurrentDictionary<int, ISpatialReference> WkidToSpatialReference = new ConcurrentDictionary<int, ISpatialReference>();
-
-        #region Private
-
-        internal static ISpatialReference GetSpatialReference(int wkid)
-        {
-            return WkidToSpatialReference.GetOrAdd(wkid, n =>
-            {
-                var spatialReferenceEnvironment = new SpatialReferenceEnvironment();
-
-                try { return spatialReferenceEnvironment.CreateGeographicCoordinateSystem(wkid); }
-                catch { return spatialReferenceEnvironment.CreateProjectedCoordinateSystem(wkid); }
-            });
-        }
-
-        internal static ISpatialReference GetSpatialReference(string wkt)
-        {
-            var spatialReferenceEnvironment = new SpatialReferenceEnvironment();
-
-            ISpatialReference spatialReference;
-            int n;
-
-            spatialReferenceEnvironment.CreateESRISpatialReference(wkt, out spatialReference, out n);
-
-            return spatialReference;
-        }
-
-        #endregion
-
         /// <summary>
         /// Returns a buffered shape.
         /// </summary>
@@ -304,14 +277,14 @@ namespace Earthworm
         /// <param name="distance">The distance in the map unit of the current geometry.</param>
         /// <param name="autoDensify">If set to true, the resulting polygon is densified.  Use this to convert a circle to a polygon with vertices.</param>
         /// <returns></returns>
-        public static IGeometry Buffer(this IGeometry shape, double distance, bool autoDensify)
+        public static IPolygon Buffer(this IGeometry shape, double distance, bool autoDensify)
         {
             var result = ((ITopologicalOperator)shape).Buffer(distance);
 
             if (autoDensify)
                 ((IPolygon)result).Densify(-1, -1);
 
-            return result;
+            return (IPolygon)result;
         }
 
         /// <summary>
@@ -320,7 +293,7 @@ namespace Earthworm
         /// <param name="shape">The current geometry.</param>
         /// <param name="distance">The distance in the map unit of the current geometry.</param>
         /// <returns></returns>
-        public static IGeometry Buffer(this IGeometry shape, double distance)
+        public static IPolygon Buffer(this IGeometry shape, double distance)
         {
             return shape.Buffer(distance, false);
         }
@@ -333,7 +306,7 @@ namespace Earthworm
         /// <param name="spatialReference">The spatial reference in which the distance is calculated.</param>
         /// <param name="autoDensify">If set to true, the resulting polygon is densified.  Use this to convert a circle to a polygon with vertices.</param>
         /// <returns></returns>
-        public static IGeometry Buffer(this IGeometry shape, double distance, ISpatialReference spatialReference, bool autoDensify)
+        public static IPolygon Buffer(this IGeometry shape, double distance, ISpatialReference spatialReference, bool autoDensify)
         {
             var originalSpatialReference = shape.SpatialReference;
             return shape.Project2(spatialReference).Buffer(distance, autoDensify).Project2(originalSpatialReference);
@@ -347,7 +320,7 @@ namespace Earthworm
         /// <param name="wkid">The well-known ID of the spatial reference in which the distance is calculated.</param>
         /// <param name="autoDensify">If set to true, the resulting polygon is densified.  Use this to convert a circle to a polygon with vertices.</param>
         /// <returns></returns>
-        public static IGeometry Buffer(this IGeometry shape, double distance, int wkid, bool autoDensify)
+        public static IPolygon Buffer(this IGeometry shape, double distance, int wkid, bool autoDensify)
         {
             var spatialReference = GetSpatialReference(wkid);
             return shape.Buffer(distance, spatialReference, autoDensify);
