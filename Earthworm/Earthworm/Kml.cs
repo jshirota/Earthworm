@@ -110,7 +110,7 @@ namespace Earthworm
         /// <returns></returns>
         public static XElement ToKml(this IGeometry shape, double z = 0, params XElement[] extraElements)
         {
-            return shape.ToJsonGeometry().ToKml(z, extraElements);
+            return (shape != null && shape.SpatialReference != null ? shape.Project2(4326) : shape).ToJsonGeometry().ToKml(z, extraElements);
         }
 
         /// <summary>
@@ -147,8 +147,9 @@ namespace Earthworm
                        new XElement(kml + "name", name), placemarkElements,
                        new XElement(kml + "ExtendedData",
                            from f in item.GetFieldNames(true, true, false)
+                           let o = item[f]
                            select new XElement(kml + "Data", new XAttribute("name", f),
-                                      new XElement(kml + "value", item[f]))),
+                                      new XElement(kml + "value", o is DateTime ? ((DateTime)o).ToString("o") : o))),
                                          item.Shape.ToKml(z, geometryElements));
         }
 

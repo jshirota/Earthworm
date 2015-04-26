@@ -28,13 +28,15 @@ namespace Earthworm
             if (q != "" && delimiter.Contains(q))
                 throw new ArgumentException("The qualifier is not valid.", "delimiter");
 
+            dateFormatter = dateFormatter ?? (d => d.ToString("o"));
+
             var fieldNames = item.GetFieldNames(true, true, false);
 
             return string.Join(delimiter, fieldNames.Select(n =>
             {
                 var o = item[n];
 
-                if (dateFormatter != null && o is DateTime)
+                if (o is DateTime)
                     o = dateFormatter((DateTime)o);
 
                 if (geometrySelector != null && o is IGeometry)
