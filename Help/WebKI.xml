@@ -85,7 +85,7 @@
   <HelpKINode Title="Entity.Create&lt;T&gt; method" Url="html/65e0742f-2c11-823e-e372-069c9cecf82f.htm" />
   <HelpKINode Title="Entity.Delete method" Url="html/3bfe0151-c05f-ebda-b472-1fb33dd4d221.htm" />
   <HelpKINode Title="Entity.Entity constructor" Url="html/dcb6ffa4-d0f6-e32f-50d0-6c827d8e89db.htm" />
-  <HelpKINode Title="Entity.GetFieldNames method" Url="html/a8d5b99d-d247-b461-868f-30cb1d98893d.htm" />
+  <HelpKINode Title="Entity.GetFieldNames method" Url="html/9e33480a-296b-8172-a119-5916a171cfaf.htm" />
   <HelpKINode Title="Entity.InsertInto method" Url="html/72f43072-95af-c09e-8ce0-c835626d708b.htm" />
   <HelpKINode Title="Entity.IsDataBound property" Url="html/074b8b8f-a6d8-6cd0-1982-ee4996c24f63.htm" />
   <HelpKINode Title="Entity.IsDirty property" Url="html/de5331ad-1715-88d4-1c13-7eb2f96e73fa.htm" />
@@ -119,8 +119,8 @@
   <HelpKINode Title="FindItemByOID method" Url="html/dee9a390-ce95-7439-5009-5b3a1e4d91c8.htm" />
   <HelpKINode Title="GetFieldName property" Url="html/bf58da6d-dd33-4bb3-8600-63b9fcdd953e.htm" />
   <HelpKINode Title="GetFieldNames method">
-    <HelpKINode Title="Entity.GetFieldNames Method " Url="html/a8d5b99d-d247-b461-868f-30cb1d98893d.htm" />
-    <HelpKINode Title="IEntity.GetFieldNames Method " Url="html/939c8784-95d8-8f59-3229-a869c776d234.htm" />
+    <HelpKINode Title="Entity.GetFieldNames Method " Url="html/9e33480a-296b-8172-a119-5916a171cfaf.htm" />
+    <HelpKINode Title="IEntity.GetFieldNames Method " Url="html/95758ade-a27c-89a2-e87d-e079974a4c98.htm" />
   </HelpKINode>
   <HelpKINode Title="GetHashCode method" Url="html/4e127d80-013f-383a-5a0a-f3d7e563ab2d.htm" />
   <HelpKINode Title="IconColour property" Url="html/9d96ae6a-fa4b-df2f-c281-c9e27c9ab56c.htm" />
@@ -141,7 +141,7 @@
   <HelpKINode Title="IEntity(Of T).InsertInto method" Url="html/d1d84543-e69b-c686-c6aa-f5046f794f42.htm" />
   <HelpKINode Title="IEntity(Of T).Shape property" Url="html/b22867eb-306c-0776-fa4f-b79a4a4011fa.htm" />
   <HelpKINode Title="IEntity.Delete method" Url="html/78cee4f2-63b6-e115-683e-a2590d2e9b51.htm" />
-  <HelpKINode Title="IEntity.GetFieldNames method" Url="html/939c8784-95d8-8f59-3229-a869c776d234.htm" />
+  <HelpKINode Title="IEntity.GetFieldNames method" Url="html/95758ade-a27c-89a2-e87d-e079974a4c98.htm" />
   <HelpKINode Title="IEntity.InsertInto method" Url="html/497c4883-cf5b-7385-3611-51756465f48c.htm" />
   <HelpKINode Title="IEntity.IsDataBound property" Url="html/4a41b2e8-3241-4d6e-2cd3-49568a8236db.htm" />
   <HelpKINode Title="IEntity.IsDirty property" Url="html/28a23692-4932-7098-85f8-3618f602d2fa.htm" />
@@ -251,14 +251,14 @@
     <HelpKINode Title="about Text class" Url="html/81151b2c-3fa9-cc67-f8b2-f7673b0b4651.htm" />
     <HelpKINode Title="methods" Url="html/d94c6753-9113-0a89-4994-ff085eaa78a9.htm" />
   </HelpKINode>
-  <HelpKINode Title="Text.ToText method" Url="html/e1c68977-7065-c188-df84-6f80733ed68d.htm" />
+  <HelpKINode Title="Text.ToText method" Url="html/cea34a3b-0e78-bd0a-9a78-a5df73c0a7b6.htm" />
   <HelpKINode Title="ToJson method" Url="html/6df681f0-a291-62d3-3f5b-0d9d3a40c534.htm" />
   <HelpKINode Title="ToKml method" Url="html/28bfabb1-d068-add1-ed44-089aac0b6756.htm" />
   <HelpKINode Title="ToMultipoint method" Url="html/71e1ab52-b886-8d62-48fa-3c4a05928a1e.htm" />
   <HelpKINode Title="ToPoint method" Url="html/54f48543-37a4-1b6f-db61-4e36f7c1734c.htm" />
   <HelpKINode Title="ToPolygon method" Url="html/0ec2fb15-2d21-3a86-3fcf-03e4aaa29da4.htm" />
   <HelpKINode Title="ToPolyline method" Url="html/06f2a470-2042-779d-4bb6-6e98b0146a1e.htm" />
-  <HelpKINode Title="ToText method" Url="html/e1c68977-7065-c188-df84-6f80733ed68d.htm" />
+  <HelpKINode Title="ToText method" Url="html/cea34a3b-0e78-bd0a-9a78-a5df73c0a7b6.htm" />
   <HelpKINode Title="Touches method" Url="html/3abf788c-06a3-664b-7284-384b3335bbf0.htm" />
   <HelpKINode Title="Union method" Url="html/6349fada-ecfb-787a-233c-fa550959cafc.htm" />
   <HelpKINode Title="Update method">
