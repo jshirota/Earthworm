@@ -139,11 +139,10 @@ namespace Earthworm
             return new XElement(kml + "Placemark", new XAttribute("id", item.OID),
                        new XElement(kml + "name", name), placemarkElements,
                        new XElement(kml + "ExtendedData",
-                           from f in item.GetFieldNames(true, true, false)
+                           from f in item.GetFieldNames(true, true)
                            let o = item[f]
-                           where !(o is byte[])
                            select new XElement(kml + "Data", new XAttribute("name", f),
-                                      new XElement(kml + "value", o is DateTime ? ((DateTime)o).ToString("o") : o))),
+                                      new XElement(kml + "value", o is byte[] ? "" : (o is DateTime ? ((DateTime)o).ToString("o") : o)))),
                                          item.Shape.ToKml(z, geometryElements));
         }
 

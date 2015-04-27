@@ -9,15 +9,7 @@ namespace Earthworm
     /// </summary>
     public static class Text
     {
-        /// <summary>
-        /// Converts the feature attributes to delimiter-separated values (i.e. CSV).
-        /// </summary>
-        /// <param name="item"></param>
-        /// <param name="delimiter"></param>
-        /// <param name="qualifier"></param>
-        /// <param name="geometrySelector"></param>
-        /// <returns></returns>
-        public static string ToText(this IEntity item, string delimiter = ",", char? qualifier = '"', Func<IGeometry, object> geometrySelector = null)
+        private static string ToDelimitedText(this IEntity item, string delimiter = ",", char? qualifier = '"', Func<IGeometry, object> geometrySelector = null)
         {
             if (string.IsNullOrEmpty(delimiter))
                 throw new ArgumentException("The delimiter is required.", "delimiter");
@@ -27,21 +19,53 @@ namespace Earthworm
             if (q != "" && delimiter.Contains(q))
                 throw new ArgumentException("The qualifier is not valid.", "delimiter");
 
-            var fieldNames = item.GetFieldNames(true, true, false);
+            var fieldNames = item.GetFieldNames(true, true);
 
-            return string.Join(delimiter, fieldNames.Select(n => item[n]).Where(o => !(o is byte[])).Select(o =>
+            var values = fieldNames.Select(n => item[n]).ToList();
+
+            if (geometrySelector != null)
+                values.Add(geometrySelector(((dynamic)item).Shape));
+
+            return string.Join(delimiter, values.Select(o =>
             {
-                if (o is DateTime)
-                    o = ((DateTime)o).ToString("o");
+                if (o is byte[])
+                    o = "";
 
-                if (geometrySelector != null && o is IGeometry)
-                    o = geometrySelector((IGeometry)o);
+                else if (o is DateTime)
+                    o = ((DateTime)o).ToString("o");
 
                 if (q == "")
                     return o;
 
                 return qualifier + (o ?? "").ToString().Replace(q, q + q) + q;
             }));
+        }
+
+        /// <summary>
+        /// Converts the feature attributes to delimiter-separated values (i.e. CSV).
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="item"></param>
+        /// <param name="delimiter"></param>
+        /// <param name="qualifier"></param>
+        /// <param name="geometrySelector"></param>
+        /// <returns></returns>
+        public static string ToText<T>(this IEntity<T> item, string delimiter = ",", char? qualifier = '"',
+            Func<T, object> geometrySelector = null) where T : IGeometry
+        {
+            return item.ToDelimitedText(delimiter, qualifier, geometrySelector == null ? (Func<IGeometry, object>)null : g => geometrySelector((T)g));
+        }
+
+        /// <summary>
+        /// Converts the feature attributes to delimiter-separated values (i.e. CSV).
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="delimiter"></param>
+        /// <param name="qualifier"></param>
+        /// <returns></returns>
+        public static string ToText(this IEntity item, string delimiter = ",", char? qualifier = '"')
+        {
+            return item.ToDelimitedText(delimiter, qualifier);
         }
     }
 }

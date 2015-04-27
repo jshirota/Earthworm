@@ -29,9 +29,8 @@ namespace Earthworm
         /// </summary>
         /// <param name="includeOID"></param>
         /// <param name="includeGlobalID"></param>
-        /// <param name="includeBlob"></param>
         /// <returns></returns>
-        IEnumerable<string> GetFieldNames(bool includeOID, bool includeGlobalID, bool includeBlob);
+        IEnumerable<string> GetFieldNames(bool includeOID, bool includeGlobalID);
 
         /// <summary>
         /// Gets or sets a field value based on the field name.

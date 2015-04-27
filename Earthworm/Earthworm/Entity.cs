@@ -13,7 +13,7 @@ namespace Earthworm
     /// <summary>
     /// The base class for entities that database rows can be mapped to.
     /// </summary>
-    public abstract class Entity : IEntity, INotifyPropertyChanged
+    public class Entity : IEntity, INotifyPropertyChanged
     {
         private readonly Dictionary<string, object> _temporaryStorage = new Dictionary<string, object>();
         internal IGeometry TemporaryShape;
@@ -85,9 +85,8 @@ namespace Earthworm
         /// </summary>
         /// <param name="includeOID"></param>
         /// <param name="includeGlobalID"></param>
-        /// <param name="includeBlob"></param>
         /// <returns></returns>
-        public IEnumerable<string> GetFieldNames(bool includeOID, bool includeGlobalID, bool includeBlob)
+        public IEnumerable<string> GetFieldNames(bool includeOID, bool includeGlobalID)
         {
             if (!IsDataBound)
                 return _mappings.Keys.Concat(_temporaryStorage.Keys).Distinct();
@@ -96,7 +95,6 @@ namespace Earthworm
                 .Select(i => Row.Fields.Field[i])
                 .Where(f => includeOID || f.Type != esriFieldType.esriFieldTypeOID)
                 .Where(f => includeGlobalID || f.Type != esriFieldType.esriFieldTypeGlobalID)
-                .Where(f => includeBlob || f.Type != esriFieldType.esriFieldTypeBlob)
                 .Where(f => f.Type != esriFieldType.esriFieldTypeGeometry)
                 .Where(f => f.Type != esriFieldType.esriFieldTypeRaster)
                 .Where(f => f.Type != esriFieldType.esriFieldTypeXML)
@@ -164,7 +162,7 @@ namespace Earthworm
         {
             var row = (IRow)rowBuffer;
 
-            foreach (var fieldName in GetFieldNames(false, false, true))
+            foreach (var fieldName in GetFieldNames(false, false))
             {
                 var fieldIndex = AO.GetFieldIndex(row.Table, fieldName);
 
@@ -241,7 +239,7 @@ namespace Earthworm
 
             _temporaryStorage.Add(Row.Table.OIDFieldName, -1);
 
-            foreach (var fieldName in GetFieldNames(false, false, true))
+            foreach (var fieldName in GetFieldNames(false, false))
                 _temporaryStorage.Add(fieldName, this[fieldName]);
 
             if (HasShape)
@@ -292,7 +290,7 @@ namespace Earthworm
     /// The interface for entities that database rows can be mapped to.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class Entity<T> : Entity, IEntity<T> where T : class, IGeometry
+    public class Entity<T> : Entity, IEntity<T> where T : class, IGeometry
     {
         /// <summary>
         /// Initializes a new instance of the Entity class.
