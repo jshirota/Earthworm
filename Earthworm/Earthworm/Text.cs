@@ -15,10 +15,9 @@ namespace Earthworm
         /// <param name="item"></param>
         /// <param name="delimiter"></param>
         /// <param name="qualifier"></param>
-        /// <param name="dateFormatter"></param>
         /// <param name="geometrySelector"></param>
         /// <returns></returns>
-        public static string ToText(this IEntity item, string delimiter = ",", char? qualifier = '"', Func<DateTime, string> dateFormatter = null, Func<IGeometry, object> geometrySelector = null)
+        public static string ToText(this IEntity item, string delimiter = ",", char? qualifier = '"', Func<IGeometry, object> geometrySelector = null)
         {
             if (string.IsNullOrEmpty(delimiter))
                 throw new ArgumentException("The delimiter is required.", "delimiter");
@@ -28,16 +27,12 @@ namespace Earthworm
             if (q != "" && delimiter.Contains(q))
                 throw new ArgumentException("The qualifier is not valid.", "delimiter");
 
-            dateFormatter = dateFormatter ?? (d => d.ToString("o"));
-
             var fieldNames = item.GetFieldNames(true, true, false);
 
-            return string.Join(delimiter, fieldNames.Select(n =>
+            return string.Join(delimiter, fieldNames.Select(n => item[n]).Where(o => !(o is byte[])).Select(o =>
             {
-                var o = item[n];
-
                 if (o is DateTime)
-                    o = dateFormatter((DateTime)o);
+                    o = ((DateTime)o).ToString("o");
 
                 if (geometrySelector != null && o is IGeometry)
                     o = geometrySelector((IGeometry)o);

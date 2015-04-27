@@ -90,7 +90,7 @@ namespace Earthworm
         public IEnumerable<string> GetFieldNames(bool includeOID, bool includeGlobalID, bool includeBlob)
         {
             if (!IsDataBound)
-                return _mappings.Keys;
+                return _mappings.Keys.Concat(_temporaryStorage.Keys).Distinct();
 
             return Enumerable.Range(0, Row.Fields.FieldCount)
                 .Select(i => Row.Fields.Field[i])

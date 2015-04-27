@@ -15,19 +15,9 @@ namespace Earthworm
 
         #region Private
 
-        private static string ToCoordinates(this JsonPoint shape, double z)
+        private static string ToString(this double[][] coordinates, double z)
         {
-            return shape.x + "," + shape.y + "," + z;
-        }
-
-        private static string ToCoordinates(this double[] coordinates, double z)
-        {
-            return coordinates[0] + "," + coordinates[1] + "," + z;
-        }
-
-        private static string ToCoordinates(this double[][] coordinates, double z)
-        {
-            return string.Join(" ", coordinates.Select(c => c.ToCoordinates(z)));
+            return string.Join(" ", coordinates.Select(c => c[0] + "," + c[1] + "," + z));
         }
 
         private static bool IsInnerRing(double[][] ring)
@@ -36,35 +26,35 @@ namespace Earthworm
                 .Sum(i => ring[i][0] * ring[i + 1][1] - ring[i + 1][0] * ring[i][1]) > 0;
         }
 
-        private static XElement ToKmlPoint(this JsonPoint shape, double z, params XElement[] extraElements)
+        private static XElement ToKmlPoint(this JsonPoint point, double z, params XElement[] extraElements)
         {
             return new XElement(kml + "Point", extraElements,
-                new XElement(kml + "coordinates", shape.ToCoordinates(z)));
+                new XElement(kml + "coordinates", point.x + "," + point.y + "," + z));
         }
 
-        private static XElement ToKmlMultipoint(this JsonMultipoint shape, double z, params XElement[] extraElements)
+        private static XElement ToKmlMultipoint(this JsonMultipoint multipoint, double z, params XElement[] extraElements)
         {
             return new XElement(kml + "MultiGeometry",
-                shape.points.Select(p => new JsonPoint { x = p[0], y = p[1] }.ToKmlPoint(z, extraElements)));
+                multipoint.points.Select(p => new JsonPoint { x = p[0], y = p[1] }.ToKmlPoint(z, extraElements)));
         }
 
-        private static XElement ToKmlPolyline(this JsonPolyline shape, double z, params XElement[] extraElements)
+        private static XElement ToKmlPolyline(this JsonPolyline polyline, double z, params XElement[] extraElements)
         {
             return new XElement(kml + "MultiGeometry",
-                shape.paths.Select(p =>
+                polyline.paths.Select(p =>
                     new XElement(kml + "LineString", extraElements,
-                        new XElement(kml + "coordinates", p.ToCoordinates(z)))));
+                        new XElement(kml + "coordinates", p.ToString(z)))));
         }
 
-        private static XElement ToKmlPolygon(this JsonPolygon shape, double z, params XElement[] extraElements)
+        private static XElement ToKmlPolygon(this JsonPolygon polygon, double z, params XElement[] extraElements)
         {
             var polygons = new List<XElement>();
 
-            foreach (var ring in shape.rings)
+            foreach (var ring in polygon.rings)
             {
                 var isInnerRing = IsInnerRing(ring);
 
-                if (shape.rings.Length == 1 || !isInnerRing)
+                if (polygon.rings.Length == 1 || !isInnerRing)
                     polygons.Add(new XElement(kml + "Polygon", extraElements));
 
                 if (polygons.Count == 0)
@@ -72,7 +62,7 @@ namespace Earthworm
 
                 polygons.Last().Add(new XElement(kml + (isInnerRing ? "innerBoundaryIs" : "outerBoundaryIs"),
                     new XElement(kml + "LinearRing",
-                        new XElement(kml + "coordinates", ring.ToCoordinates(z)))));
+                        new XElement(kml + "coordinates", ring.ToString(z)))));
             }
 
             return new XElement(kml + "MultiGeometry", polygons);
@@ -110,7 +100,10 @@ namespace Earthworm
         /// <returns></returns>
         public static XElement ToKml(this IGeometry shape, double z = 0, params XElement[] extraElements)
         {
-            return (shape != null && shape.SpatialReference != null ? shape.Project2(4326) : shape).ToJsonGeometry().ToKml(z, extraElements);
+            if (shape == null)
+                return null;
+
+            return (shape.SpatialReference != null ? shape.Project2(4326) : shape).ToJsonGeometry().ToKml(z, extraElements);
         }
 
         /// <summary>
@@ -148,6 +141,7 @@ namespace Earthworm
                        new XElement(kml + "ExtendedData",
                            from f in item.GetFieldNames(true, true, false)
                            let o = item[f]
+                           where !(o is byte[])
                            select new XElement(kml + "Data", new XAttribute("name", f),
                                       new XElement(kml + "value", o is DateTime ? ((DateTime)o).ToString("o") : o))),
                                          item.Shape.ToKml(z, geometryElements));
