@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder" version="2014.11.22.0" projectFile="D:\GitHub\Earthworm\trunk\Earthworm\EarthwormReference\EarthwormReference.shfbproj" started="4/27/2015 9:11:05 AM">
+<shfbBuild product="Sandcastle Help File Builder" version="2014.11.22.0" projectFile="D:\GitHub\Earthworm\trunk\Earthworm\EarthwormReference\EarthwormReference.shfbproj" started="4/27/2015 12:53:42 PM">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
@@ -25,16 +25,16 @@ Copying XML comments files
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
-    Last step completed in 00:00:00.0040
+    Last step completed in 00:00:00.0430
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0010
+    Last step completed in 00:00:00.0040
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
 [C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe]
-Build started 4/27/2015 9:11:06 AM.
+Build started 4/27/2015 12:53:46 PM.
 Project &quot;D:\GitHub\Earthworm\branches\gh-pages\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
 PrepareForBuild:
   Creating directory &quot;obj\Debug\&quot;.
@@ -53,13 +53,13 @@ Done Building Project &quot;D:\GitHub\Earthworm\branches\gh-pages\Help\Working\G
 
 Build succeeded.
 
-Time Elapsed 00:00:00.78
-    Last step completed in 00:00:00.9181
+Time Elapsed 00:00:01.00
+    Last step completed in 00:00:01.2471
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
 [C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe]
-Build started 4/27/2015 9:11:07 AM.
+Build started 4/27/2015 12:53:48 PM.
 Project &quot;D:\GitHub\Earthworm\branches\gh-pages\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
 TransformManifest:
   XslTransform (v2014.11.22.0)
@@ -79,17 +79,17 @@ Done Building Project &quot;D:\GitHub\Earthworm\branches\gh-pages\Help\Working\T
 
 Build succeeded.
 
-Time Elapsed 00:00:00.47
-    Last step completed in 00:00:00.6641
+Time Elapsed 00:00:02.44
+    Last step completed in 00:00:02.5993
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.7061
+    Last step completed in 00:00:00.4040
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
 No additional content to copy
-    Last step completed in 00:00:00.0010
+    Last step completed in 00:00:00.0030
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
@@ -98,7 +98,7 @@ Merging conceptual and additional tables of contents...
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
 [C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe]
-Build started 4/27/2015 9:11:09 AM.
+Build started 4/27/2015 12:53:51 PM.
 Project &quot;D:\GitHub\Earthworm\branches\gh-pages\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
 GenerateIntermediateTOC:
   XslTransform (v2014.11.22.0)
@@ -109,24 +109,24 @@ Done Building Project &quot;D:\GitHub\Earthworm\branches\gh-pages\Help\Working\G
 
 Build succeeded.
 
-Time Elapsed 00:00:00.11
+Time Elapsed 00:00:00.14
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00.2120
+    Last step completed in 00:00:00.2530
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
-    Last step completed in 00:00:00.2590
+    Last step completed in 00:00:00.6371
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 D:\GitHub\Earthworm\branches\gh-pages\Help\Working\sandcastle.config
-    Last step completed in 00:00:00.8101
+    Last step completed in 00:00:00.2840
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
 [C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe]
-Build started 4/27/2015 9:11:10 AM.
+Build started 4/27/2015 12:53:52 PM.
 Project &quot;D:\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
 BuildReferenceTopics:
   BuildAssembler (v2014.11.22.0)
@@ -225,66 +225,66 @@ BuildReferenceTopics:
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\Microsoft.VisualBasic.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\Microsoft.Win32.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.CodeDom.Compiler.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Collections.ObjectModel.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Collections.Specialized.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Collections.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.ComponentModel.Design.Serialization.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.ComponentModel.Design.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.ComponentModel.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Configuration.Provider.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.CodeDom.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Configuration.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Data.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Diagnostics.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Drawing.Design.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.CodeDom.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Globalization.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.IO.Compression.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.IO.Ports.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Linq.Expressions.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.IO.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Media.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.Cache.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.Configuration.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.IO.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.Mail.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.Security.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.Sockets.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Collections.Concurrent.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.Configuration.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.Mail.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.Mime.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.NetworkInformation.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.ComponentModel.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Reflection.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Runtime.CompilerServices.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Collections.Generic.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Runtime.InteropServices.ComTypes.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Linq.Expressions.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.Security.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Runtime.InteropServices.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Runtime.Serialization.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Authentication.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Cryptography.X509Certificates.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Runtime.Versioning.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.AccessControl.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Cryptography.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Principal.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Collections.Generic.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Net.Sockets.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Resources.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Permissions.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Policy.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Cryptography.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Runtime.Versioning.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.ServiceProcess.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.AccessControl.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Text.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Principal.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Text.RegularExpressions.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Threading.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Web.Configuration.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Runtime.CompilerServices.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Web.UI.WebControls.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Authentication.ExtendedProtection.Configuration.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Authentication.ExtendedProtection.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Text.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Web.UI.WebControls.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Authentication.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Windows.Forms.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Configuration.Provider.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Configuration.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Xml.Linq.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Timers.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Xml.XPath.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Permissions.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Xml.Schema.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Security.Policy.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Xml.Serialization.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Xml.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Timers.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Collections.ObjectModel.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Xml.XPath.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Collections.Specialized.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Collections.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Xml.Linq.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Xml.Schema.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Web.UI.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Xml.Serialization.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\Reflection\System.Web.xml
   ResolveReferenceLinksComponent: Loading Local reference link type targets
   ResolveReferenceLinksComponent: Indexing targets in D:\GitHub\Earthworm\branches\gh-pages\Help\Working\reflection.xml
@@ -561,14 +561,14 @@ Done Building Project &quot;D:\GitHub\Earthworm\branches\gh-pages\Help\Working\B
 
 Build succeeded.
 
-Time Elapsed 00:00:09.92
-    Last step completed in 00:00:10.0520
+Time Elapsed 00:00:19.18
+    Last step completed in 00:00:19.3059
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
 
 Clearing any prior web output
-    Last step completed in 00:00:00.0020
+    Last step completed in 00:00:00.0010
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -584,7 +584,7 @@ Processed 138 HTML files
 Sorting keywords and generating See Also indices
 Saving website keyword index to D:\GitHub\Earthworm\branches\gh-pages\Help\Working\WebKI.xml
 Saving website table of contents to D:\GitHub\Earthworm\branches\gh-pages\Help\Working\WebTOC.xml
-    Last step completed in 00:00:00.2330
+    Last step completed in 00:00:00.3180
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
@@ -674,7 +674,7 @@ C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyle
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\..\LegacyWeb\TOC.css -&gt; D:\GitHub\Earthworm\branches\gh-pages\Help\Working\Output\Website\TOC.css
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\..\LegacyWeb\TOC.js -&gt; D:\GitHub\Earthworm\branches\gh-pages\Help\Working\Output\Website\TOC.js
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\..\LegacyWeb\Web.Config -&gt; D:\GitHub\Earthworm\branches\gh-pages\Help\Working\Output\Website\Web.Config
-    Last step completed in 00:00:00.4120
+    Last step completed in 00:00:01.0541
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
@@ -683,7 +683,7 @@ Generating website table of contents file...
 <buildStep step="GenerateFullTextIndex">
 Generating full-text index for the website...
 
-    Last step completed in 00:00:00.3450
+    Last step completed in 00:00:00.3460
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
@@ -691,15 +691,15 @@ Copying website files to output folder...
 Copied 100 files
 Copied 200 files
 Copied 249 files for the website content
-    Last step completed in 00:00:00.3130
+    Last step completed in 00:00:00.4030
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00.1330
+    Last step completed in 00:00:00.5351
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 4/27/2015 9:11:21 AM.  Total time: 00:00:16.3536
+Build completed successfully at 4/27/2015 12:54:14 PM.  Total time: 00:00:31.2331
 
 </buildStep>
 </shfbBuild>
