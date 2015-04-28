@@ -180,7 +180,12 @@ namespace Earthworm
                 var feature = row as IFeature;
 
                 if (feature != null)
-                    feature.Shape = ((dynamic)this).Shape;
+                {
+                    var entity = this as IEntity<IGeometry>;
+
+                    if (entity != null)
+                        feature.Shape = entity.Shape;
+                }
             }
         }
 
@@ -409,6 +414,17 @@ namespace Earthworm
         public static IEnumerable<T> Map<T>(this IFeatureClass featureClass, IQueryFilter filter = null, bool useUpdateCursor = false) where T : Entity
         {
             return ((ITable)featureClass).Map<T>(filter, useUpdateCursor);
+        }
+
+        /// <summary>
+        /// Maps a database row to an instance of the specified type.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="row"></param>
+        /// <returns></returns>
+        public static T Map<T>(this IRow row) where T : Entity
+        {
+            return Entity.Create<T>(row);
         }
 
         /// <summary>

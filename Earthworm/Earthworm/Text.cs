@@ -24,7 +24,12 @@ namespace Earthworm
             var values = fieldNames.Select(n => item[n]).ToList();
 
             if (geometrySelector != null)
-                values.Add(geometrySelector(((dynamic)item).Shape));
+            {
+                var entity = item as IEntity<IGeometry>;
+
+                if (entity != null)
+                    values.Add(geometrySelector(entity.Shape));
+            }
 
             return string.Join(delimiter, values.Select(o =>
             {
