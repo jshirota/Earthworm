@@ -19,7 +19,7 @@
         </p>
         <ul>
             <li>Fights the impedance mismatch between geodatabase tables and OOP.</li>
-            <li>Does not get in the way of existing ArcObjects code. It is basically the same as using ICursor.</li>
+            <li>Does not get in the way of existing ArcObjects code.</li>
             <li>Works with Desktop ArcObjects, Addin, SOE and Engine applications.</li>
             <li>Does not require any auto-generated code. No XML mapping files. No dependency on the IDE.</li>
             <li>Supports CRUD operations with intuitive syntax.</li>
@@ -27,19 +27,12 @@
             <li>Respects all geodatabase behaviours such as versions, edit sessions, etc.</li>
             <li>Works with anything that implements IFeatureClass or ITable (i.e. shapefiles, coverages). Note: The GUI tool only works with SDE, file and personal geodatabases.</li>
             <li>Returns mapped objects as a lazy sequence implementing IEnumerable&lt;T&gt;. Allows for LINQ queries. Facilitates functional programming.</li>
-            <li>Encapsulates low-level ArcObjects "ceremony code" such as the cursor cleanup code.</li>
-            <li>Provides JSON serialization/deserialization compatible with ArcGIS REST API.</li>
+            <li>Provides JSON serialization/deserialization for geometries.</li>
             <li>Provides KML serialization for geometries.</li>
             <li>Enables common spatial operations and predicates as extension methods for IGeometry to avoid verbose interface casting code.</li>
-            <li>Provides class code generation for meta programming (i.e. code generation tools or runtime compilation via CodeDom or Roslyn). Supports C# and Visual Basic.</li>
-            <li>Mapped classes implement INotifyPropertyChanged. Mapped properties automatically raise the PropertyChanged event upon property setter access (via IL weaving) without using an AOP library.</li>
-            <li>Super light weight.  The entire library is written in 700 lines of code (52KB compiled).</li>
-            <li>Completely free!</li>
+            <li>Mapped properties automatically raise the INotifyPropertyChanged.PropertyChanged event upon property setter access (via Reflection.Emit but memoized).</li>
+            <li>Super light weight.  The entire library is written in 600 lines of code.</li>
         </ul>
-        <br />
-        <p>
-            <a href="examples.html" style="font-size: large;">Examples</a>
-        </p>
     </div>
 </body>
 </html>
