@@ -417,17 +417,6 @@ namespace Earthworm
         }
 
         /// <summary>
-        /// Maps a database row to an instance of the specified type.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="row"></param>
-        /// <returns></returns>
-        public static T Map<T>(this IRow row) where T : Entity
-        {
-            return Entity.Create<T>(row);
-        }
-
-        /// <summary>
         /// Finds the row by the OID and returns the data as an object of the specified type.  If no match is found, returns null.
         /// </summary>
         /// <typeparam name="T"></typeparam>
