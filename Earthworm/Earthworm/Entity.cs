@@ -48,6 +48,7 @@ namespace Earthworm
             return item;
         }
 
+        internal bool IsDerived;
         internal IRow Row;
         internal bool HasShape;
 
@@ -111,13 +112,18 @@ namespace Earthworm
 
         private object GetValue(string fieldName)
         {
+            var isMapped = _mappings.ContainsKey(fieldName);
+
             if (IsDataBound)
                 return Row.GetValue(fieldName);
+
+            if (!IsDerived && isMapped)
+                return _mappings[fieldName].GetValue(this, null);
 
             if (_temporaryStorage.ContainsKey(fieldName))
                 return _temporaryStorage[fieldName];
 
-            if (!_mappings.ContainsKey(fieldName))
+            if (!isMapped)
                 throw new MissingFieldException(string.Format("Field '{0}' has not been defined.", fieldName));
 
             var type = _mappings[fieldName].PropertyType;
@@ -126,6 +132,8 @@ namespace Earthworm
 
         private void SetValue(string fieldName, object value)
         {
+            var isMapped = _mappings.ContainsKey(fieldName);
+
             if (IsDataBound)
             {
                 if (AreEqual(Row.GetValue(fieldName), value))
@@ -135,13 +143,20 @@ namespace Earthworm
             }
             else
             {
-                if (_temporaryStorage.ContainsKey(fieldName) && AreEqual(_temporaryStorage[fieldName], value))
-                    return;
+                if (!IsDerived && isMapped)
+                {
+                    _mappings[fieldName].SetValue(this, value, null);
+                }
+                else
+                {
+                    if (_temporaryStorage.ContainsKey(fieldName) && AreEqual(_temporaryStorage[fieldName], value))
+                        return;
 
-                _temporaryStorage[fieldName] = value;
+                    _temporaryStorage[fieldName] = value;
+                }
             }
 
-            if (_mappings.ContainsKey(fieldName))
+            if (isMapped)
                 RaisePropertyChanged(_mappings[fieldName].Name);
 
             IsDirty = true;

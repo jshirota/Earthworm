@@ -62,9 +62,11 @@ namespace Earthworm
             return typeBuilder.CreateType();
         }
 
-        public static T Create<T>() where T : IEntity
+        public static T Create<T>() where T : Entity
         {
-            return (T)Activator.CreateInstance(DeriveMemoized(typeof(T)));
+            var item = (T)Activator.CreateInstance(DeriveMemoized(typeof(T)));
+            item.IsDerived = true;
+            return item;
         }
     }
 }
