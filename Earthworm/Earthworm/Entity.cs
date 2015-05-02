@@ -55,7 +55,7 @@ namespace Earthworm
         /// <summary>
         /// The ObjectID field.
         /// </summary>
-        public int OID { get { return IsDataBound ? Row.OID : -1; } }
+        public int OID { get { return IsDataBound && Row.HasOID ? Row.OID : -1; } }
 
         /// <summary>
         /// Indicates if the object is bound to an actual row in the underlying table.
@@ -145,6 +145,9 @@ namespace Earthworm
             {
                 if (!IsDerived && isMapped)
                 {
+                    if (AreEqual(_mappings[fieldName].GetValue(this, null), value))
+                        return;
+
                     _mappings[fieldName].SetValue(this, value, null);
                 }
                 else
@@ -156,10 +159,11 @@ namespace Earthworm
                 }
             }
 
-            if (isMapped)
+            if (IsDerived && isMapped)
                 RaisePropertyChanged(_mappings[fieldName].Name);
 
-            IsDirty = true;
+            if (IsDataBound)
+                IsDirty = true;
         }
 
         /// <summary>
@@ -182,7 +186,7 @@ namespace Earthworm
                 var fieldIndex = AO.GetFieldIndex(row.Table, fieldName);
 
                 if (fieldIndex == -1)
-                    throw new MissingFieldException(string.Format("Field '{0}' does not exist in Table '{1}'.", fieldName, ((IDataset)row.Table).Name));
+                    continue;
 
                 var field = row.Table.Fields.Field[fieldIndex];
 
@@ -348,9 +352,11 @@ namespace Earthworm
                     TemporaryShape = value;
                 }
 
-                RaisePropertyChanged(() => Shape);
+                if (IsDerived)
+                    RaisePropertyChanged(() => Shape);
 
-                IsDirty = true;
+                if (IsDataBound)
+                    IsDirty = true;
             }
         }
 
