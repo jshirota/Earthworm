@@ -15,9 +15,12 @@ namespace Earthworm
     /// </summary>
     public class Entity : IEntity, INotifyPropertyChanged
     {
-        private readonly Dictionary<string, object> _temporaryStorage = new Dictionary<string, object>();
+        internal bool IsDerived;
+        internal IRow Row;
+        internal bool HasShape;
         internal IGeometry TemporaryShape;
 
+        private readonly Dictionary<string, object> _temporaryStorage = new Dictionary<string, object>();
         private readonly Dictionary<string, PropertyInfo> _mappings;
 
         internal static readonly Func<Type, Dictionary<Mapped, PropertyInfo>> GetMappings =
@@ -47,10 +50,6 @@ namespace Earthworm
             item.Row = row;
             return item;
         }
-
-        internal bool IsDerived;
-        internal IRow Row;
-        internal bool HasShape;
 
         /// <summary>
         /// The ObjectID field.
