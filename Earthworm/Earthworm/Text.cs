@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using ESRI.ArcGIS.Geometry;
 
@@ -9,7 +10,7 @@ namespace Earthworm
     /// </summary>
     public static class Text
     {
-        private static string ToDelimitedText(this IEntity item, string delimiter = ",", char? qualifier = '"', Func<IGeometry, object> geometrySelector = null)
+        private static string ToDelimitedText(this IEntity item, string delimiter = ",", char? qualifier = '"', Func<IGeometry, object> geometrySelector = null, Func<DateTime, object> dateSelector = null)
         {
             if (string.IsNullOrEmpty(delimiter))
                 throw new ArgumentException("The delimiter is required.", "delimiter");
@@ -17,7 +18,7 @@ namespace Earthworm
             var q = qualifier.ToString();
 
             if (q != "" && delimiter.Contains(q))
-                throw new ArgumentException("The qualifier is not valid.", "delimiter");
+                throw new ArgumentException("The qualifier is not valid.", "qualifier");
 
             var fieldNames = item.GetFieldNames(true, true);
 
@@ -28,8 +29,17 @@ namespace Earthworm
                 var entity = item as IEntity<IGeometry>;
 
                 if (entity != null)
-                    values.Add(geometrySelector(entity.Shape));
+                {
+                    var o = geometrySelector(entity.Shape);
+
+                    if (o is string)
+                        values.Add(o);
+                    else
+                        values.AddRange((o as IEnumerable ?? new[] { o }).Cast<object>());
+                }
             }
+
+            dateSelector = dateSelector ?? (d => d.ToString("o"));
 
             return string.Join(delimiter, values.Select(o =>
             {
@@ -37,7 +47,7 @@ namespace Earthworm
                     o = "";
 
                 else if (o is DateTime)
-                    o = ((DateTime)o).ToString("o");
+                    o = dateSelector((DateTime)o);
 
                 if (q == "")
                     return o;
@@ -54,11 +64,24 @@ namespace Earthworm
         /// <param name="delimiter"></param>
         /// <param name="qualifier"></param>
         /// <param name="geometrySelector"></param>
+        /// <param name="dateSelector"></param>
         /// <returns></returns>
-        public static string ToText<T>(this IEntity<T> item, string delimiter = ",", char? qualifier = '"',
-            Func<T, object> geometrySelector = null) where T : IGeometry
+        public static string ToText<T>(this IEntity<T> item, string delimiter, char? qualifier, Func<T, object> geometrySelector = null, Func<DateTime, object> dateSelector = null) where T : IGeometry
         {
-            return item.ToDelimitedText(delimiter, qualifier, geometrySelector == null ? (Func<IGeometry, object>)null : g => geometrySelector((T)g));
+            return item.ToDelimitedText(delimiter, qualifier, geometrySelector == null ? (Func<IGeometry, object>)null : g => geometrySelector((T)g), dateSelector);
+        }
+
+        /// <summary>
+        /// Converts the feature attributes to delimiter-separated values (i.e. CSV).
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="item"></param>
+        /// <param name="geometrySelector"></param>
+        /// <param name="dateSelector"></param>
+        /// <returns></returns>
+        public static string ToText<T>(this IEntity<T> item, Func<T, object> geometrySelector = null, Func<DateTime, object> dateSelector = null) where T : IGeometry
+        {
+            return item.ToDelimitedText(",", '"', geometrySelector == null ? (Func<IGeometry, object>)null : g => geometrySelector((T)g), dateSelector);
         }
 
         /// <summary>
@@ -67,10 +90,11 @@ namespace Earthworm
         /// <param name="item"></param>
         /// <param name="delimiter"></param>
         /// <param name="qualifier"></param>
+        /// <param name="dateSelector"></param>
         /// <returns></returns>
-        public static string ToText(this IEntity item, string delimiter = ",", char? qualifier = '"')
+        public static string ToText(this IEntity item, string delimiter = ",", char? qualifier = '"', Func<DateTime, object> dateSelector = null)
         {
-            return item.ToDelimitedText(delimiter, qualifier);
+            return item.ToDelimitedText(delimiter, qualifier, null, dateSelector);
         }
     }
 }
