@@ -111,7 +111,7 @@ namespace Earthworm
             if (t == typeof(Guid?))
                 return CreateField(name, esriFieldType.esriFieldTypeGUID, true, null);
 
-            throw new ArgumentException(string.Format("This property type '{0}' is not supported.", propertyType.Name), "propertyType");
+            throw new ArgumentException($"This property type '{propertyType.Name}' is not supported.", nameof(propertyType));
         }
 
         private static ITable CreateTable(object container, string name, string oidField, bool isSpatial, esriGeometryType geometryType, ISpatialReference spatialReference, List<IField> customFields)
@@ -122,13 +122,13 @@ namespace Earthworm
 
             var fieldsEdit = (IFieldsEdit)fields;
             fieldsEdit.FieldCount_2 = i + customFields.Count;
-            fieldsEdit.Field_2[0] = GetOIDField(oidField);
+            fieldsEdit.set_Field(0, GetOIDField(oidField));
 
             if (isSpatial)
-                fieldsEdit.Field_2[1] = GetShapeField(geometryType, spatialReference);
+                fieldsEdit.set_Field(1, GetShapeField(geometryType, spatialReference));
 
             foreach (var field in customFields)
-                fieldsEdit.Field_2[i++] = field;
+                fieldsEdit.set_Field(i++, field);
 
             IObjectClassDescription ocDesc = new FeatureClassDescription();
 
@@ -139,10 +139,7 @@ namespace Earthworm
                     : fws.CreateTable(name, fields, ocDesc.InstanceCLSID, ocDesc.ClassExtensionCLSID, "");
 
             var fds = container as IFeatureDataset;
-            if (fds != null)
-                return fds.CreateFeatureClass(name, fields, ocDesc.InstanceCLSID, ocDesc.ClassExtensionCLSID, esriFeatureType.esriFTSimple, "Shape", "") as ITable;
-
-            return null;
+            return fds?.CreateFeatureClass(name, fields, ocDesc.InstanceCLSID, ocDesc.ClassExtensionCLSID, esriFeatureType.esriFTSimple, "Shape", "") as ITable;
         }
 
         private static ITable CreateTable<T>(object container, string name, bool isSpatial, esriGeometryType geometryType, ISpatialReference spatialReference) where T : IEntity

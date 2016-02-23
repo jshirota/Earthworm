@@ -13,12 +13,12 @@ namespace Earthworm
         private static string ToDelimitedText(this IEntity item, string delimiter = ",", char? qualifier = '"', Func<IGeometry, object> geometrySelector = null, Func<DateTime, object> dateSelector = null)
         {
             if (string.IsNullOrEmpty(delimiter))
-                throw new ArgumentException("The delimiter is required.", "delimiter");
+                throw new ArgumentException("The delimiter is required.", nameof(delimiter));
 
             var q = qualifier.ToString();
 
             if (q != "" && delimiter.Contains(q))
-                throw new ArgumentException("The qualifier is not valid.", "qualifier");
+                throw new ArgumentException("The qualifier is not valid.", nameof(qualifier));
 
             var fieldNames = item.GetFieldNames(true, true);
 

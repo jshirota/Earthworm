@@ -79,7 +79,7 @@ namespace Earthworm
             if (polygon != null)
                 return polygon.ToPolygon();
 
-            throw new ArgumentException("This geometry type is not supported.", "shape");
+            throw new ArgumentException("This geometry type is not supported.", nameof(shape));
         }
 
         private static IGeometry Load<T>(this T shape, double[][] array)
