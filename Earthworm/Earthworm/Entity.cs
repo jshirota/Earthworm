@@ -54,12 +54,12 @@ namespace Earthworm
         /// <summary>
         /// The ObjectID field.
         /// </summary>
-        public int OID => IsDataBound && Row.HasOID ? Row.OID : -1;
+        public int OID { get { return IsDataBound && Row.HasOID ? Row.OID : -1; } }
 
         /// <summary>
         /// Indicates if the object is bound to an actual row in the underlying table.
         /// </summary>
-        public bool IsDataBound => Row != null;
+        public bool IsDataBound { get { return Row != null; } }
 
         private bool _isDirty;
 
@@ -123,7 +123,7 @@ namespace Earthworm
                 return _temporaryStorage[fieldName];
 
             if (!isMapped)
-                throw new MissingFieldException($"Field '{fieldName}' has not been defined.");
+                throw new MissingFieldException(string.Format("Field '{0}' has not been defined.", fieldName));
 
             var type = _mappings[fieldName].PropertyType;
             return type.IsValueType ? Activator.CreateInstance(type) : null;
@@ -289,7 +289,10 @@ namespace Earthworm
         /// <param name="propertyName"></param>
         protected void RaisePropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            var propertyChanged = PropertyChanged;
+
+            if (propertyChanged != null)
+                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>

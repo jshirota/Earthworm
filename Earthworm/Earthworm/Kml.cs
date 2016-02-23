@@ -86,7 +86,7 @@ namespace Earthworm
             if (polygon != null)
                 return polygon.ToKmlPolygon(z, extraElements);
 
-            throw new ArgumentException("This geometry type is not supported.", nameof(shape));
+            throw new ArgumentException("This geometry type is not supported.", "shape");
         }
 
         #endregion
@@ -142,7 +142,7 @@ namespace Earthworm
                            from f in item.GetFieldNames(true, true)
                            let o = item[f]
                            select new XElement(kml + "Data", new XAttribute("name", f),
-                                      new XElement(kml + "value", o is byte[] ? "" : ((o as DateTime?)?.ToString("o") ?? o)))),
+                                      new XElement(kml + "value", o is byte[] ? "" : (o is DateTime ? ((DateTime)o).ToString("o") : o)))),
                                          item.Shape.ToKml(z, geometryElements));
         }
 
@@ -155,7 +155,7 @@ namespace Earthworm
         /// <returns></returns>
         public static XElement ToKml(this IEntity<IGeometry> item, string name = null, KmlStyle style = null)
         {
-            return item.ToKml(name, 0, null, style?.ToKml());
+            return item.ToKml(name, 0, null, style == null ? null : style.ToKml());
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Earthworm
         {
             return new XElement(kml + "kml",
                        new XElement(kml + "Document", documentElements,
-                           items.Select(i => i.ToKml(name?.Invoke(i), z?.Invoke(i) ?? 0, null, placemarkElements?.Invoke(i)))));
+                           items.Select(i => i.ToKml(name == null ? null : name(i), z == null ? 0 : z(i), null, placemarkElements == null ? null : placemarkElements(i)))));
         }
 
         /// <summary>
@@ -207,32 +207,32 @@ namespace Earthworm
         /// <summary>
         /// The url of the icon.
         /// </summary>
-        public string IconUrl { get; }
+        public string IconUrl { get; private set; }
 
         /// <summary>
         /// The colour of icons.  The format conforms to the KML specification (i.e. 7fff0000 where alpha=0x7f, blue=0xff, green=0x00, and red=0x00).
         /// </summary>
-        public string IconColour { get; }
+        public string IconColour { get; private set; }
 
         /// <summary>
         /// The size of icons.
         /// </summary>
-        public double IconScale { get; }
+        public double IconScale { get; private set; }
 
         /// <summary>
         /// The colour of lines.  The format conforms to the KML specification (i.e. 7fff0000 where alpha=0x7f, blue=0xff, green=0x00, and red=0x00).
         /// </summary>
-        public string LineColour { get; }
+        public string LineColour { get; private set; }
 
         /// <summary>
         /// The width of lines.  This applies to polygons, too.
         /// </summary>
-        public double LineWidth { get; }
+        public double LineWidth { get; private set; }
 
         /// <summary>
         /// The colour of polygons.  The format conforms to the KML specification (i.e. 7fff0000 where alpha=0x7f, blue=0xff, green=0x00, and red=0x00).
         /// </summary>
-        public string PolygonColour { get; }
+        public string PolygonColour { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the KmlStyle class.

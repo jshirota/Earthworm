@@ -111,7 +111,7 @@ namespace Earthworm
             if (t == typeof(Guid?))
                 return CreateField(name, esriFieldType.esriFieldTypeGUID, true, null);
 
-            throw new ArgumentException($"This property type '{propertyType.Name}' is not supported.", nameof(propertyType));
+            throw new ArgumentException(string.Format("This property type '{0}' is not supported.", propertyType.Name), "propertyType");
         }
 
         private static ITable CreateTable(object container, string name, string oidField, bool isSpatial, esriGeometryType geometryType, ISpatialReference spatialReference, List<IField> customFields)
@@ -139,7 +139,10 @@ namespace Earthworm
                     : fws.CreateTable(name, fields, ocDesc.InstanceCLSID, ocDesc.ClassExtensionCLSID, "");
 
             var fds = container as IFeatureDataset;
-            return fds?.CreateFeatureClass(name, fields, ocDesc.InstanceCLSID, ocDesc.ClassExtensionCLSID, esriFeatureType.esriFTSimple, "Shape", "") as ITable;
+            if (fds != null)
+                return fds.CreateFeatureClass(name, fields, ocDesc.InstanceCLSID, ocDesc.ClassExtensionCLSID, esriFeatureType.esriFTSimple, "Shape", "") as ITable;
+
+            return null;
         }
 
         private static ITable CreateTable<T>(object container, string name, bool isSpatial, esriGeometryType geometryType, ISpatialReference spatialReference) where T : IEntity

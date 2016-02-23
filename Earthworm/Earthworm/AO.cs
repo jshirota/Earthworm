@@ -45,7 +45,7 @@ namespace Earthworm
             var fieldIndex = GetFieldIndex(row.Table, fieldName);
 
             if (fieldIndex == -1)
-                throw new MissingFieldException($"Field '{fieldName}' does not exist in Table '{((IDataset)row.Table).Name}'.");
+                throw new MissingFieldException(string.Format("Field '{0}' does not exist in Table '{1}'.", fieldName, ((IDataset)row.Table).Name));
 
             return row.GetValue(fieldIndex);
         }
@@ -64,9 +64,10 @@ namespace Earthworm
                 ms.ImportFromVariant(value);
                 value = ms;
             }
-            else
+
+            else if (value is Guid)
             {
-                value = (value as Guid?)?.ToString("B").ToUpper();
+                value = ((Guid)value).ToString("B").ToUpper();
             }
 
             row.Value[fieldIndex] = value;
@@ -77,7 +78,7 @@ namespace Earthworm
             var fieldIndex = GetFieldIndex(row.Table, fieldName);
 
             if (fieldIndex == -1)
-                throw new MissingFieldException($"Field '{fieldName}' does not exist in Table '{((IDataset)row.Table).Name}'.");
+                throw new MissingFieldException(string.Format("Field '{0}' does not exist in Table '{1}'.", fieldName, ((IDataset)row.Table).Name));
 
             row.SetValue(fieldIndex, value);
         }
