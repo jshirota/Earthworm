@@ -5,47 +5,28 @@
     <HelpKINode Title="about AO class" Url="html/6D75EB29.htm" />
     <HelpKINode Title="methods" Url="html/B334C3EA.htm" />
   </HelpKINode>
-  <HelpKINode Title="AO.Boundary method" Url="html/13D65C47.htm" />
-  <HelpKINode Title="AO.Buffer method" Url="html/BA124FEB.htm" />
-  <HelpKINode Title="AO.Clip method" Url="html/AC1AE2AB.htm" />
-  <HelpKINode Title="AO.Contains method" Url="html/7E920E2F.htm" />
-  <HelpKINode Title="AO.ConvexHull method" Url="html/403DC89.htm" />
-  <HelpKINode Title="AO.Copy(Of T) method" Url="html/A9A1C21E.htm" />
-  <HelpKINode Title="AO.Copy&lt;T&gt; method" Url="html/A9A1C21E.htm" />
-  <HelpKINode Title="AO.Crosses method" Url="html/A1A27F2A.htm" />
-  <HelpKINode Title="AO.Difference method" Url="html/F02265BF.htm" />
-  <HelpKINode Title="AO.Disjoint method" Url="html/8819D600.htm" />
-  <HelpKINode Title="AO.DistanceTo method" Url="html/4F881BDE.htm" />
   <HelpKINode Title="AO.Edit method" Url="html/31731037.htm" />
-  <HelpKINode Title="AO.Equals2 method" Url="html/5E21F23D.htm" />
-  <HelpKINode Title="AO.Intersect method" Url="html/3C6ED853.htm" />
-  <HelpKINode Title="AO.Intersects method" Url="html/B0EFE8AB.htm" />
-  <HelpKINode Title="AO.Overlaps method" Url="html/27E3A3F4.htm" />
-  <HelpKINode Title="AO.Project2 method" Url="html/F6E36BA7.htm" />
-  <HelpKINode Title="AO.Relation method" Url="html/C10AB119.htm" />
-  <HelpKINode Title="AO.Touches method" Url="html/CF073413.htm" />
-  <HelpKINode Title="AO.Union method" Url="html/3B17C3E4.htm" />
-  <HelpKINode Title="AO.Within method" Url="html/A9E643F8.htm" />
-  <HelpKINode Title="Boundary method" Url="html/13D65C47.htm" />
-  <HelpKINode Title="Buffer method" Url="html/BA124FEB.htm" />
-  <HelpKINode Title="Clip method" Url="html/AC1AE2AB.htm" />
-  <HelpKINode Title="Contains method" Url="html/7E920E2F.htm" />
-  <HelpKINode Title="ConvexHull method" Url="html/403DC89.htm" />
-  <HelpKINode Title="Copy(Of T) method" Url="html/A9A1C21E.htm" />
-  <HelpKINode Title="Copy&lt;T&gt; method" Url="html/A9A1C21E.htm" />
+  <HelpKINode Title="Boundary method" Url="html/2D913CC0.htm" />
+  <HelpKINode Title="Buffer method" Url="html/90898E72.htm" />
+  <HelpKINode Title="Clip method" Url="html/55F03406.htm" />
+  <HelpKINode Title="Contains method" Url="html/9D7171B3.htm" />
+  <HelpKINode Title="ConvexHull method" Url="html/1A5AC6F5.htm" />
+  <HelpKINode Title="Copy(Of T) method" Url="html/F85E737.htm" />
+  <HelpKINode Title="Copy&lt;T&gt; method" Url="html/F85E737.htm" />
   <HelpKINode Title="Create(Of T) method" Url="html/B41E96EB.htm" />
   <HelpKINode Title="Create&lt;T&gt; method" Url="html/B41E96EB.htm" />
   <HelpKINode Title="CreateFeatureClass method" Url="html/F739F989.htm" />
   <HelpKINode Title="CreateTable(Of T) method" Url="html/5F261AD0.htm" />
   <HelpKINode Title="CreateTable&lt;T&gt; method" Url="html/5F261AD0.htm" />
-  <HelpKINode Title="Crosses method" Url="html/A1A27F2A.htm" />
+  <HelpKINode Title="Crosses method" Url="html/8E681057.htm" />
+  <HelpKINode Title="DefaultSpatialReference property" Url="html/22781A1A.htm" />
   <HelpKINode Title="Delete method">
     <HelpKINode Title="Entity.Delete Method " Url="html/B6FA865D.htm" />
     <HelpKINode Title="IEntity.Delete Method " Url="html/F90FCD1F.htm" />
   </HelpKINode>
-  <HelpKINode Title="Difference method" Url="html/F02265BF.htm" />
-  <HelpKINode Title="Disjoint method" Url="html/8819D600.htm" />
-  <HelpKINode Title="DistanceTo method" Url="html/4F881BDE.htm" />
+  <HelpKINode Title="Difference method" Url="html/EB3A858A.htm" />
+  <HelpKINode Title="Disjoint method" Url="html/8F8506E5.htm" />
+  <HelpKINode Title="DistanceTo method" Url="html/F57FFB1A.htm" />
   <HelpKINode Title="Earthworm namespace" Url="html/45893AA5.htm" />
   <HelpKINode Title="Earthworm.AO class" Url="html/6D75EB29.htm" />
   <HelpKINode Title="Earthworm.Entity class" Url="html/EB30F4F1.htm" />
@@ -59,6 +40,7 @@
   <HelpKINode Title="Earthworm.Kml class" Url="html/D991B3FC.htm" />
   <HelpKINode Title="Earthworm.KmlStyle class" Url="html/BE5F20F8.htm" />
   <HelpKINode Title="Earthworm.Mapped class" Url="html/FD71C586.htm" />
+  <HelpKINode Title="Earthworm.Shape class" Url="html/749CEFAF.htm" />
   <HelpKINode Title="Earthworm.TableWriter class" Url="html/535ADC82.htm" />
   <HelpKINode Title="Earthworm.Text class" Url="html/D18AD011.htm" />
   <HelpKINode Title="Edit method" Url="html/31731037.htm" />
@@ -114,7 +96,7 @@
   <HelpKINode Title="EntityExtensions.Insert method" Url="html/D347742E.htm" />
   <HelpKINode Title="EntityExtensions.Map method" Url="html/2C14F489.htm" />
   <HelpKINode Title="Equals method" Url="html/14DDD17A.htm" />
-  <HelpKINode Title="Equals2 method" Url="html/5E21F23D.htm" />
+  <HelpKINode Title="Equals2 method" Url="html/5DDEF9EE.htm" />
   <HelpKINode Title="FieldName property" Url="html/985E1D3E.htm" />
   <HelpKINode Title="FindItemByOID method" Url="html/CE2163CE.htm" />
   <HelpKINode Title="GetFieldName property" Url="html/FF9E70F5.htm" />
@@ -156,6 +138,7 @@
   </HelpKINode>
   <HelpKINode Title="IEntity&lt;T&gt;.InsertInto method" Url="html/88A1AF39.htm" />
   <HelpKINode Title="IEntity&lt;T&gt;.Shape property" Url="html/F423E4F1.htm" />
+  <HelpKINode Title="InnerRing method" Url="html/2CD2D348.htm" />
   <HelpKINode Title="Insert method" Url="html/D347742E.htm" />
   <HelpKINode Title="InsertInto method">
     <HelpKINode Title="Entity(T).InsertInto Method " Url="html/A385AFA5.htm" />
@@ -163,8 +146,8 @@
     <HelpKINode Title="IEntity(T).InsertInto Method " Url="html/88A1AF39.htm" />
     <HelpKINode Title="IEntity.InsertInto Method " Url="html/9D95ED2A.htm" />
   </HelpKINode>
-  <HelpKINode Title="Intersect method" Url="html/3C6ED853.htm" />
-  <HelpKINode Title="Intersects method" Url="html/B0EFE8AB.htm" />
+  <HelpKINode Title="Intersect method" Url="html/BBF0A867.htm" />
+  <HelpKINode Title="Intersects method" Url="html/6371A867.htm" />
   <HelpKINode Title="IsDataBound property">
     <HelpKINode Title="Entity.IsDataBound Property " Url="html/EF270390.htm" />
     <HelpKINode Title="IEntity.IsDataBound Property " Url="html/7560A6A8.htm" />
@@ -224,20 +207,61 @@
   <HelpKINode Title="Mapped.GetFieldName property" Url="html/FF9E70F5.htm" />
   <HelpKINode Title="Mapped.Length property" Url="html/A756CD23.htm" />
   <HelpKINode Title="Mapped.Mapped constructor" Url="html/61F8409C.htm" />
+  <HelpKINode Title="Multipoint method" Url="html/CB23135A.htm" />
   <HelpKINode Title="OID property">
     <HelpKINode Title="Entity.OID Property " Url="html/365948A4.htm" />
     <HelpKINode Title="IEntity.OID Property " Url="html/7CE3B015.htm" />
   </HelpKINode>
-  <HelpKINode Title="Overlaps method" Url="html/27E3A3F4.htm" />
+  <HelpKINode Title="OuterRing method" Url="html/5A7C0AB4.htm" />
+  <HelpKINode Title="Overlaps method" Url="html/29240D99.htm" />
+  <HelpKINode Title="P method" Url="html/64B13E16.htm" />
+  <HelpKINode Title="Path method" Url="html/69FDF256.htm" />
+  <HelpKINode Title="Polygon method" Url="html/62DE23D0.htm" />
   <HelpKINode Title="PolygonColour property" Url="html/77F1C850.htm" />
-  <HelpKINode Title="Project2 method" Url="html/F6E36BA7.htm" />
+  <HelpKINode Title="Polyline method" Url="html/3A318E75.htm" />
+  <HelpKINode Title="Project2 method" Url="html/59F9EFF2.htm" />
   <HelpKINode Title="PropertyChanged event" Url="html/1EB41FBD.htm" />
   <HelpKINode Title="RaisePropertyChanged method" Url="html/2F8F4F79.htm" />
-  <HelpKINode Title="Relation method" Url="html/C10AB119.htm" />
+  <HelpKINode Title="Relation method" Url="html/A9327962.htm" />
+  <HelpKINode Title="Shape class">
+    <HelpKINode Title="Shape Class" Url="html/749CEFAF.htm" />
+    <HelpKINode Title="about Shape class" Url="html/749CEFAF.htm" />
+    <HelpKINode Title="methods" Url="html/C42BAB52.htm" />
+    <HelpKINode Title="properties" Url="html/C2521BE6.htm" />
+  </HelpKINode>
   <HelpKINode Title="Shape property">
     <HelpKINode Title="Entity(T).Shape Property " Url="html/5DD84114.htm" />
     <HelpKINode Title="IEntity(T).Shape Property " Url="html/F423E4F1.htm" />
   </HelpKINode>
+  <HelpKINode Title="Shape.Boundary method" Url="html/2D913CC0.htm" />
+  <HelpKINode Title="Shape.Buffer method" Url="html/90898E72.htm" />
+  <HelpKINode Title="Shape.Clip method" Url="html/55F03406.htm" />
+  <HelpKINode Title="Shape.Contains method" Url="html/9D7171B3.htm" />
+  <HelpKINode Title="Shape.ConvexHull method" Url="html/1A5AC6F5.htm" />
+  <HelpKINode Title="Shape.Copy(Of T) method" Url="html/F85E737.htm" />
+  <HelpKINode Title="Shape.Copy&lt;T&gt; method" Url="html/F85E737.htm" />
+  <HelpKINode Title="Shape.Crosses method" Url="html/8E681057.htm" />
+  <HelpKINode Title="Shape.DefaultSpatialReference property" Url="html/22781A1A.htm" />
+  <HelpKINode Title="Shape.Difference method" Url="html/EB3A858A.htm" />
+  <HelpKINode Title="Shape.Disjoint method" Url="html/8F8506E5.htm" />
+  <HelpKINode Title="Shape.DistanceTo method" Url="html/F57FFB1A.htm" />
+  <HelpKINode Title="Shape.Equals2 method" Url="html/5DDEF9EE.htm" />
+  <HelpKINode Title="Shape.InnerRing method" Url="html/2CD2D348.htm" />
+  <HelpKINode Title="Shape.Intersect method" Url="html/BBF0A867.htm" />
+  <HelpKINode Title="Shape.Intersects method" Url="html/6371A867.htm" />
+  <HelpKINode Title="Shape.Multipoint method" Url="html/CB23135A.htm" />
+  <HelpKINode Title="Shape.OuterRing method" Url="html/5A7C0AB4.htm" />
+  <HelpKINode Title="Shape.Overlaps method" Url="html/29240D99.htm" />
+  <HelpKINode Title="Shape.P method" Url="html/64B13E16.htm" />
+  <HelpKINode Title="Shape.Path method" Url="html/69FDF256.htm" />
+  <HelpKINode Title="Shape.Polygon method" Url="html/62DE23D0.htm" />
+  <HelpKINode Title="Shape.Polyline method" Url="html/3A318E75.htm" />
+  <HelpKINode Title="Shape.Project2 method" Url="html/59F9EFF2.htm" />
+  <HelpKINode Title="Shape.Relation method" Url="html/A9327962.htm" />
+  <HelpKINode Title="Shape.Touches method" Url="html/1BD8A5A5.htm" />
+  <HelpKINode Title="Shape.Union method" Url="html/1CDC215A.htm" />
+  <HelpKINode Title="Shape.Within method" Url="html/474F923C.htm" />
+  <HelpKINode Title="Shape.WKID method" Url="html/ED9AAB6A.htm" />
   <HelpKINode Title="TableWriter class">
     <HelpKINode Title="TableWriter Class" Url="html/535ADC82.htm" />
     <HelpKINode Title="about TableWriter class" Url="html/535ADC82.htm" />
@@ -259,11 +283,12 @@
   <HelpKINode Title="ToPolygon method" Url="html/4CC415C8.htm" />
   <HelpKINode Title="ToPolyline method" Url="html/7F2ABA61.htm" />
   <HelpKINode Title="ToText method" Url="html/F1B89F3E.htm" />
-  <HelpKINode Title="Touches method" Url="html/CF073413.htm" />
-  <HelpKINode Title="Union method" Url="html/3B17C3E4.htm" />
+  <HelpKINode Title="Touches method" Url="html/1BD8A5A5.htm" />
+  <HelpKINode Title="Union method" Url="html/1CDC215A.htm" />
   <HelpKINode Title="Update method">
     <HelpKINode Title="Entity.Update Method " Url="html/73055A6A.htm" />
     <HelpKINode Title="IEntity.Update Method " Url="html/13DF2638.htm" />
   </HelpKINode>
-  <HelpKINode Title="Within method" Url="html/A9E643F8.htm" />
+  <HelpKINode Title="Within method" Url="html/474F923C.htm" />
+  <HelpKINode Title="WKID method" Url="html/ED9AAB6A.htm" />
 </HelpKI>

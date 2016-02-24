@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder and Tools" version="2015.10.10.0" projectFile="C:\Users\Jiro\Documents\GitHub\Earthworm\trunk\Earthworm\EarthwormReference\EarthwormReference.shfbproj" started="2/23/2016 3:11:05 PM">
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2015.10.10.0" projectFile="C:\Users\Jiro\Documents\GitHub\Earthworm\trunk\Earthworm\EarthwormReference\EarthwormReference.shfbproj" started="2/24/2016 4:01:44 PM">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
@@ -30,16 +30,16 @@ Copying XML comments files
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
-    Last step completed in 00:00:00.0425
+    Last step completed in 00:00:00.0570
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0125
+    Last step completed in 00:00:00.0135
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
 [C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe - GenerateRefInfo.proj]
-Build started 2/23/2016 3:11:07 PM.
+Build started 2/24/2016 4:01:47 PM.
 The target &quot;BeforeGenerateProjectPriFile&quot; listed in a BeforeTargets attribute at &quot;C:\Program Files (x86)\MSBuild\Microsoft\NuGet\Microsoft.NuGet.targets (186,61)&quot; does not exist in the project, and will be ignored.
 Project &quot;C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
 PrepareForBuild:
@@ -49,7 +49,7 @@ GenerateRefInfo:
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
   Loaded 1 assemblies for reflection and 4 dependency assemblies.
-  Wrote information on 1 namespaces, 12 types, and 91 members
+  Wrote information on 1 namespaces, 13 types, and 103 members
   Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
   XslTransform (v2015.10.10.0)
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
@@ -59,13 +59,13 @@ Done Building Project &quot;C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh
 
 Build succeeded.
 
-Time Elapsed 00:00:01.31
-    Last step completed in 00:00:01.4975
+Time Elapsed 00:00:01.21
+    Last step completed in 00:00:01.5030
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
 [C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe - TransformManifest.proj]
-Build started 2/23/2016 3:11:09 PM.
+Build started 2/24/2016 4:01:48 PM.
 Project &quot;C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
 TransformManifest:
   XslTransform (v2015.10.10.0)
@@ -77,13 +77,6 @@ TransformManifest:
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
   Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
-    Unique name 4009D610 generated for M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)
-    Unique name 280033E1 generated for M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Boolean)
-    Unique name 8558BF46 generated for M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Int32,System.Boolean)
-    Unique name E74371EE generated for M:Earthworm.AO.Equals2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)
-    Unique name 16307B65 generated for M:Earthworm.AO.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference,ESRI.ArcGIS.Geometry.IGeoTransformation,ESRI.ArcGIS.Geometry.esriTransformDirection)
-    Unique name 74017B65 generated for M:Earthworm.AO.Project2``1(``0,System.Int32)
-    Unique name 82B2C5AA generated for M:Earthworm.AO.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.Double)
     Unique name 4E7081C4 generated for M:Earthworm.EntityExtensions.FindItemByOID``1(ESRI.ArcGIS.Geodatabase.ITable,System.Int32)
     Unique name F1638096 generated for M:Earthworm.EntityExtensions.Insert``1(ESRI.ArcGIS.Geodatabase.ITable,System.Collections.Generic.IEnumerable{``0})
     Unique name 728807BF generated for M:Earthworm.EntityExtensions.Map``1(ESRI.ArcGIS.Geodatabase.ITable,ESRI.ArcGIS.Geodatabase.IQueryFilter,System.Boolean)
@@ -92,6 +85,16 @@ TransformManifest:
     Unique name 71FE0C74 generated for M:Earthworm.Kml.ToKml(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Xml.Linq.XElement[])
     Unique name ED870205 generated for M:Earthworm.Kml.ToKml``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.Func{``0,System.Double},System.Func{``0,System.Xml.Linq.XElement[]},System.Xml.Linq.XElement[])
     Unique name CA57C8D6 generated for M:Earthworm.Mapped.#ctor(System.String,System.Int32)
+    Unique name 102FAFF3 generated for M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)
+    Unique name 102CAFF3 generated for M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Boolean)
+    Unique name 102DAFF3 generated for M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Int32,System.Boolean)
+    Unique name 44AD6706 generated for M:Earthworm.Shape.Equals2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)
+    Unique name 373FF219 generated for M:Earthworm.Shape.P(System.Double,System.Double,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference)
+    Unique name F026E98D generated for M:Earthworm.Shape.Polygon(ESRI.ArcGIS.Geometry.IRing[])
+    Unique name 2F402CC4 generated for M:Earthworm.Shape.Polyline(ESRI.ArcGIS.Geometry.IPoint[])
+    Unique name 6433CC64 generated for M:Earthworm.Shape.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference,ESRI.ArcGIS.Geometry.IGeoTransformation,ESRI.ArcGIS.Geometry.esriTransformDirection)
+    Unique name 6DB40FF generated for M:Earthworm.Shape.Project2``1(``0,System.Int32)
+    Unique name 54E94FDA generated for M:Earthworm.Shape.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.Double)
     Unique name 1D933365 generated for M:Earthworm.TableWriter.CreateFeatureClass``1(ESRI.ArcGIS.Geodatabase.IFeatureWorkspace,System.String,ESRI.ArcGIS.Geometry.esriGeometryType,ESRI.ArcGIS.Geometry.ISpatialReference)
     Unique name 5899136 generated for M:Earthworm.TableWriter.CreateFeatureClass``1(ESRI.ArcGIS.Geodatabase.IFeatureWorkspace,System.String,ESRI.ArcGIS.Geometry.esriGeometryType,System.Int32)
     Unique name 687060BF generated for M:Earthworm.Text.ToText``1(Earthworm.IEntity{``0},System.String,System.Nullable{System.Char},System.Func{``0,System.Object},System.Func{System.DateTime,System.Object})
@@ -103,17 +106,17 @@ Done Building Project &quot;C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh
 
 Build succeeded.
 
-Time Elapsed 00:00:00.86
-    Last step completed in 00:00:01.0042
+Time Elapsed 00:00:00.89
+    Last step completed in 00:00:01.0322
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.0345
+    Last step completed in 00:00:00.0420
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
 No additional content to copy
-    Last step completed in 00:00:00.0045
+    Last step completed in 00:00:00.0040
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
@@ -122,7 +125,7 @@ Merging conceptual and additional tables of contents...
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
 [C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe - GenerateIntermediateTOC.proj]
-Build started 2/23/2016 3:11:10 PM.
+Build started 2/24/2016 4:01:49 PM.
 Project &quot;C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
 GenerateIntermediateTOC:
   XslTransform (v2015.10.10.0)
@@ -133,24 +136,24 @@ Done Building Project &quot;C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh
 
 Build succeeded.
 
-Time Elapsed 00:00:00.19
+Time Elapsed 00:00:00.21
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00.3367
+    Last step completed in 00:00:00.3552
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
-    Last step completed in 00:00:00.3753
+    Last step completed in 00:00:00.5504
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\sandcastle.config
-    Last step completed in 00:00:00.0180
+    Last step completed in 00:00:00.0185
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
 [C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe - BuildReferenceTopics.proj]
-Build started 2/23/2016 3:11:10 PM.
+Build started 2/24/2016 4:01:50 PM.
 Project &quot;C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
 BuildReferenceTopics:
   BuildAssembler (v2015.10.10.0)
@@ -160,7 +163,7 @@ BuildReferenceTopics:
   CopyFromFileComponent: Loaded 1 copy commands
   CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework&#39;
   CopyFromIndexComponent: Searching for files that match &#39;reflection.xml&#39; in &#39;C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working&#39;
-  CopyFromIndexComponent: Indexed 70223 elements
+  CopyFromIndexComponent: Indexed 70241 elements
   ForEachComponent: Loading subcomponents.
   ForEachComponent: Loaded 1 subcomponents.
   ForEachComponent: Loading subcomponents.
@@ -178,7 +181,7 @@ BuildReferenceTopics:
   SyntaxComponent: Loaded 2 syntax generators.
   CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0&#39;
   CopyFromIndexComponent: Searching for files that match &#39;Earthworm.xml&#39; in &#39;C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working&#39;
-  CopyFromIndexComponent: Indexed 144448 elements
+  CopyFromIndexComponent: Indexed 144461 elements
   ForEachComponent: Loading subcomponents.
   ForEachComponent: Loaded 2 subcomponents.
   ShowMissingComponent: [Sandcastle Help File Builder and Tools, version 2015.10.10.0]
@@ -251,20 +254,19 @@ BuildReferenceTopics:
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.CodeDom.Compiler.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.ComponentModel.Design.Serialization.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.ComponentModel.Design.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Configuration.Provider.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Configuration.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.CodeDom.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.ComponentModel.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Data.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Collections.Concurrent.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.ComponentModel.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Diagnostics.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Collections.Generic.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Drawing.Design.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Globalization.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Collections.Concurrent.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.IO.Compression.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.IO.Ports.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.IO.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Collections.Generic.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Configuration.Provider.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Configuration.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Linq.Expressions.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Diagnostics.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Media.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Net.Cache.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Net.Configuration.xml
@@ -272,161 +274,57 @@ BuildReferenceTopics:
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Reflection.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Net.Mime.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Net.NetworkInformation.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Runtime.InteropServices.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Linq.Expressions.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Net.Security.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Net.Sockets.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Resources.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Runtime.CompilerServices.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Runtime.Serialization.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Net.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Runtime.InteropServices.ComTypes.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Resources.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Runtime.Serialization.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Runtime.Versioning.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Collections.ObjectModel.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.Permissions.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Runtime.InteropServices.ComTypes.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.AccessControl.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.Policy.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.ServiceProcess.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Collections.Specialized.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.Principal.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Text.RegularExpressions.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Collections.ObjectModel.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.Authentication.ExtendedProtection.Configuration.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Runtime.InteropServices.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.Authentication.ExtendedProtection.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Collections.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Text.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.Authentication.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.Cryptography.X509Certificates.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Timers.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Web.Configuration.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.Cryptography.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Threading.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.ServiceProcess.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Collections.Specialized.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Text.RegularExpressions.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Collections.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Timers.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Text.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Web.Configuration.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Web.UI.WebControls.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.Permissions.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.Policy.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Threading.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Windows.Forms.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.Principal.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Web.UI.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Xml.Linq.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Xml.Schema.xml
-  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Web.UI.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Xml.Serialization.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Xml.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Web.xml
   ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Xml.XPath.xml
+  ResolveReferenceLinksComponent: Indexing targets in C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework\System.Security.xml
   ResolveReferenceLinksComponent: Loading Local reference link type targets
   ResolveReferenceLinksComponent: Indexing targets in C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\reflection.xml
-  ResolveReferenceLinksComponent: 70223 total reference link targets
+  ResolveReferenceLinksComponent: 70241 total reference link targets
   ResolveReferenceLinksComponent: Creating MSDN URL resolver
   ResolveReferenceLinksComponent: Loaded 40 cached MSDN content ID entries
   BuildAssemblerCore: Building topic R:Project_EarthwormReference
   BuildAssemblerCore: Building topic N:Earthworm
   BuildAssemblerCore: Building topic T:Earthworm.AO
   BuildAssemblerCore: Building topic Methods.T:Earthworm.AO
-  BuildAssemblerCore: Building topic Overload:Earthworm.AO.Buffer
-  BuildAssemblerCore: Building topic Overload:Earthworm.AO.Equals2
-  BuildAssemblerCore: Building topic Overload:Earthworm.AO.Project2
-  BuildAssemblerCore: Building topic Overload:Earthworm.AO.Within
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Boundary(ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Boundary(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Boundary(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Boundary(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolygon&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.ISpatialReference&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolygon&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Boolean)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolygon&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Int32,System.Boolean)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Int32,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Int32,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolygon&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Int32,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Clip(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IEnvelope)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Clip(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IEnvelope)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Clip(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IEnvelope)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IEnvelope&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Clip(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IEnvelope)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Clip(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IEnvelope)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Contains(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Contains(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Contains(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Contains(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.ConvexHull(ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.ConvexHull(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.ConvexHull(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.ConvexHull(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Copy``1(``0)
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Crosses(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Crosses(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Crosses(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Crosses(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Difference(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Difference(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Difference(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Difference(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Difference(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Disjoint(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Disjoint(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Disjoint(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Disjoint(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.DistanceTo(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.DistanceTo(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.DistanceTo(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.DistanceTo(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
   BuildAssemblerCore: Building topic M:Earthworm.AO.Edit(ESRI.ArcGIS.Geodatabase.IWorkspace,System.Action)
 BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Edit(ESRI.ArcGIS.Geodatabase.IWorkspace,System.Action)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geodatabase.IWorkspace&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Edit(ESRI.ArcGIS.Geodatabase.IWorkspace,System.Action)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geodatabase.IWorkspace&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Equals2(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Equals2(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Equals2(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Equals2(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Equals2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Equals2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Equals2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Equals2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Intersect(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Intersect(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Intersect(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Intersect(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Intersect(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Intersects(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Intersects(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Intersects(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Intersects(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Overlaps(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Overlaps(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Overlaps(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Overlaps(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.ISpatialReference&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference,ESRI.ArcGIS.Geometry.IGeoTransformation,ESRI.ArcGIS.Geometry.esriTransformDirection)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference,ESRI.ArcGIS.Geometry.IGeoTransformation,ESRI.ArcGIS.Geometry.esriTransformDirection)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.ISpatialReference&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference,ESRI.ArcGIS.Geometry.IGeoTransformation,ESRI.ArcGIS.Geometry.esriTransformDirection)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeoTransformation&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference,ESRI.ArcGIS.Geometry.IGeoTransformation,ESRI.ArcGIS.Geometry.esriTransformDirection)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.esriTransformDirection&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Project2``1(``0,System.Int32)
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Relation(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.String)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Relation(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.String)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Relation(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.String)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Relation(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.String)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Touches(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Touches(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Touches(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Touches(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Union(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Union(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Union(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Union(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Union(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-  BuildAssemblerCore: Building topic M:Earthworm.AO.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.Double)
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.AO.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
   BuildAssemblerCore: Building topic T:Earthworm.Entity
   BuildAssemblerCore: Building topic Methods.T:Earthworm.Entity
   BuildAssemblerCore: Building topic Properties.T:Earthworm.Entity
@@ -549,6 +447,151 @@ BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Kml.ToKm
   BuildAssemblerCore: Building topic P:Earthworm.Mapped.FieldName
   BuildAssemblerCore: Building topic P:Earthworm.Mapped.GetFieldName
   BuildAssemblerCore: Building topic P:Earthworm.Mapped.Length
+  BuildAssemblerCore: Building topic T:Earthworm.Shape
+  BuildAssemblerCore: Building topic Methods.T:Earthworm.Shape
+  BuildAssemblerCore: Building topic Properties.T:Earthworm.Shape
+  BuildAssemblerCore: Building topic Overload:Earthworm.Shape.Buffer
+  BuildAssemblerCore: Building topic Overload:Earthworm.Shape.Equals2
+  BuildAssemblerCore: Building topic Overload:Earthworm.Shape.P
+  BuildAssemblerCore: Building topic Overload:Earthworm.Shape.Polygon
+  BuildAssemblerCore: Building topic Overload:Earthworm.Shape.Polyline
+  BuildAssemblerCore: Building topic Overload:Earthworm.Shape.Project2
+  BuildAssemblerCore: Building topic Overload:Earthworm.Shape.Within
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Boundary(ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Boundary(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Boundary(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Boundary(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolygon&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.ISpatialReference&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolygon&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Boolean)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolygon&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Int32,System.Boolean)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Int32,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Int32,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolygon&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Buffer(ESRI.ArcGIS.Geometry.IGeometry,System.Double,System.Int32,System.Boolean)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Clip(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IEnvelope)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Clip(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IEnvelope)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Clip(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IEnvelope)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IEnvelope&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Clip(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IEnvelope)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Clip(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IEnvelope)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Contains(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Contains(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Contains(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Contains(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.ConvexHull(ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.ConvexHull(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.ConvexHull(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.ConvexHull(ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Copy``1(``0)
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Crosses(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Crosses(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Crosses(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Crosses(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic P:Earthworm.Shape.DefaultSpatialReference
+BuildAssembler : warning : ResolveReferenceLinksComponent: [P:Earthworm.Shape.DefaultSpatialReference] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.ISpatialReference&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Difference(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Difference(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Difference(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Difference(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Difference(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Disjoint(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Disjoint(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Disjoint(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Disjoint(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.DistanceTo(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.DistanceTo(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.DistanceTo(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.DistanceTo(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Equals2(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Equals2(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Equals2(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Equals2(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Equals2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Equals2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Equals2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Equals2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.InnerRing(ESRI.ArcGIS.Geometry.IPoint[])
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.InnerRing(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.InnerRing(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IRing&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Intersect(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Intersect(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Intersect(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Intersect(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Intersect(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Intersects(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Intersects(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Intersects(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Intersects(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Multipoint(ESRI.ArcGIS.Geometry.IPoint[])
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Multipoint(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Multipoint(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IMultipoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.OuterRing(ESRI.ArcGIS.Geometry.IPoint[])
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.OuterRing(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.OuterRing(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IRing&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Overlaps(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Overlaps(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Overlaps(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Overlaps(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.P(System.Double,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.P(System.Double,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.ISpatialReference&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.P(System.Double,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.P(System.Double,System.Double,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.P(System.Double,System.Double,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.ISpatialReference&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.P(System.Double,System.Double,System.Double,ESRI.ArcGIS.Geometry.ISpatialReference)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Path(ESRI.ArcGIS.Geometry.IPoint[])
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Path(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Path(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPath&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Polygon(ESRI.ArcGIS.Geometry.IPoint[])
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Polygon(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Polygon(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolygon&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Polygon(ESRI.ArcGIS.Geometry.IRing[])
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Polygon(ESRI.ArcGIS.Geometry.IRing[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IRing&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Polygon(ESRI.ArcGIS.Geometry.IRing[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolygon&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Polyline(ESRI.ArcGIS.Geometry.IPath[])
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Polyline(ESRI.ArcGIS.Geometry.IPath[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPath&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Polyline(ESRI.ArcGIS.Geometry.IPath[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolyline&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Polyline(ESRI.ArcGIS.Geometry.IPoint[])
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Polyline(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPoint&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Polyline(ESRI.ArcGIS.Geometry.IPoint[])] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IPolyline&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.ISpatialReference&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference,ESRI.ArcGIS.Geometry.IGeoTransformation,ESRI.ArcGIS.Geometry.esriTransformDirection)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference,ESRI.ArcGIS.Geometry.IGeoTransformation,ESRI.ArcGIS.Geometry.esriTransformDirection)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.ISpatialReference&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference,ESRI.ArcGIS.Geometry.IGeoTransformation,ESRI.ArcGIS.Geometry.esriTransformDirection)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeoTransformation&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Project2``1(``0,ESRI.ArcGIS.Geometry.ISpatialReference,ESRI.ArcGIS.Geometry.IGeoTransformation,ESRI.ArcGIS.Geometry.esriTransformDirection)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.esriTransformDirection&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Project2``1(``0,System.Int32)
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Relation(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.String)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Relation(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.String)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Relation(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.String)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Relation(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.String)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Touches(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Touches(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Touches(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Touches(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Union(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Union(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Union(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Union(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Union(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.Double)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.Within(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IGeometry,System.Double)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.IGeometry&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
+  BuildAssemblerCore: Building topic M:Earthworm.Shape.WKID(System.Int32)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.Shape.WKID(System.Int32)] Unknown reference link target &#39;T:ESRI.ArcGIS.Geometry.ISpatialReference&#39;. [C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj]
   BuildAssemblerCore: Building topic T:Earthworm.TableWriter
   BuildAssemblerCore: Building topic Methods.T:Earthworm.TableWriter
   BuildAssemblerCore: Building topic Overload:Earthworm.TableWriter.CreateFeatureClass
@@ -578,16 +621,16 @@ BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Earthworm.TableWri
   BuildAssemblerCore: Building topic M:Earthworm.Text.ToText(Earthworm.IEntity,System.String,System.Nullable{System.Char},System.Func{System.DateTime,System.Object})
   BuildAssemblerCore: Building topic M:Earthworm.Text.ToText``1(Earthworm.IEntity{``0},System.Func{``0,System.Object},System.Func{System.DateTime,System.Object})
   BuildAssemblerCore: Building topic M:Earthworm.Text.ToText``1(Earthworm.IEntity{``0},System.String,System.Nullable{System.Char},System.Func{``0,System.Object},System.Func{System.DateTime,System.Object})
-  Processed 139 topic(s)
-  124 warning(s)
+  Processed 157 topic(s)
+  146 warning(s)
   CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 6 of 15.
   CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
 Done Building Project &quot;C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\BuildReferenceTopics.proj&quot; (default targets).
 
 Build succeeded.
 
-Time Elapsed 00:00:16.77
-    Last step completed in 00:00:16.9257
+Time Elapsed 00:00:19.17
+    Last step completed in 00:00:19.3485
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
@@ -603,11 +646,11 @@ E-Mail: Eric@EWoodruff.us
 Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
 
 Processing website files in C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\Output\Website
-Processed 139 HTML files
+Processed 157 HTML files
 Sorting keywords and generating See Also indices
 Saving website keyword index to C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\WebKI.xml
 Saving website table of contents to C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\WebTOC.xml
-    Last step completed in 00:00:01.0713
+    Last step completed in 00:00:01.3515
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
@@ -696,30 +739,30 @@ C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyle
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\..\LegacyWeb\TOC.css -&gt; C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\Output\Website\TOC.css
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\..\LegacyWeb\TOC.js -&gt; C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\Output\Website\TOC.js
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\..\LegacyWeb\Web.Config -&gt; C:\Users\Jiro\Documents\GitHub\Earthworm\branches\gh-pages\Help\Working\Output\Website\Web.Config
-    Last step completed in 00:00:00.6012
+    Last step completed in 00:00:00.7845
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
-    Last step completed in 00:00:00.0000
+    Last step completed in 00:00:00.0005
 </buildStep>
 <buildStep step="GenerateFullTextIndex">
 Generating full-text index for the website...
 
-    Last step completed in 00:00:00.4694
+    Last step completed in 00:00:00.4788
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
 
-Copied 249 files for the website content
-    Last step completed in 00:00:00.4510
+Copied 267 files for the website content
+    Last step completed in 00:00:00.4687
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00.0994
+    Last step completed in 00:00:00.1159
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 2/23/2016 3:11:30 PM.  Total time: 00:00:24.7360
+Build completed successfully at 2/24/2016 4:02:12 PM.  Total time: 00:00:28.7882
 
 </buildStep>
 </shfbBuild>
