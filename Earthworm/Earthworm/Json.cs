@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using System.Web.Script.Serialization;
-using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Geometry;
 
 namespace Earthworm
@@ -82,14 +81,6 @@ namespace Earthworm
             throw new ArgumentException("This geometry type is not supported.", "shape");
         }
 
-        private static IGeometry Load<T>(this T shape, double[][] array)
-        {
-            var points = array.Select(c => new WKSPoint { X = c[0], Y = c[1] }).ToArray();
-            ((IGeometryBridge2)new GeometryEnvironment()).SetWKSPoints((IPointCollection4)shape, ref points);
-
-            return (IGeometry)shape;
-        }
-
         #endregion
 
         /// <summary>
@@ -110,7 +101,7 @@ namespace Earthworm
         public static IPoint ToPoint(string json)
         {
             var shape = json.Deserialize<JsonPoint>();
-            return new Point { X = shape.x, Y = shape.y };
+            return new PointClass { X = shape.x, Y = shape.y };
         }
 
         /// <summary>
@@ -121,7 +112,7 @@ namespace Earthworm
         public static IMultipoint ToMultipoint(string json)
         {
             var shape = json.Deserialize<JsonMultipoint>();
-            return (IMultipoint)new Multipoint().Load(shape.points);
+            return new MultipointClass().Load(shape.points);
         }
 
         /// <summary>
@@ -132,12 +123,12 @@ namespace Earthworm
         public static IPolyline ToPolyline(string json)
         {
             var shape = json.Deserialize<JsonPolyline>();
-            var polyline = (IGeometryCollection)new Polyline();
+            var polyline = new PolylineClass();
 
             foreach (var path in shape.paths)
-                polyline.AddGeometry(new Path().Load(path));
+                polyline.AddGeometry(new PathClass().Load(path));
 
-            return (IPolyline)polyline;
+            return polyline;
         }
 
         /// <summary>
@@ -148,12 +139,12 @@ namespace Earthworm
         public static IPolygon ToPolygon(string json)
         {
             var shape = json.Deserialize<JsonPolygon>();
-            var polygon = (IGeometryCollection)new Polygon();
+            var polygon = new PolygonClass();
 
             foreach (var ring in shape.rings)
-                polygon.AddGeometry(new Ring().Load(ring));
+                polygon.AddGeometry(new RingClass().Load(ring));
 
-            return (IPolygon)polygon;
+            return polygon;
         }
     }
 

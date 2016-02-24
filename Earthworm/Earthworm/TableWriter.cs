@@ -201,7 +201,7 @@ namespace Earthworm
         /// <returns></returns>
         public static IFeatureClass CreateFeatureClass<T>(this IFeatureWorkspace featureWorkspace, string name, esriGeometryType geometryType, int wkid) where T : IEntity<IGeometry>
         {
-            return CreateTable<T>(featureWorkspace, name, true, geometryType, AO.GetSpatialReference(wkid)) as IFeatureClass;
+            return CreateTable<T>(featureWorkspace, name, true, geometryType, Shape.WKID(wkid)) as IFeatureClass;
         }
 
         /// <summary>

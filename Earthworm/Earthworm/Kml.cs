@@ -20,12 +20,6 @@ namespace Earthworm
             return string.Join(" ", coordinates.Select(c => c[0] + "," + c[1] + "," + z));
         }
 
-        private static bool IsInnerRing(double[][] ring)
-        {
-            return Enumerable.Range(0, ring.Length - 1)
-                .Sum(i => ring[i][0] * ring[i + 1][1] - ring[i + 1][0] * ring[i][1]) > 0;
-        }
-
         private static XElement ToKmlPoint(this JsonPoint point, double z, params XElement[] extraElements)
         {
             return new XElement(kml + "Point", extraElements,
@@ -52,7 +46,7 @@ namespace Earthworm
 
             foreach (var ring in polygon.rings)
             {
-                var isInnerRing = IsInnerRing(ring);
+                var isInnerRing = ring.IsInnerRing();
 
                 if (polygon.rings.Length == 1 || !isInnerRing)
                     polygons.Add(new XElement(kml + "Polygon", extraElements));
