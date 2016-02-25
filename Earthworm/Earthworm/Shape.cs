@@ -22,6 +22,23 @@ namespace Earthworm
                 catch { return spatialReferenceEnvironment.CreateProjectedCoordinateSystem(wkid); }
             });
 
+        private static ISpatialReference GetUniqueSpatialReference(this IEnumerable<IGeometry> shapes)
+        {
+            var spatialReferences = shapes
+                .Select(g => g.SpatialReference)
+                .Where(s => s != null)
+                .Distinct()
+                .ToList();
+
+            if (spatialReferences.Count == 0)
+                return null;
+
+            if (spatialReferences.Count > 1)
+                throw new InvalidOperationException("Cannot mix different spatial references.");
+
+            return spatialReferences.Single();
+        }
+
         internal static T Load<T>(this T shape, double[][] array) where T : IPointCollection4
         {
             var points = array.Select(c => new WKSPointZ { X = c[0], Y = c[1], Z = c.ElementAtOrDefault(2) }).ToArray();
@@ -49,11 +66,6 @@ namespace Earthworm
         #endregion
 
         #region Spatial Reference
-
-        /// <summary>
-        /// The default spatial reference used when constructing a Point object.
-        /// </summary>
-        public static ISpatialReference DefaultSpatialReference { get; set; }
 
         /// <summary>
         /// Creates a spatial reference from a Well-Known ID.
@@ -124,7 +136,7 @@ namespace Earthworm
         /// <returns></returns>
         public static IPoint P(double x, double y, double z, ISpatialReference spatialReference = null)
         {
-            return new PointClass { X = x, Y = y, Z = z, SpatialReference = spatialReference ?? DefaultSpatialReference };
+            return new PointClass { X = x, Y = y, Z = z, SpatialReference = spatialReference };
         }
 
         /// <summary>
@@ -140,13 +152,34 @@ namespace Earthworm
         }
 
         /// <summary>
+        /// Initializes a new instance of the Point class.
+        /// </summary>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        public static IPoint P(string json)
+        {
+            return Json.ToPoint(json);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the Multipoint class.
         /// </summary>
         /// <param name="points"></param>
         /// <returns></returns>
         public static IMultipoint Multipoint(params IPoint[] points)
         {
-            return new MultipointClass().Load(points);
+            var multipointClass = new MultipointClass { SpatialReference = points.GetUniqueSpatialReference() };
+            return multipointClass.Load(points);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the Multipoint class.
+        /// </summary>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        public static IMultipoint Multipoint(string json)
+        {
+            return Json.ToMultipoint(json);
         }
 
         /// <summary>
@@ -156,7 +189,8 @@ namespace Earthworm
         /// <returns></returns>
         public static IPath Path(params IPoint[] points)
         {
-            return new PathClass().Load(points);
+            var path = new PathClass { SpatialReference = points.GetUniqueSpatialReference() };
+            return path.Load(points);
         }
 
         /// <summary>
@@ -166,7 +200,7 @@ namespace Earthworm
         /// <returns></returns>
         public static IPolyline Polyline(params IPath[] paths)
         {
-            var polyline = new PolylineClass();
+            var polyline = new PolylineClass { SpatialReference = paths.GetUniqueSpatialReference() };
 
             foreach (var path in paths)
                 polyline.AddGeometry(path);
@@ -185,13 +219,24 @@ namespace Earthworm
         }
 
         /// <summary>
+        /// Initializes a new instance of the Polyline class.
+        /// </summary>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        public static IPolyline Polyline(string json)
+        {
+            return Json.ToPolyline(json);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the Ring class.  Reorders the points clockwise (if not already).
         /// </summary>
         /// <param name="points"></param>
         /// <returns></returns>
         public static IRing OuterRing(params IPoint[] points)
         {
-            return new RingClass().Load(points.IsInnerRing() ? points.Reverse() : points);
+            var ring = new RingClass { SpatialReference = points.GetUniqueSpatialReference() };
+            return ring.Load(points.IsInnerRing() ? points.Reverse() : points);
         }
 
         /// <summary>
@@ -201,7 +246,8 @@ namespace Earthworm
         /// <returns></returns>
         public static IRing InnerRing(params IPoint[] points)
         {
-            return new RingClass().Load(points.IsInnerRing() ? points : points.Reverse());
+            var ring = new RingClass { SpatialReference = points.GetUniqueSpatialReference() };
+            return ring.Load(points.IsInnerRing() ? points : points.Reverse());
         }
 
         /// <summary>
@@ -211,7 +257,7 @@ namespace Earthworm
         /// <returns></returns>
         public static IPolygon Polygon(params IRing[] rings)
         {
-            var polygon = new PolygonClass();
+            var polygon = new PolygonClass { SpatialReference = rings.GetUniqueSpatialReference() };
 
             foreach (var ring in rings)
                 polygon.AddGeometry(ring);
@@ -227,6 +273,16 @@ namespace Earthworm
         public static IPolygon Polygon(params IPoint[] points)
         {
             return Polygon(OuterRing(points));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the Polygon class.
+        /// </summary>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        public static IPolygon Polygon(string json)
+        {
+            return Json.ToPolygon(json);
         }
 
         #endregion

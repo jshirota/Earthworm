@@ -40,24 +40,40 @@ namespace Earthworm
                 .ToArray();
         }
 
+        private static SpatialReference Convert(this ISpatialReference spatialReference)
+        {
+            if (spatialReference == null)
+                return null;
+
+            return new SpatialReference { wkid = spatialReference.FactoryCode };
+        }
+
+        private static ISpatialReference Convert(this SpatialReference spatialReference)
+        {
+            if (spatialReference == null)
+                return null;
+
+            return Shape.WKID(spatialReference.wkid);
+        }
+
         private static JsonPoint ToPoint(this IPoint shape)
         {
-            return new JsonPoint { x = shape.X, y = shape.Y };
+            return new JsonPoint { x = shape.X, y = shape.Y, spatialReference = shape.SpatialReference.Convert() };
         }
 
         private static JsonMultipoint ToMultipoint(this IMultipoint shape)
         {
-            return new JsonMultipoint { points = ((IPointCollection4)shape).ToArray() };
+            return new JsonMultipoint { points = ((IPointCollection4)shape).ToArray(), spatialReference = shape.SpatialReference.Convert() };
         }
 
         private static JsonPolyline ToPolyline(this IPolyline shape)
         {
-            return new JsonPolyline { paths = ((IGeometryCollection)shape).ToArray() };
+            return new JsonPolyline { paths = ((IGeometryCollection)shape).ToArray(), spatialReference = shape.SpatialReference.Convert() };
         }
 
         private static JsonPolygon ToPolygon(this IPolygon shape)
         {
-            return new JsonPolygon { rings = ((IGeometryCollection)shape).ToArray() };
+            return new JsonPolygon { rings = ((IGeometryCollection)shape).ToArray(), spatialReference = shape.SpatialReference.Convert() };
         }
 
         internal static IJsonGeometry ToJsonGeometry(this IGeometry shape)
@@ -101,7 +117,7 @@ namespace Earthworm
         public static IPoint ToPoint(string json)
         {
             var shape = json.Deserialize<JsonPoint>();
-            return new PointClass { X = shape.x, Y = shape.y };
+            return new PointClass { X = shape.x, Y = shape.y, SpatialReference = shape.spatialReference.Convert() };
         }
 
         /// <summary>
@@ -112,7 +128,8 @@ namespace Earthworm
         public static IMultipoint ToMultipoint(string json)
         {
             var shape = json.Deserialize<JsonMultipoint>();
-            return new MultipointClass().Load(shape.points);
+            var multipoint = new MultipointClass { SpatialReference = shape.spatialReference.Convert() };
+            return multipoint.Load(shape.points);
         }
 
         /// <summary>
@@ -123,7 +140,7 @@ namespace Earthworm
         public static IPolyline ToPolyline(string json)
         {
             var shape = json.Deserialize<JsonPolyline>();
-            var polyline = new PolylineClass();
+            var polyline = new PolylineClass { SpatialReference = shape.spatialReference.Convert() };
 
             foreach (var path in shape.paths)
                 polyline.AddGeometry(new PathClass().Load(path));
@@ -139,7 +156,7 @@ namespace Earthworm
         public static IPolygon ToPolygon(string json)
         {
             var shape = json.Deserialize<JsonPolygon>();
-            var polygon = new PolygonClass();
+            var polygon = new PolygonClass { SpatialReference = shape.spatialReference.Convert() };
 
             foreach (var ring in shape.rings)
                 polygon.AddGeometry(new RingClass().Load(ring));
@@ -154,23 +171,33 @@ namespace Earthworm
     {
     }
 
-    internal class JsonPoint : IJsonGeometry
+    internal class JsonGeometry : IJsonGeometry
+    {
+        public SpatialReference spatialReference { get; set; }
+    }
+
+    internal class SpatialReference
+    {
+        public int wkid { get; set; }
+    }
+
+    internal class JsonPoint : JsonGeometry
     {
         public double x { get; set; }
         public double y { get; set; }
     }
 
-    internal class JsonMultipoint : IJsonGeometry
+    internal class JsonMultipoint : JsonGeometry
     {
         public double[][] points { get; set; }
     }
 
-    internal class JsonPolyline : IJsonGeometry
+    internal class JsonPolyline : JsonGeometry
     {
         public double[][][] paths { get; set; }
     }
 
-    internal class JsonPolygon : IJsonGeometry
+    internal class JsonPolygon : JsonGeometry
     {
         public double[][][] rings { get; set; }
     }
