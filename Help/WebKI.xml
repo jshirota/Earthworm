@@ -19,7 +19,6 @@
   <HelpKINode Title="CreateTable(Of T) method" Url="html/5F261AD0.htm" />
   <HelpKINode Title="CreateTable&lt;T&gt; method" Url="html/5F261AD0.htm" />
   <HelpKINode Title="Crosses method" Url="html/8E681057.htm" />
-  <HelpKINode Title="DefaultSpatialReference property" Url="html/22781A1A.htm" />
   <HelpKINode Title="Delete method">
     <HelpKINode Title="Entity.Delete Method " Url="html/B6FA865D.htm" />
     <HelpKINode Title="IEntity.Delete Method " Url="html/F90FCD1F.htm" />
@@ -207,7 +206,7 @@
   <HelpKINode Title="Mapped.GetFieldName property" Url="html/FF9E70F5.htm" />
   <HelpKINode Title="Mapped.Length property" Url="html/A756CD23.htm" />
   <HelpKINode Title="Mapped.Mapped constructor" Url="html/61F8409C.htm" />
-  <HelpKINode Title="Multipoint method" Url="html/CB23135A.htm" />
+  <HelpKINode Title="Multipoint method" Url="html/6C84E134.htm" />
   <HelpKINode Title="OID property">
     <HelpKINode Title="Entity.OID Property " Url="html/365948A4.htm" />
     <HelpKINode Title="IEntity.OID Property " Url="html/7CE3B015.htm" />
@@ -227,7 +226,6 @@
     <HelpKINode Title="Shape Class" Url="html/749CEFAF.htm" />
     <HelpKINode Title="about Shape class" Url="html/749CEFAF.htm" />
     <HelpKINode Title="methods" Url="html/C42BAB52.htm" />
-    <HelpKINode Title="properties" Url="html/C2521BE6.htm" />
   </HelpKINode>
   <HelpKINode Title="Shape property">
     <HelpKINode Title="Entity(T).Shape Property " Url="html/5DD84114.htm" />
@@ -241,7 +239,6 @@
   <HelpKINode Title="Shape.Copy(Of T) method" Url="html/F85E737.htm" />
   <HelpKINode Title="Shape.Copy&lt;T&gt; method" Url="html/F85E737.htm" />
   <HelpKINode Title="Shape.Crosses method" Url="html/8E681057.htm" />
-  <HelpKINode Title="Shape.DefaultSpatialReference property" Url="html/22781A1A.htm" />
   <HelpKINode Title="Shape.Difference method" Url="html/EB3A858A.htm" />
   <HelpKINode Title="Shape.Disjoint method" Url="html/8F8506E5.htm" />
   <HelpKINode Title="Shape.DistanceTo method" Url="html/F57FFB1A.htm" />
@@ -249,7 +246,7 @@
   <HelpKINode Title="Shape.InnerRing method" Url="html/2CD2D348.htm" />
   <HelpKINode Title="Shape.Intersect method" Url="html/BBF0A867.htm" />
   <HelpKINode Title="Shape.Intersects method" Url="html/6371A867.htm" />
-  <HelpKINode Title="Shape.Multipoint method" Url="html/CB23135A.htm" />
+  <HelpKINode Title="Shape.Multipoint method" Url="html/6C84E134.htm" />
   <HelpKINode Title="Shape.OuterRing method" Url="html/5A7C0AB4.htm" />
   <HelpKINode Title="Shape.Overlaps method" Url="html/29240D99.htm" />
   <HelpKINode Title="Shape.P method" Url="html/64B13E16.htm" />
