@@ -117,7 +117,7 @@ namespace Earthworm
         public static IPoint ToPoint(string json)
         {
             var shape = json.Deserialize<JsonPoint>();
-            return new PointClass { X = shape.x, Y = shape.y, SpatialReference = shape.spatialReference.Convert() };
+            return new Point { X = shape.x, Y = shape.y, SpatialReference = shape.spatialReference.Convert() };
         }
 
         /// <summary>
@@ -128,7 +128,8 @@ namespace Earthworm
         public static IMultipoint ToMultipoint(string json)
         {
             var shape = json.Deserialize<JsonMultipoint>();
-            var multipoint = new MultipointClass { SpatialReference = shape.spatialReference.Convert() };
+            var multipoint = (IMultipoint)new Multipoint();
+            multipoint.SpatialReference = shape.spatialReference.Convert();
             return multipoint.Load(shape.points);
         }
 
@@ -140,10 +141,11 @@ namespace Earthworm
         public static IPolyline ToPolyline(string json)
         {
             var shape = json.Deserialize<JsonPolyline>();
-            var polyline = new PolylineClass { SpatialReference = shape.spatialReference.Convert() };
+            var polyline = (IPolyline)new Polyline();
+            polyline.SpatialReference = shape.spatialReference.Convert();
 
             foreach (var path in shape.paths)
-                polyline.AddGeometry(new PathClass().Load(path));
+                ((IGeometryCollection)polyline).AddGeometry(((IGeometry)new Path()).Load(path));
 
             return polyline;
         }
@@ -156,10 +158,11 @@ namespace Earthworm
         public static IPolygon ToPolygon(string json)
         {
             var shape = json.Deserialize<JsonPolygon>();
-            var polygon = new PolygonClass { SpatialReference = shape.spatialReference.Convert() };
+            var polygon = (IPolygon)new Polygon();
+            polygon.SpatialReference = shape.spatialReference.Convert();
 
             foreach (var ring in shape.rings)
-                polygon.AddGeometry(new RingClass().Load(ring));
+                ((IGeometryCollection)polygon).AddGeometry(((IGeometry)new Ring()).Load(ring));
 
             return polygon;
         }

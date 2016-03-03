@@ -39,15 +39,15 @@ namespace Earthworm
             return spatialReferences.Single();
         }
 
-        internal static T Load<T>(this T shape, double[][] array) where T : IPointCollection4
+        internal static T Load<T>(this T shape, double[][] array) where T : IGeometry
         {
             var points = array.Select(c => new WKSPointZ { X = c[0], Y = c[1], Z = c.ElementAtOrDefault(2) }).ToArray();
-            new GeometryEnvironmentClass().SetWKSPointZs(shape, ref points);
+            ((IGeometryBridge2)new GeometryEnvironment()).SetWKSPointZs((IPointCollection4)shape, ref points);
 
             return shape;
         }
 
-        private static T Load<T>(this T shape, IEnumerable<IPoint> points) where T : IPointCollection4
+        private static T Load<T>(this T shape, IEnumerable<IPoint> points) where T : IGeometry
         {
             return shape.Load(points.Select(p => new[] { p.X, p.Y }).ToArray());
         }
@@ -136,7 +136,7 @@ namespace Earthworm
         /// <returns></returns>
         public static IPoint P(double x, double y, double z, ISpatialReference spatialReference = null)
         {
-            return new PointClass { X = x, Y = y, Z = z, SpatialReference = spatialReference };
+            return new Point { X = x, Y = y, Z = z, SpatialReference = spatialReference };
         }
 
         /// <summary>
@@ -168,7 +168,8 @@ namespace Earthworm
         /// <returns></returns>
         public static IMultipoint Multipoint(params IPoint[] points)
         {
-            var multipointClass = new MultipointClass { SpatialReference = points.GetUniqueSpatialReference() };
+            var multipointClass = (IMultipoint)new Multipoint();
+            multipointClass.SpatialReference = points.GetUniqueSpatialReference();
             return multipointClass.Load(points);
         }
 
@@ -189,7 +190,8 @@ namespace Earthworm
         /// <returns></returns>
         public static IPath Path(params IPoint[] points)
         {
-            var path = new PathClass { SpatialReference = points.GetUniqueSpatialReference() };
+            var path = (IPath)new Path();
+            path.SpatialReference = points.GetUniqueSpatialReference();
             return path.Load(points);
         }
 
@@ -200,10 +202,11 @@ namespace Earthworm
         /// <returns></returns>
         public static IPolyline Polyline(params IPath[] paths)
         {
-            var polyline = new PolylineClass { SpatialReference = paths.GetUniqueSpatialReference() };
+            var polyline = (IPolyline)new Polyline();
+            polyline.SpatialReference = paths.GetUniqueSpatialReference();
 
             foreach (var path in paths)
-                polyline.AddGeometry(path);
+                ((IGeometryCollection)polyline).AddGeometry(path);
 
             return polyline;
         }
@@ -235,7 +238,8 @@ namespace Earthworm
         /// <returns></returns>
         public static IRing OuterRing(params IPoint[] points)
         {
-            var ring = new RingClass { SpatialReference = points.GetUniqueSpatialReference() };
+            var ring = (IRing)new Ring();
+            ring.SpatialReference = points.GetUniqueSpatialReference();
             return ring.Load(points.IsInnerRing() ? points.Reverse() : points);
         }
 
@@ -246,7 +250,8 @@ namespace Earthworm
         /// <returns></returns>
         public static IRing InnerRing(params IPoint[] points)
         {
-            var ring = new RingClass { SpatialReference = points.GetUniqueSpatialReference() };
+            var ring = (IRing)new Ring();
+            ring.SpatialReference = points.GetUniqueSpatialReference();
             return ring.Load(points.IsInnerRing() ? points : points.Reverse());
         }
 
@@ -257,10 +262,11 @@ namespace Earthworm
         /// <returns></returns>
         public static IPolygon Polygon(params IRing[] rings)
         {
-            var polygon = new PolygonClass { SpatialReference = rings.GetUniqueSpatialReference() };
+            var polygon = (IPolygon)new Polygon();
+            polygon.SpatialReference = rings.GetUniqueSpatialReference();
 
             foreach (var ring in rings)
-                polygon.AddGeometry(ring);
+                ((IGeometryCollection)polygon).AddGeometry(ring);
 
             return polygon;
         }
