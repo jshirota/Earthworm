@@ -81,7 +81,8 @@ namespace Earthworm.SpatialAnalyst
         /// <param name="fileName"></param>
         public Grid(string fileName)
         {
-            var directory = GetDirectoryName(fileName);
+            var directoryName = GetDirectoryName(fileName);
+            var directory = directoryName == "" ? Environment.CurrentDirectory : directoryName;
             var name = GetFileName(fileName);
             var workspace = GetWorkspace(directory);
 
@@ -500,9 +501,6 @@ namespace Earthworm.SpatialAnalyst
             var directory = directoryName == "" ? Environment.CurrentDirectory : directoryName;
 
             Directory.CreateDirectory(directory);
-
-            if (File.Exists(fileName))
-                File.Delete(fileName);
 
             if (fileName.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
             {
