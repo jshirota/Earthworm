@@ -501,6 +501,16 @@ namespace Earthworm.SpatialAnalyst
 
             Directory.CreateDirectory(directory);
 
+            if (File.Exists(fileName))
+                File.Delete(fileName);
+
+            if (fileName.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
+            {
+                var conversionOp = (IRasterExportOp)new RasterConversionOp();
+                conversionOp.ExportToASCII((IGeoDataset)RasterDataset, fileName);
+                return;
+            }
+
             var workspace = GetWorkspace(directory);
             var name = GetFileName(fileName);
 
