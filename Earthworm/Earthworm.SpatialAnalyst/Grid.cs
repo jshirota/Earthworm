@@ -5,6 +5,7 @@ using ESRI.ArcGIS.DataSourcesRaster;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.GeoAnalyst;
 using ESRI.ArcGIS.Geodatabase;
+using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.SpatialAnalyst;
 using static System.IO.Path;
 using static ESRI.ArcGIS.GeoAnalyst.esriGeoAnalysisStatisticsEnum;
@@ -146,7 +147,7 @@ namespace Earthworm.SpatialAnalyst
                 extensionConfig.State = esriExtensionState.esriESEnabled;
         }
 
-        private IWorkspace GetWorkspace(string directory)
+        private static IWorkspace GetWorkspace(string directory)
         {
             var workspaceFactory = new RasterWorkspaceFactory();
 
@@ -484,18 +485,22 @@ namespace Earthworm.SpatialAnalyst
         /// </summary>
         /// <param name="workspace"></param>
         /// <param name="name"></param>
-        public void Save(IWorkspace workspace, string name)
+        public Grid Save(IWorkspace workspace, string name)
         {
             var format = workspace.Type == esriWorkspaceType.esriFileSystemWorkspace ? GetFormat(name) : "GDB";
 
-            ((ISaveAs2)RasterDataset).SaveAs(name, workspace, format);
+
+
+            var dataset = ((ISaveAs2)RasterDataset).SaveAs(name, workspace, format);
+
+            return new Grid((IRasterDataset)dataset);
         }
 
         /// <summary>
         /// Saves this grid.  The format is inferred from the file extension.
         /// </summary>
         /// <param name="fileName"></param>
-        public void Save(string fileName)
+        public Grid Save(string fileName)
         {
             var directoryName = GetDirectoryName(fileName);
             var directory = directoryName == "" ? Environment.CurrentDirectory : directoryName;
@@ -506,13 +511,14 @@ namespace Earthworm.SpatialAnalyst
             {
                 var conversionOp = (IRasterExportOp)new RasterConversionOp();
                 conversionOp.ExportToASCII((IGeoDataset)RasterDataset, fileName);
-                return;
+
+                return this;
             }
 
             var workspace = GetWorkspace(directory);
             var name = GetFileName(fileName);
 
-            Save(workspace, name);
+            return Save(workspace, name);
         }
 
         #endregion
@@ -1303,6 +1309,15 @@ namespace Earthworm.SpatialAnalyst
         #endregion
 
         #region Transformation
+
+        private static ITransformationOp TransformationOp => (ITransformationOp)new RasterTransformationOp();
+
+        public static Grid Clip(Grid grid, IEnvelope envelope)
+        {
+            var dataset = TransformationOp.Clip((IGeoDataset)grid.RasterDataset, envelope);
+
+            return new Grid((IRasterDataset)dataset);
+        }
 
         /// <summary>
         /// Combines multiple input grids into a single grid.
