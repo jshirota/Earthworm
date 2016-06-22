@@ -76,5 +76,18 @@ Many overloads available for KML, which I will discuss later.
 cityFeatureClass.Map<City>().ToKml().Save("doc.kml");
 ```
 
+Let's say ypu have a Windows Forms UI like this.
+```c#
+var cities = cityFeatureClass.Map<City>().ToList();
 
-            
+var f = new Form();
+f.Controls.Add(new DataGridView
+{
+    DataSource = new BindingSource { DataSource = cities },
+    Dock = DockStyle.Fill
+});
+
+Application.Run(f);
+```
+
+If you change an attribute value, IsDirty becomes true.  This is because the mapped objects raise the ProperyChanged event on its own.
