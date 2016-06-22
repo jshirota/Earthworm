@@ -17,3 +17,64 @@ http://jshirota.github.io/Earthworm/Help/
 The NuGet package is here:
 
 http://nuget.org/packages/Earthworm
+
+This update uses the update cursor.
+```c#
+foreach (var city in cityFeatureClass.Map<City>(useUpdateCursor: true))
+{
+    city.POP2000 += 1;
+    city.Update();
+}
+```
+
+If you use the following static imports, you can define geometries much more succinctly.
+```c#
+using static Earthworm.Shape;
+```
+For example,
+```c#
+var state = new State
+{
+    STATE_NAME = "Test",
+    Shape = Polygon(
+        OuterRing(P(0, 0), P(0, 3), P(3, 3), P(3, 0)),
+        InnerRing(P(1, 1), P(1, 2), P(2, 2), P(2, 1))
+        )
+};
+
+state.ToKml().Save("test.kml");
+```
+
+This inserts a new record.
+```c#
+var toronto = new City
+{
+    AREANAME = "Toronto",
+    POP2000 = 123,
+    Shape = P(-79.5, 43.6)
+};
+
+toronto.InsertInto(cityFeatureClass);
+```
+
+This also inserts records.  If you have many records to insert, this is more effective because all of the records are inserted via an inert cursor.
+```c#
+cityFeatureClass.Insert(manyCities);
+```
+
+This returns an XElement.
+```c#
+toronto.ToKml()
+```
+So does this.
+```C#
+toronto.Shape.ToKml()
+```
+
+Many overloads available for KML, which I will discuss later.
+```c#
+cityFeatureClass.Map<City>().ToKml().Save("doc.kml");
+```
+
+
+            
