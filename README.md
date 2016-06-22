@@ -18,6 +18,8 @@ The NuGet package is here:
 
 http://nuget.org/packages/Earthworm
 
+##Examples
+
 This update uses the update cursor.
 ```c#
 foreach (var city in cityFeatureClass.Map<City>(useUpdateCursor: true))
