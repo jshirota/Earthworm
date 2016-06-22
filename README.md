@@ -76,7 +76,7 @@ Many overloads available for KML, which I will discuss later.
 cityFeatureClass.Map<City>().ToKml().Save("doc.kml");
 ```
 
-Let's say ypu have a Windows Forms UI like this.
+Let's say you have a Windows Forms UI like this.
 ```c#
 var cities = cityFeatureClass.Map<City>().ToList();
 
