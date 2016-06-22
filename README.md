@@ -91,3 +91,11 @@ Application.Run(f);
 ```
 
 If you change an attribute value, IsDirty becomes true.  This is because the mapped objects raise the ProperyChanged event on its own.
+
+This creates a new feature class in inserts cities with more than 1 million people into it.
+```c#
+var cityFeatureClass = featureWorkspace.OpenFeatureClass("Cities");
+
+featureWorkspace.CreateFeatureClass<City>("Cities2", esriGeometryType.esriGeometryPoint, 4326)
+    .Insert(cityFeatureClass.Map<City>(new QueryFilter { WhereClause = "POP2000>1000000" }));
+```
