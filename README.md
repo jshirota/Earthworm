@@ -70,6 +70,27 @@ city["hidden_field"] = 1234;
 city.Update();
 ```
 
+You need a workspace edit session?  No problem.
+```c#
+try
+{
+    workspace.Edit(() =>
+    {
+        foreach (var city in cityFeatureClass.Map<City>(useUpdateCursor: true))
+        {
+            city.POP2000 = 0;
+            city.Update();
+        }
+
+        throw new Exception("Dummy error!");
+    });
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Error occurred and rolled back.  " + ex.Message);
+}
+```
+
 This returns an XElement.
 ```c#
 toronto.ToKml()
