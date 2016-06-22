@@ -64,6 +64,12 @@ This also inserts records.  If you have many records to insert, this is more eff
 cityFeatureClass.Insert(manyCities);
 ```
 
+Sometimes you have to dynamically access a field by name.  That's OK.  We support editing data that way, too.
+```c#
+city["hidden_field"] = 1234;
+city.Update();
+```
+
 This returns an XElement.
 ```c#
 toronto.ToKml()
