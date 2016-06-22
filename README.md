@@ -101,3 +101,30 @@ var cityFeatureClass = featureWorkspace.OpenFeatureClass("Cities");
 featureWorkspace.CreateFeatureClass<City>("Cities2", esriGeometryType.esriGeometryPoint, 4326)
     .Insert(cityFeatureClass.Map<City>(new QueryFilter { WhereClause = "POP2000>1000000" }));
 ```
+
+Earthworm.SpatialAnalyst is a separate NuGet package.  Most raster algebra expressions and operators work just like ArcINFO GRID.  Yeah!
+
+```c#
+var dem = new Grid("n52_w128_1arc_v3.bil");
+var dem_feet = dem * 3.28084;
+```
+
+Using static imports, Hillshade can be called like this.
+```c#
+var hillshade = Hillshade(dem, zFactor: 0.00001);
+```
+
+Or via an extension method like this.
+```c#
+var hillshade = dem.Hillshade(zFactor: 0.00001);
+hillshade.Save("hillshade.png");
+```
+
+Here's an example of "Game of Life" procedure using Earthworm.SpatialAnalyst.
+```c#
+static Grid Tick(Grid grid)
+{
+    var count = FocalSum(grid, 3, 3) - grid;
+    return Con(count == 3 | (grid == 1 & count == 2), 1, 0);
+}
+```
