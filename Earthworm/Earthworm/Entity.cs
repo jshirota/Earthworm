@@ -211,8 +211,9 @@ namespace Earthworm
         /// Inserts this item into a table.
         /// </summary>
         /// <param name="table"></param>
+        /// <param name="fetchRow"></param>
         /// <returns></returns>
-        public int InsertInto(ITable table)
+        public int InsertInto(ITable table, bool fetchRow = false)
         {
             var cursor = table.Insert(true);
 
@@ -221,8 +222,14 @@ namespace Earthworm
                 var rowBuffer = table.CreateRowBuffer();
 
                 CopyTo(rowBuffer);
+                var oid = (int)cursor.InsertRow(rowBuffer);
+                if (fetchRow)
+                {
+                    cursor.Flush();
+                    this.Row = table.GetRow(oid);
+                }
 
-                return (int)cursor.InsertRow(rowBuffer);
+                return oid;
             }
             finally
             {
