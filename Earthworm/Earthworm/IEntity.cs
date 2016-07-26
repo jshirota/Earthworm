@@ -43,8 +43,9 @@ namespace Earthworm
         /// Inserts this item into a table.
         /// </summary>
         /// <param name="table"></param>
+        /// <param name="fetchRow"></param>
         /// <returns></returns>
-        int InsertInto(ITable table);
+        int InsertInto(ITable table, bool fetchRow = false);
 
         /// <summary>
         /// Commits changes to the underlying table.
