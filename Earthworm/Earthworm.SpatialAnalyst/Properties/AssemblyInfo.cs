@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Earthworm.SpatialAnalyst for ArcGIS")]
-[assembly: AssemblyCopyright("Copyright © Jiro Shirota 2016")]
+[assembly: AssemblyCopyright("Copyright © Jiro Shirota 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
