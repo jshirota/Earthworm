@@ -2,7 +2,6 @@
 <HelpKI>
   <HelpKINode Title="AO class">
     <HelpKINode Title="AO Class" Url="html/6D75EB29.htm" />
-    <HelpKINode Title="about AO class" Url="html/6D75EB29.htm" />
     <HelpKINode Title="methods" Url="html/B334C3EA.htm" />
   </HelpKINode>
   <HelpKINode Title="AO.Edit method" Url="html/31731037.htm" />
@@ -45,7 +44,6 @@
   <HelpKINode Title="Edit method" Url="html/31731037.htm" />
   <HelpKINode Title="Entity class">
     <HelpKINode Title="Entity Class" Url="html/EB30F4F1.htm" />
-    <HelpKINode Title="about Entity class" Url="html/EB30F4F1.htm" />
     <HelpKINode Title="constructor" Url="html/6C828EEF.htm" />
     <HelpKINode Title="events" Url="html/7079DDD2.htm" />
     <HelpKINode Title="methods" Url="html/816A06D6.htm" />
@@ -53,7 +51,6 @@
   </HelpKINode>
   <HelpKINode Title="Entity(Of T) class">
     <HelpKINode Title="Entity(T) Class" Url="html/206AEB2E.htm" />
-    <HelpKINode Title="about Entity(Of T) class" Url="html/206AEB2E.htm" />
     <HelpKINode Title="constructor" Url="html/944B8896.htm" />
     <HelpKINode Title="events" Url="html/39D47FC8.htm" />
     <HelpKINode Title="methods" Url="html/3D73644E.htm" />
@@ -77,7 +74,6 @@
   <HelpKINode Title="Entity.Update method" Url="html/73055A6A.htm" />
   <HelpKINode Title="Entity&lt;T&gt; class">
     <HelpKINode Title="Entity(T) Class" Url="html/206AEB2E.htm" />
-    <HelpKINode Title="about Entity&lt;T&gt; class" Url="html/206AEB2E.htm" />
     <HelpKINode Title="constructor" Url="html/944B8896.htm" />
     <HelpKINode Title="events" Url="html/39D47FC8.htm" />
     <HelpKINode Title="methods" Url="html/3D73644E.htm" />
@@ -88,7 +84,6 @@
   <HelpKINode Title="Entity&lt;T&gt;.Shape property" Url="html/5DD84114.htm" />
   <HelpKINode Title="EntityExtensions class">
     <HelpKINode Title="EntityExtensions Class" Url="html/1A781EC2.htm" />
-    <HelpKINode Title="about EntityExtensions class" Url="html/1A781EC2.htm" />
     <HelpKINode Title="methods" Url="html/48A46EA6.htm" />
   </HelpKINode>
   <HelpKINode Title="EntityExtensions.FindItemByOID method" Url="html/CE2163CE.htm" />
@@ -109,13 +104,11 @@
   <HelpKINode Title="IconUrl property" Url="html/40BE0F92.htm" />
   <HelpKINode Title="IEntity interface">
     <HelpKINode Title="IEntity Interface" Url="html/F9EB16BE.htm" />
-    <HelpKINode Title="about IEntity interface" Url="html/F9EB16BE.htm" />
     <HelpKINode Title="methods" Url="html/D9FED50A.htm" />
     <HelpKINode Title="properties" Url="html/1F293C7D.htm" />
   </HelpKINode>
   <HelpKINode Title="IEntity(Of T) interface">
     <HelpKINode Title="IEntity(T) Interface" Url="html/A78CE8B8.htm" />
-    <HelpKINode Title="about IEntity(Of T) interface" Url="html/A78CE8B8.htm" />
     <HelpKINode Title="methods" Url="html/B7B14F02.htm" />
     <HelpKINode Title="properties" Url="html/E7B42D0F.htm" />
   </HelpKINode>
@@ -131,7 +124,6 @@
   <HelpKINode Title="IEntity.Update method" Url="html/13DF2638.htm" />
   <HelpKINode Title="IEntity&lt;T&gt; interface">
     <HelpKINode Title="IEntity(T) Interface" Url="html/A78CE8B8.htm" />
-    <HelpKINode Title="about IEntity&lt;T&gt; interface" Url="html/A78CE8B8.htm" />
     <HelpKINode Title="methods" Url="html/B7B14F02.htm" />
     <HelpKINode Title="properties" Url="html/E7B42D0F.htm" />
   </HelpKINode>
@@ -161,7 +153,6 @@
   </HelpKINode>
   <HelpKINode Title="Json class">
     <HelpKINode Title="Json Class" Url="html/51823F60.htm" />
-    <HelpKINode Title="about Json class" Url="html/51823F60.htm" />
     <HelpKINode Title="methods" Url="html/5F785F11.htm" />
   </HelpKINode>
   <HelpKINode Title="Json.ToJson method" Url="html/B87F5967.htm" />
@@ -171,13 +162,11 @@
   <HelpKINode Title="Json.ToPolyline method" Url="html/7F2ABA61.htm" />
   <HelpKINode Title="Kml class">
     <HelpKINode Title="Kml Class" Url="html/D991B3FC.htm" />
-    <HelpKINode Title="about Kml class" Url="html/D991B3FC.htm" />
     <HelpKINode Title="methods" Url="html/A254EA77.htm" />
   </HelpKINode>
   <HelpKINode Title="Kml.ToKml method" Url="html/7B9EB49C.htm" />
   <HelpKINode Title="KmlStyle class">
     <HelpKINode Title="KmlStyle Class" Url="html/BE5F20F8.htm" />
-    <HelpKINode Title="about KmlStyle class" Url="html/BE5F20F8.htm" />
     <HelpKINode Title="constructor" Url="html/D5A0B942.htm" />
     <HelpKINode Title="methods" Url="html/45DC0F1C.htm" />
     <HelpKINode Title="properties" Url="html/A839FAB0.htm" />
@@ -197,7 +186,6 @@
   <HelpKINode Title="Map method" Url="html/2C14F489.htm" />
   <HelpKINode Title="Mapped class">
     <HelpKINode Title="Mapped Class" Url="html/FD71C586.htm" />
-    <HelpKINode Title="about Mapped class" Url="html/FD71C586.htm" />
     <HelpKINode Title="constructor" Url="html/61F8409C.htm" />
     <HelpKINode Title="methods" Url="html/3B50DA5B.htm" />
     <HelpKINode Title="properties" Url="html/B8F01335.htm" />
@@ -224,7 +212,6 @@
   <HelpKINode Title="Relation method" Url="html/A9327962.htm" />
   <HelpKINode Title="Shape class">
     <HelpKINode Title="Shape Class" Url="html/749CEFAF.htm" />
-    <HelpKINode Title="about Shape class" Url="html/749CEFAF.htm" />
     <HelpKINode Title="methods" Url="html/C42BAB52.htm" />
   </HelpKINode>
   <HelpKINode Title="Shape property">
@@ -261,7 +248,6 @@
   <HelpKINode Title="Shape.WKID method" Url="html/ED9AAB6A.htm" />
   <HelpKINode Title="TableWriter class">
     <HelpKINode Title="TableWriter Class" Url="html/535ADC82.htm" />
-    <HelpKINode Title="about TableWriter class" Url="html/535ADC82.htm" />
     <HelpKINode Title="methods" Url="html/3E11C4A2.htm" />
   </HelpKINode>
   <HelpKINode Title="TableWriter.CreateFeatureClass method" Url="html/F739F989.htm" />
@@ -269,7 +255,6 @@
   <HelpKINode Title="TableWriter.CreateTable&lt;T&gt; method" Url="html/5F261AD0.htm" />
   <HelpKINode Title="Text class">
     <HelpKINode Title="Text Class" Url="html/D18AD011.htm" />
-    <HelpKINode Title="about Text class" Url="html/D18AD011.htm" />
     <HelpKINode Title="methods" Url="html/D8AF7320.htm" />
   </HelpKINode>
   <HelpKINode Title="Text.ToText method" Url="html/F1B89F3E.htm" />
