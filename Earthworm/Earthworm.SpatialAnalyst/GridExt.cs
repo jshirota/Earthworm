@@ -3,6 +3,9 @@ using ESRI.ArcGIS.Geometry;
 
 namespace Earthworm.SpatialAnalyst
 {
+    /// <summary>
+    /// Provides common raster GIS operations via extension methods.
+    /// </summary>
     public static class GridExt
     {
         #region Conditional
@@ -764,6 +767,12 @@ namespace Earthworm.SpatialAnalyst
 
         #region Transformation
 
+        /// <summary>
+        /// Subsets a raster using a rectangle.
+        /// </summary>
+        /// <param name="grid"></param>
+        /// <param name="envelope"></param>
+        /// <returns></returns>
         public static Grid Clip(this Grid grid, IEnvelope envelope)
             => Grid.Clip(grid, envelope);
 

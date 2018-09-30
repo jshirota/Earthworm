@@ -1312,6 +1312,12 @@ namespace Earthworm.SpatialAnalyst
 
         private static ITransformationOp TransformationOp => (ITransformationOp)new RasterTransformationOp();
 
+        /// <summary>
+        /// Subsets a raster using a rectangle.
+        /// </summary>
+        /// <param name="grid"></param>
+        /// <param name="envelope"></param>
+        /// <returns></returns>
         public static Grid Clip(Grid grid, IEnvelope envelope)
         {
             var dataset = TransformationOp.Clip((IGeoDataset)grid.RasterDataset, envelope);
