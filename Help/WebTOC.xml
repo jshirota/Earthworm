@@ -1,90 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpTOC>
 
-  <HelpTOCNode Id="4f5d468b-e3c3-4ec3-9a54-a19b0d2b1be9" Title="Earthworm - An ORM for Esri Geodatabase" Url="html/C8711CFD.htm">
-    <HelpTOCNode Id="e80a6205-e954-4ec3-9965-f165f141f2e9" Title="Earthworm" Url="html/45893AA5.htm">
-      <HelpTOCNode Id="4fea25d4-1e28-429c-a203-a5cf7212402e" Title="AO Class" Url="html/6D75EB29.htm">
-        <HelpTOCNode Id="d4f57772-e3e4-40ac-b72a-d8d75faaba85" Title="AO Methods" Url="html/B334C3EA.htm">
+  <HelpTOCNode Id="ab2dd42f-57d4-4f78-aca7-4520ab21dea8" Title="Earthworm - An ORM for Esri Geodatabase" Url="html/C8711CFD.htm">
+    <HelpTOCNode Id="0c1c5945-e5e1-4866-8ab7-242ab6b38707" Title="Earthworm" Url="html/45893AA5.htm">
+      <HelpTOCNode Id="536d5d4d-8079-4826-bbbe-d85fc5732ad7" Title="AO Class" Url="html/6D75EB29.htm">
+        <HelpTOCNode Id="55ce7993-7720-495d-aeab-1fbee947b44f" Title="AO Methods" Url="html/B334C3EA.htm">
           <HelpTOCNode Title="Edit Method " Url="html/31731037.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="c192ac83-1d25-4eb7-8541-7576a1431931" Title="Entity Class" Url="html/EB30F4F1.htm">
+      <HelpTOCNode Id="782ea549-c652-4cde-8df9-002479f8b4e9" Title="Entity Class" Url="html/EB30F4F1.htm">
         <HelpTOCNode Title="Entity Constructor " Url="html/6C828EEF.htm" />
-        <HelpTOCNode Id="bdc93aaa-bc06-40ca-a9de-4974a4cc595d" Title="Entity Properties" Url="html/FEABF844.htm">
+        <HelpTOCNode Id="fa22721d-3a53-4dea-bf2c-87671907a346" Title="Entity Properties" Url="html/FEABF844.htm">
           <HelpTOCNode Title="IsDataBound Property " Url="html/EF270390.htm" />
           <HelpTOCNode Title="IsDirty Property " Url="html/864BA9E8.htm" />
           <HelpTOCNode Title="Item Property " Url="html/DDF9BA6F.htm" />
           <HelpTOCNode Title="OID Property " Url="html/365948A4.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="a6308650-766d-4dd9-a0e0-12fe9725394d" Title="Entity Methods" Url="html/816A06D6.htm">
+        <HelpTOCNode Id="6569ff14-f9af-4b59-852b-102c949b80c3" Title="Entity Methods" Url="html/816A06D6.htm">
           <HelpTOCNode Title="Create(T) Method " Url="html/B41E96EB.htm" />
           <HelpTOCNode Title="Delete Method " Url="html/B6FA865D.htm" />
           <HelpTOCNode Title="GetFieldNames Method " Url="html/53CD86BC.htm" />
           <HelpTOCNode Title="InsertInto Method " Url="html/F2602A72.htm" />
-          <HelpTOCNode Id="d3d86867-afcc-4815-8149-2ea35477f0ae" Title="RaisePropertyChanged Method " Url="html/2F8F4F79.htm">
+          <HelpTOCNode Id="ff9d7a23-af76-4c11-aa66-c21c40ab9f85" Title="RaisePropertyChanged Method " Url="html/2F8F4F79.htm">
             <HelpTOCNode Title="RaisePropertyChanged(T) Method (Expression(Func(T)))" Url="html/DD761613.htm" />
             <HelpTOCNode Title="RaisePropertyChanged Method (String)" Url="html/BA009386.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Update Method " Url="html/73055A6A.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="1fbb3f7f-2a99-44af-a241-a7a48b9b5213" Title="Entity Events" Url="html/7079DDD2.htm">
+        <HelpTOCNode Id="7e48aaf4-36d9-490e-9350-e315bc540b45" Title="Entity Events" Url="html/7079DDD2.htm">
           <HelpTOCNode Title="PropertyChanged Event" Url="html/1EB41FBD.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="66b88e57-ca9e-4c56-bb2e-8c95005b6327" Title="Entity(T) Class" Url="html/206AEB2E.htm">
+      <HelpTOCNode Id="a94bfdf5-a427-4321-95a2-483617556add" Title="Entity(T) Class" Url="html/206AEB2E.htm">
         <HelpTOCNode Title="Entity(T) Constructor " Url="html/944B8896.htm" />
-        <HelpTOCNode Id="14099c52-9ce3-4139-aec1-d696daf435a2" Title="Entity(T) Properties" Url="html/673C13C1.htm">
+        <HelpTOCNode Id="afff8a6d-79cf-4f51-b78c-66a6b101c11a" Title="Entity(T) Properties" Url="html/673C13C1.htm">
           <HelpTOCNode Title="Shape Property " Url="html/5DD84114.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="24b17bb9-fa8a-44a0-be48-51cedc7ba186" Title="Entity(T) Methods" Url="html/3D73644E.htm">
-          <HelpTOCNode Id="3206b30b-4224-4989-ab70-dc2a1bc8f0ed" Title="InsertInto Method " Url="html/A385AFA5.htm">
+        <HelpTOCNode Id="9ece0cb4-ab8a-42ea-832e-ef345e670a4a" Title="Entity(T) Methods" Url="html/3D73644E.htm">
+          <HelpTOCNode Id="dba88d98-d8bc-4e5b-8a5d-dae1e5338e37" Title="InsertInto Method " Url="html/A385AFA5.htm">
             <HelpTOCNode Title="InsertInto Method (IFeatureClass)" Url="html/E25F3133.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
         <HelpTOCNode Title="Entity(T) Events" Url="html/39D47FC8.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="9af931df-c37e-4ab2-a9ff-b2ceb12b4934" Title="EntityExtensions Class" Url="html/1A781EC2.htm">
-        <HelpTOCNode Id="48353ab0-6ca8-47aa-9cd6-5ef3e29872d6" Title="EntityExtensions Methods" Url="html/48A46EA6.htm">
-          <HelpTOCNode Id="27aa6594-2438-4503-8905-fe08be2bd29b" Title="FindItemByOID Method " Url="html/CE2163CE.htm">
+      <HelpTOCNode Id="4c0a0d03-ce66-43bf-acbc-8c89603f88c1" Title="EntityExtensions Class" Url="html/1A781EC2.htm">
+        <HelpTOCNode Id="6f8238b2-a8e6-4bde-9508-d6c802ca6c48" Title="EntityExtensions Methods" Url="html/48A46EA6.htm">
+          <HelpTOCNode Id="c580f31b-2d8a-4350-909e-80ea756aba3b" Title="FindItemByOID Method " Url="html/CE2163CE.htm">
             <HelpTOCNode Title="FindItemByOID(T) Method (IFeatureClass, Int32)" Url="html/32B35140.htm" />
             <HelpTOCNode Title="FindItemByOID(T) Method (ITable, Int32)" Url="html/4E7081C4.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="63b404eb-1100-4c3b-8713-dd24b7cf09ee" Title="Insert Method " Url="html/D347742E.htm">
+          <HelpTOCNode Id="29a3c384-8421-461d-b3d7-985a661d8138" Title="Insert Method " Url="html/D347742E.htm">
             <HelpTOCNode Title="Insert(T) Method (IFeatureClass, IEnumerable(T))" Url="html/114CAF49.htm" />
             <HelpTOCNode Title="Insert(T) Method (ITable, IEnumerable(T))" Url="html/F1638096.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="9429beaf-5605-4afe-8a5b-58dda5446cd1" Title="Map Method " Url="html/2C14F489.htm">
+          <HelpTOCNode Id="e2472fdd-b8ce-4228-8844-7cfb447c9ae2" Title="Map Method " Url="html/2C14F489.htm">
             <HelpTOCNode Title="Map(T) Method (IFeatureClass, IQueryFilter, Boolean)" Url="html/79DBECEB.htm" />
             <HelpTOCNode Title="Map(T) Method (ITable, IQueryFilter, Boolean)" Url="html/728807BF.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="5dbc5dde-4337-4ab9-bdbf-5c48a4066f2b" Title="IEntity Interface" Url="html/F9EB16BE.htm">
-        <HelpTOCNode Id="5e28922b-a36e-4402-847d-e305dc05b50c" Title="IEntity Properties" Url="html/1F293C7D.htm">
+      <HelpTOCNode Id="b6d14199-cfd8-49e4-a07e-eb04b91b937b" Title="IEntity Interface" Url="html/F9EB16BE.htm">
+        <HelpTOCNode Id="462cd5ce-ccff-4cbe-b66c-e0169964771c" Title="IEntity Properties" Url="html/1F293C7D.htm">
           <HelpTOCNode Title="IsDataBound Property " Url="html/7560A6A8.htm" />
           <HelpTOCNode Title="IsDirty Property " Url="html/6FC70DC.htm" />
           <HelpTOCNode Title="Item Property " Url="html/1AABB816.htm" />
           <HelpTOCNode Title="OID Property " Url="html/7CE3B015.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="3d670ca4-a24c-4249-baf2-4e365aa3a6a2" Title="IEntity Methods" Url="html/D9FED50A.htm">
+        <HelpTOCNode Id="aaf301e6-3ad7-4c9c-bceb-32395761e8be" Title="IEntity Methods" Url="html/D9FED50A.htm">
           <HelpTOCNode Title="Delete Method " Url="html/F90FCD1F.htm" />
           <HelpTOCNode Title="GetFieldNames Method " Url="html/FE5B5607.htm" />
           <HelpTOCNode Title="InsertInto Method " Url="html/9D95ED2A.htm" />
           <HelpTOCNode Title="Update Method " Url="html/13DF2638.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="c333e11f-24d8-494c-beeb-ad3dd62cd3e0" Title="IEntity(T) Interface" Url="html/A78CE8B8.htm">
-        <HelpTOCNode Id="b9020378-64a2-45b1-8f30-47f7ddc4bb4c" Title="IEntity(T) Properties" Url="html/E7B42D0F.htm">
+      <HelpTOCNode Id="89595e6e-86e7-44b3-b6c6-b4aa55db803e" Title="IEntity(T) Interface" Url="html/A78CE8B8.htm">
+        <HelpTOCNode Id="6310af33-c3f7-46d8-8ff8-9ec306145822" Title="IEntity(T) Properties" Url="html/E7B42D0F.htm">
           <HelpTOCNode Title="Shape Property " Url="html/F423E4F1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="e257de75-05e4-435a-883b-80eec6a8014a" Title="IEntity(T) Methods" Url="html/B7B14F02.htm">
-          <HelpTOCNode Id="b23a635c-8650-4bbc-896b-426c008f5b05" Title="InsertInto Method " Url="html/88A1AF39.htm">
+        <HelpTOCNode Id="9610b56a-90d1-4af8-9c6b-999e99c73404" Title="IEntity(T) Methods" Url="html/B7B14F02.htm">
+          <HelpTOCNode Id="17f43df8-fe26-4816-a972-319e7708c84d" Title="InsertInto Method " Url="html/88A1AF39.htm">
             <HelpTOCNode Title="InsertInto Method (IFeatureClass)" Url="html/1DE59C1D.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="673af9b0-096b-4af5-a5ae-c7cdda636b6e" Title="Json Class" Url="html/51823F60.htm">
-        <HelpTOCNode Id="fc6b03f9-804a-4345-a9fe-0653d58ddba4" Title="Json Methods" Url="html/5F785F11.htm">
+      <HelpTOCNode Id="38177b29-6d7c-4611-ae9a-0a98cf4074fb" Title="Json Class" Url="html/51823F60.htm">
+        <HelpTOCNode Id="5c6085e0-bdc7-4d74-8acf-edb03f9db9c6" Title="Json Methods" Url="html/5F785F11.htm">
           <HelpTOCNode Title="ToJson Method " Url="html/B87F5967.htm" />
           <HelpTOCNode Title="ToMultipoint Method " Url="html/2B718D43.htm" />
           <HelpTOCNode Title="ToPoint Method " Url="html/A653595B.htm" />
@@ -92,9 +92,9 @@
           <HelpTOCNode Title="ToPolyline Method " Url="html/7F2ABA61.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="d89694b6-af7c-486c-b064-08f8f63caa03" Title="Kml Class" Url="html/D991B3FC.htm">
-        <HelpTOCNode Id="77ee8226-56bc-4322-b3ef-2aae103fddc4" Title="Kml Methods" Url="html/A254EA77.htm">
-          <HelpTOCNode Id="355390ed-24cd-4ba1-809f-2aee799c4c2d" Title="ToKml Method " Url="html/7B9EB49C.htm">
+      <HelpTOCNode Id="321a1158-95da-481b-bdde-88193e567ac5" Title="Kml Class" Url="html/D991B3FC.htm">
+        <HelpTOCNode Id="d909697a-ea1a-4fc6-935f-4fc4f97b438b" Title="Kml Methods" Url="html/A254EA77.htm">
+          <HelpTOCNode Id="c6d1d9ff-d083-4f68-a9dc-8acc81787560" Title="ToKml Method " Url="html/7B9EB49C.htm">
             <HelpTOCNode Title="ToKml Method (KmlStyle)" Url="html/CF5697D9.htm" />
             <HelpTOCNode Title="ToKml Method (IGeometry, Double, XElement[])" Url="html/71FE0C74.htm" />
             <HelpTOCNode Title="ToKml Method (IEntity(IGeometry), String, KmlStyle)" Url="html/3B0B6C5B.htm" />
@@ -104,9 +104,9 @@
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="62cf69a0-93d6-4f97-9a87-6e59f48809db" Title="KmlStyle Class" Url="html/BE5F20F8.htm">
+      <HelpTOCNode Id="fd1394f6-3aec-4798-b4eb-b3af348d06b9" Title="KmlStyle Class" Url="html/BE5F20F8.htm">
         <HelpTOCNode Title="KmlStyle Constructor " Url="html/D5A0B942.htm" />
-        <HelpTOCNode Id="2e480748-1b50-4c3e-b5fc-87515b8024b6" Title="KmlStyle Properties" Url="html/A839FAB0.htm">
+        <HelpTOCNode Id="00623d6b-b068-467e-b890-2ab30e9a0a3e" Title="KmlStyle Properties" Url="html/A839FAB0.htm">
           <HelpTOCNode Title="IconColour Property " Url="html/692E1AD7.htm" />
           <HelpTOCNode Title="IconScale Property " Url="html/42D414D1.htm" />
           <HelpTOCNode Title="IconUrl Property " Url="html/40BE0F92.htm" />
@@ -114,27 +114,27 @@
           <HelpTOCNode Title="LineWidth Property " Url="html/FB56CF4C.htm" />
           <HelpTOCNode Title="PolygonColour Property " Url="html/77F1C850.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="1770be9c-52b9-44c7-8627-a29c3953140e" Title="KmlStyle Methods" Url="html/45DC0F1C.htm">
+        <HelpTOCNode Id="d928e1ae-75ce-4946-b57a-9790667d1119" Title="KmlStyle Methods" Url="html/45DC0F1C.htm">
           <HelpTOCNode Title="Equals Method " Url="html/14DDD17A.htm" />
           <HelpTOCNode Title="GetHashCode Method " Url="html/9060342D.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="dab6e7e6-bff0-48a1-ad9f-9b3441a35b5f" Title="Mapped Class" Url="html/FD71C586.htm">
-        <HelpTOCNode Id="d7648a13-ce46-4fb2-8342-abe2c502ce6c" Title="Mapped Constructor " Url="html/61F8409C.htm">
+      <HelpTOCNode Id="d0c0e383-21d4-430b-918d-b121241cdd9d" Title="Mapped Class" Url="html/FD71C586.htm">
+        <HelpTOCNode Id="60db4fd6-f682-4b60-8b07-8c4809a173ff" Title="Mapped Constructor " Url="html/61F8409C.htm">
           <HelpTOCNode Title="Mapped Constructor (String)" Url="html/B27F39A7.htm" />
           <HelpTOCNode Title="Mapped Constructor (String, Int32)" Url="html/CA57C8D6.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="a2b5f0c1-56e7-4cf6-aa6d-11f29205d7da" Title="Mapped Properties" Url="html/B8F01335.htm">
+        <HelpTOCNode Id="6f2c3b63-21d6-405d-85c8-45dd3ef33689" Title="Mapped Properties" Url="html/B8F01335.htm">
           <HelpTOCNode Title="FieldName Property " Url="html/985E1D3E.htm" />
           <HelpTOCNode Title="GetFieldName Property " Url="html/FF9E70F5.htm" />
           <HelpTOCNode Title="Length Property " Url="html/A756CD23.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="Mapped Methods" Url="html/3B50DA5B.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="13f35e85-b8be-4dfb-8002-855409b286f2" Title="Shape Class" Url="html/749CEFAF.htm">
-        <HelpTOCNode Id="42d09c07-1909-43de-a426-653d8848f2d5" Title="Shape Methods" Url="html/C42BAB52.htm">
+      <HelpTOCNode Id="344841f1-b67c-453c-9e5e-d1fc10b453d6" Title="Shape Class" Url="html/749CEFAF.htm">
+        <HelpTOCNode Id="93450e4d-1a94-45f1-b588-b4af801e3d78" Title="Shape Methods" Url="html/C42BAB52.htm">
           <HelpTOCNode Title="Boundary Method " Url="html/2D913CC0.htm" />
-          <HelpTOCNode Id="e236798a-49f4-4323-87ce-a3e56a2744da" Title="Buffer Method " Url="html/90898E72.htm">
+          <HelpTOCNode Id="55d8d72b-c3d8-4eb9-ba5b-c2ee25477da1" Title="Buffer Method " Url="html/90898E72.htm">
             <HelpTOCNode Title="Buffer Method (IGeometry, Double)" Url="html/9B16076D.htm" />
             <HelpTOCNode Title="Buffer Method (IGeometry, Double, Boolean)" Url="html/102CAFF3.htm" />
             <HelpTOCNode Title="Buffer Method (IGeometry, Double, ISpatialReference, Boolean)" Url="html/102FAFF3.htm" />
@@ -148,36 +148,36 @@
           <HelpTOCNode Title="Difference Method " Url="html/EB3A858A.htm" />
           <HelpTOCNode Title="Disjoint Method " Url="html/8F8506E5.htm" />
           <HelpTOCNode Title="DistanceTo Method " Url="html/F57FFB1A.htm" />
-          <HelpTOCNode Id="77d6e66e-a477-484b-837b-c63d5d701cb4" Title="Equals2 Method " Url="html/5DDEF9EE.htm">
+          <HelpTOCNode Id="d8e534e5-5b2f-46bd-8fee-bce926b96bdd" Title="Equals2 Method " Url="html/5DDEF9EE.htm">
             <HelpTOCNode Title="Equals2 Method (IGeometry, IGeometry)" Url="html/8BDA5BC5.htm" />
             <HelpTOCNode Title="Equals2 Method (IPoint, IPoint)" Url="html/44AD6706.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="InnerRing Method " Url="html/2CD2D348.htm" />
           <HelpTOCNode Title="Intersect Method " Url="html/BBF0A867.htm" />
           <HelpTOCNode Title="Intersects Method " Url="html/6371A867.htm" />
-          <HelpTOCNode Id="412536d7-32e7-4485-97e1-d2ca7f3f89cf" Title="Multipoint Method " Url="html/6C84E134.htm">
+          <HelpTOCNode Id="7d457762-79d6-4b96-b456-224174189e84" Title="Multipoint Method " Url="html/6C84E134.htm">
             <HelpTOCNode Title="Multipoint Method (IPoint[])" Url="html/CB23135A.htm" />
             <HelpTOCNode Title="Multipoint Method (String)" Url="html/204FD9F1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="OuterRing Method " Url="html/5A7C0AB4.htm" />
           <HelpTOCNode Title="Overlaps Method " Url="html/29240D99.htm" />
-          <HelpTOCNode Id="f71a2aad-3c18-4a6a-9d2a-c397010dfc43" Title="P Method " Url="html/64B13E16.htm">
+          <HelpTOCNode Id="8c918141-9aae-49c0-9508-ddbdc3e66038" Title="P Method " Url="html/64B13E16.htm">
             <HelpTOCNode Title="P Method (String)" Url="html/373FF21C.htm" />
             <HelpTOCNode Title="P Method (Double, Double, ISpatialReference)" Url="html/EA28BEA1.htm" />
             <HelpTOCNode Title="P Method (Double, Double, Double, ISpatialReference)" Url="html/373FF219.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Path Method " Url="html/69FDF256.htm" />
-          <HelpTOCNode Id="269c48ce-a72c-4b03-bd16-5a7754b33b70" Title="Polygon Method " Url="html/62DE23D0.htm">
+          <HelpTOCNode Id="4a893cff-529b-44d0-9a9c-339bbf3e9703" Title="Polygon Method " Url="html/62DE23D0.htm">
             <HelpTOCNode Title="Polygon Method (IPoint[])" Url="html/5BBF7D8C.htm" />
             <HelpTOCNode Title="Polygon Method (IRing[])" Url="html/F026E98D.htm" />
             <HelpTOCNode Title="Polygon Method (String)" Url="html/D81D475E.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="199876d2-0959-4949-bfa0-4b8d86041b98" Title="Polyline Method " Url="html/3A318E75.htm">
+          <HelpTOCNode Id="d1a67038-ce94-4763-8b9a-6877b5a53f77" Title="Polyline Method " Url="html/3A318E75.htm">
             <HelpTOCNode Title="Polyline Method (IPath[])" Url="html/D23C4D4F.htm" />
             <HelpTOCNode Title="Polyline Method (IPoint[])" Url="html/2F402CC4.htm" />
             <HelpTOCNode Title="Polyline Method (String)" Url="html/D16F2CC4.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="edbbde3f-3e83-4ba2-a4c3-6f26a2edb854" Title="Project2 Method " Url="html/59F9EFF2.htm">
+          <HelpTOCNode Id="3a6cb5f6-afae-40c8-926b-37e2f3234be8" Title="Project2 Method " Url="html/59F9EFF2.htm">
             <HelpTOCNode Title="Project2(T) Method (T, ISpatialReference)" Url="html/6E319F76.htm" />
             <HelpTOCNode Title="Project2(T) Method (T, Int32)" Url="html/6DB40FF.htm" />
             <HelpTOCNode Title="Project2(T) Method (T, ISpatialReference, IGeoTransformation, esriTransformDirection)" Url="html/6433CC64.htm" />
@@ -185,16 +185,16 @@
           <HelpTOCNode Title="Relation Method " Url="html/A9327962.htm" />
           <HelpTOCNode Title="Touches Method " Url="html/1BD8A5A5.htm" />
           <HelpTOCNode Title="Union Method " Url="html/1CDC215A.htm" />
-          <HelpTOCNode Id="f25483a4-a298-4cb8-8bbc-58472f868172" Title="Within Method " Url="html/474F923C.htm">
+          <HelpTOCNode Id="a96bd462-72dd-41e9-b321-7432a4e923f6" Title="Within Method " Url="html/474F923C.htm">
             <HelpTOCNode Title="Within Method (IGeometry, IGeometry)" Url="html/E06FA5F0.htm" />
             <HelpTOCNode Title="Within Method (IGeometry, IGeometry, Double)" Url="html/54E94FDA.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="WKID Method " Url="html/ED9AAB6A.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="a987bae1-0b75-4ed9-9e20-da74b76cdc5a" Title="TableWriter Class" Url="html/535ADC82.htm">
-        <HelpTOCNode Id="37602fe5-4e8a-4471-aeab-90c1e1dfda6d" Title="TableWriter Methods" Url="html/3E11C4A2.htm">
-          <HelpTOCNode Id="5cc9c011-4f8a-4446-b85b-998b4772e782" Title="CreateFeatureClass Method " Url="html/F739F989.htm">
+      <HelpTOCNode Id="c2c2891c-7437-4023-a286-051b12e51636" Title="TableWriter Class" Url="html/535ADC82.htm">
+        <HelpTOCNode Id="a3788f4e-dbea-42e2-a7a7-8869011e01a4" Title="TableWriter Methods" Url="html/3E11C4A2.htm">
+          <HelpTOCNode Id="7fdc70a0-cdf2-469d-a5ea-59b8edb6443a" Title="CreateFeatureClass Method " Url="html/F739F989.htm">
             <HelpTOCNode Title="CreateFeatureClass(T) Method (IFeatureDataset, String, esriGeometryType)" Url="html/465364F3.htm" />
             <HelpTOCNode Title="CreateFeatureClass(T) Method (IFeatureWorkspace, String, esriGeometryType, ISpatialReference)" Url="html/1D933365.htm" />
             <HelpTOCNode Title="CreateFeatureClass(T) Method (IFeatureWorkspace, String, esriGeometryType, Int32)" Url="html/5899136.htm" />
@@ -202,9 +202,9 @@
           <HelpTOCNode Title="CreateTable(T) Method " Url="html/5F261AD0.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="089d6ff6-1381-4d83-9039-083c0f52424d" Title="Text Class" Url="html/D18AD011.htm">
-        <HelpTOCNode Id="de1c9fdb-a507-4553-a2a2-2553eb9315b2" Title="Text Methods" Url="html/D8AF7320.htm">
-          <HelpTOCNode Id="b6b160f3-e377-4c2b-940c-531af7162cd8" Title="ToText Method " Url="html/F1B89F3E.htm">
+      <HelpTOCNode Id="0131ba0c-7d4a-447b-a41d-c4672e03361f" Title="Text Class" Url="html/D18AD011.htm">
+        <HelpTOCNode Id="0ef79619-8627-43a4-aeb3-1aa1e7e67aed" Title="Text Methods" Url="html/D8AF7320.htm">
+          <HelpTOCNode Id="c1926656-6690-427d-a45c-5e2f239b3199" Title="ToText Method " Url="html/F1B89F3E.htm">
             <HelpTOCNode Title="ToText(T) Method (IEntity(T), Func(T, Object), Func(DateTime, Object))" Url="html/B134E328.htm" />
             <HelpTOCNode Title="ToText Method (IEntity, String, Nullable(Char), Func(DateTime, Object))" Url="html/CF39C70F.htm" />
             <HelpTOCNode Title="ToText(T) Method (IEntity(T), String, Nullable(Char), Func(T, Object), Func(DateTime, Object))" Url="html/687060BF.htm" />
