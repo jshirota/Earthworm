@@ -6,10 +6,6 @@ The ClickOnce installer is here:
 
 http://jshirota.github.io/Earthworm/ORMappingDeploy.application
 
-The project page is here:
-
-http://jshirota.github.io/Earthworm/
-
 The library reference is here:
 
 http://jshirota.github.io/Earthworm/Help/
