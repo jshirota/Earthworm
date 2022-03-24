@@ -537,7 +537,7 @@ namespace Earthworm
         public static IGeometry Clip(this IGeometry shape, IEnvelope clipperEnvelope)
         {
             var clone = shape.Copy();
-            ((ITopologicalOperator)shape).Clip(clipperEnvelope);
+            ((ITopologicalOperator)clone).Clip(clipperEnvelope);
             return clone;
         }
 
