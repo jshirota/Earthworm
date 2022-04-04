@@ -14,6 +14,10 @@ The NuGet package is here:
 
 http://nuget.org/packages/Earthworm
 
+.NET 6:
+
+https://github.com/jshirota/Earthworm/blob/3.0/README.md
+
 ##Examples
 
 This update uses the update cursor.
