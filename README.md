@@ -16,7 +16,7 @@ http://nuget.org/packages/Earthworm
 
 .NET 6:
 
-https://github.com/jshirota/Earthworm/blob/3.0/README.md
+https://github.com/jshirota/Earthworm/tree/3.0
 
 ##Examples
 
