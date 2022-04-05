@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>3.0.0-alpha1</Version>
+		<Version>2.1.0</Version>
 		<Authors>Jiro Shirota</Authors>
 		<SignAssembly>True</SignAssembly>
 		<AssemblyOriginatorKeyFile>Earthworm.snk</AssemblyOriginatorKeyFile>
