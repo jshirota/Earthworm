@@ -16,6 +16,9 @@ http://nuget.org/packages/Earthworm
 
 .NET 6:
 
+Starting at Version 2.1, we support .NET 6.0 as well as .NET Framework 4.x.
+
+The source code for this is a new branch:
 https://github.com/jshirota/Earthworm/tree/3.0
 
 ##Examples
